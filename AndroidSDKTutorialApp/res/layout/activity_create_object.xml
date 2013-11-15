@@ -1,0 +1,78 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="0dip"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:paddingBottom="13dip"
+        android:paddingLeft="30dip"
+        android:paddingRight="30dip"
+        android:paddingTop="30dip"
+        tools:ignore="UselessParent" >
+
+        <TextView
+            android:id="@+id/createObject_textView"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal|center_vertical"
+            android:paddingBottom="20dip"
+            android:text="@string/lets_create_an_object"
+            android:textAppearance="?android:attr/textAppearanceMedium" />
+        <TextView
+            android:id="@+id/scope_textView"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal|center_vertical"
+            android:paddingBottom="20dip"
+            android:text="@string/object_scope" />
+        <TextView
+            android:id="@+id/bucketName_textView"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal|center_vertical"
+            android:paddingBottom="20dip"
+            android:text="@string/bucket_name"/>
+
+        <Button
+            android:id="@+id/signup_button"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal|center_vertical"
+            android:onClick="onCreateObjectButtonClicked"
+            android:text="@string/create_object"
+            android:textSize="15sp"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:orientation="vertical"
+        android:paddingTop="2dip" >
+
+        <ProgressBar
+            android:id="@+id/progressBar"
+            style="?android:attr/progressBarStyle"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:visibility="invisible"
+            android:indeterminate="true" />
+
+        <ImageView
+            android:id="@+id/page"
+            android:layout_width="fill_parent"
+            android:layout_height="0dip"
+            android:layout_weight="1"
+            android:contentDescription="@string/page"
+            android:gravity="center_vertical"
+            android:src="@drawable/page2" />
+    </LinearLayout>
+
+</LinearLayout>

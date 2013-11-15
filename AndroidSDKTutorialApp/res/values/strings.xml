@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">KiiSDKTutorial</string>
+    <string name="action_settings">Settings</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="page">page</string>
+    <string name="log_in">Log In</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="enter_password">Enter password</string>
+    <string name="enter_username">Enter username</string>
+    <string name="lets_create_an_object">Lets create an object!</string>
+    <string name="create_object">Create Object</string>
+    <string name="attach_file">Attach File</string>
+    <string name="attach_file_txt">Attach file to the object</string>
+    <string name="bucket_name">Bucket Name : MyBucket</string>
+    <string name="object_scope">Object scope : Application</string>
+
+</resources>
