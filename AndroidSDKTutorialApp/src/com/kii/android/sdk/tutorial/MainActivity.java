@@ -12,7 +12,6 @@ import android.widget.Toast;
 
 import com.kii.android.sdk.tutorial.R;
 import com.kii.cloud.storage.Kii;
-import com.kii.cloud.storage.Kii.Site;
 import com.kii.cloud.storage.KiiUser;
 import com.kii.cloud.storage.callback.KiiUserCallBack;
 
@@ -29,7 +28,7 @@ public class MainActivity extends Activity {
         mUsernameField = (EditText) findViewById(R.id.username_field);
         mPasswordField = (EditText) findViewById(R.id.password_field);
         progressBar = (ProgressBar) findViewById(R.id.progressBar);
-        Kii.initialize("dd9ada4b", "69c4aa13308d5e2fd9a12ebae5da555a", Site.US);
+        Kii.initialize("68b8823b", "b53a7a219d962c47c6e766d00a06b6ad", "https://qa21.internal.kii.com/api");
     }
 
     public void onLoginButtonClicked(View v) {
