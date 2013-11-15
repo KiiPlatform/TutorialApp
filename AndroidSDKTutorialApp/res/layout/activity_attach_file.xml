@@ -42,6 +42,7 @@
         android:paddingLeft="30dip"
         android:paddingRight="30dip"
         android:orientation="vertical"
+        android:paddingBottom ="2dip"
         android:paddingTop="2dip" >
 
         <ProgressBar

@@ -87,10 +87,11 @@
             android:layout_height="wrap_content"
             android:layout_gravity="bottom"
             android:orientation="vertical"
-            android:paddingTop="2dip" >
+            android:paddingTop="2dip"
+            android:paddingBottom="2dip">
             <ProgressBar
                 android:id="@+id/progressBar"
-                style="?android:attr/progressBarStyle"
+                style="?android:attr/progressBarStyleLarge"
                 android:gravity="center_vertical"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"

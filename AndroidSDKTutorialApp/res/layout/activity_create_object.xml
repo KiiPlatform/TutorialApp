@@ -54,6 +54,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="bottom"
         android:orientation="vertical"
+        android:paddingBottom ="2dip"
         android:paddingTop="2dip" >
 
         <ProgressBar
