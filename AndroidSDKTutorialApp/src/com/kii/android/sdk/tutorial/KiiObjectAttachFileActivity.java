@@ -48,7 +48,7 @@ public class KiiObjectAttachFileActivity extends Activity {
     @Override
     protected void onActivityResult(int requestCode, int resultCode,
             Intent data) {
-        if(requestCode == PICK_IMAGE) {
+        if(requestCode == PICK_IMAGE && resultCode == RESULT_OK) {
             Uri selectedFileUri = data.getData();
             String filePath = getFilePathByUri(selectedFileUri);
             Log.v(TAG, "Picture Path : "+filePath);
