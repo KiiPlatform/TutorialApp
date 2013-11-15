@@ -20,7 +20,7 @@
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:gravity="center_horizontal|center_vertical"
-            android:paddingBottom="20dip"
+            android:paddingBottom="15dip"
             android:text="@string/lets_create_an_object"
             android:textAppearance="?android:attr/textAppearanceMedium" />
         <TextView
@@ -28,14 +28,14 @@
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:gravity="center_horizontal|center_vertical"
-            android:paddingBottom="20dip"
+            android:paddingBottom="15dip"
             android:text="@string/object_scope" />
         <TextView
             android:id="@+id/bucketName_textView"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:gravity="center_horizontal|center_vertical"
-            android:paddingBottom="20dip"
+            android:paddingBottom="15dip"
             android:text="@string/bucket_name"/>
 
         <Button
@@ -59,7 +59,7 @@
 
         <ProgressBar
             android:id="@+id/progressBar"
-            style="?android:attr/progressBarStyle"
+            style="?android:attr/progressBarStyleLarge"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:gravity="center_vertical"

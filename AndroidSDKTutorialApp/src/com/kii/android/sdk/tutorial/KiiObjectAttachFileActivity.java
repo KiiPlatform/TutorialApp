@@ -110,10 +110,14 @@ public class KiiObjectAttachFileActivity extends Activity {
             @Override
             public void onTransferCompleted(KiiRTransfer operator, Exception e) {
                 progressBar.setVisibility(View.INVISIBLE);
-                DialogFragment newFragment = UploadFinishDialogFragment
-                        .newInstance("File uploaded!",
-                                "Would you like to create another object?");
-                newFragment.show(getFragmentManager(), "dialog.");
+                if(e == null) {
+                    DialogFragment newFragment = UploadFinishDialogFragment
+                            .newInstance("File uploaded!",
+                                    "Would you like to create another object?");
+                    newFragment.show(getFragmentManager(), "dialog.");
+                } else {
+                    showToast("Error in file upload :"+e.getLocalizedMessage());
+                }
             }
         });
     }
