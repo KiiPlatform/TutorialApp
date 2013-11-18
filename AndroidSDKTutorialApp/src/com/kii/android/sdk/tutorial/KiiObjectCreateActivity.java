@@ -14,7 +14,6 @@ import com.kii.cloud.storage.callback.KiiObjectCallBack;
 
 
 public class KiiObjectCreateActivity extends Activity{
-    private static final String BUCKET_NAME = "MyBucket";
     ProgressBar progressBar = null;
 
     @Override
@@ -26,7 +25,7 @@ public class KiiObjectCreateActivity extends Activity{
 
     public void onCreateObjectButtonClicked(View v) {
         progressBar.setVisibility(View.VISIBLE);
-        KiiBucket bucket = Kii.bucket(BUCKET_NAME);
+        KiiBucket bucket = Kii.bucket(AppConstants.APP_BUCKET_NAME);
         KiiObject object = bucket.object();
         object.set("score", (int)(Math.random()*100));
         object.save(new KiiObjectCallBack() {
