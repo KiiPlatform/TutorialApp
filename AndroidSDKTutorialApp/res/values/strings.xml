@@ -13,7 +13,7 @@
     <string name="create_object">Create Object</string>
     <string name="attach_file">Attach File</string>
     <string name="attach_file_txt">Attach file to the object</string>
-    <string name="bucket_name">Bucket Name : MyBucket</string>
+    <string name="bucket_name">Bucket Name : tutorial</string>
     <string name="object_scope">Object scope : Application</string>
 
 </resources>
