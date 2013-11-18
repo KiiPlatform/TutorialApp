@@ -1,0 +1,18 @@
+# iOSSDKTutorialApp
+
+### Requirements:
+
+- Xcode (version 5.0 or later)
+- iOS installed device or iOS simulator (iOS 6.0 or later)
+
+### How to setup:
+
+1. Open KiiTutorialApp.xcodeproj
+2. Get the APP ID, APP KEY and server location from KiiCloud developer portal, then copy these values to KiiAppConstants.m.
+
+```objectivec
+NSString *const KII_APP_ID = @"__APP_ID__";
+NSString *const KII_APP_KEY = @"__APP_KEY__";
+KiiSite const KII_APP_SITE = kiiSiteUS;
+```
+
