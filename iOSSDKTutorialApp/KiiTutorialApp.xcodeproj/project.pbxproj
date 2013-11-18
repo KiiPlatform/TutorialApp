@@ -256,7 +256,7 @@
 				ORGANIZATIONNAME = "Kii Corporation";
 				TargetAttributes = {
 					9B5B533618338B27000533F9 = {
-						TestTargetID = 9B5B531518338B26000533F9 /* KiiTutorialApp */;
+						TestTargetID = 9B5B531518338B26000533F9;
 					};
 				};
 			};
@@ -434,7 +434,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"/Users/ochtea/workspace-git/iOSStorageSDK/SampleApp/KiiTutorialApp/KiiTutorialApp",
+					KiiTutorialApp,
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "KiiTutorialApp/KiiTutorialApp-Prefix.pch";
@@ -455,7 +455,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"/Users/ochtea/workspace-git/iOSStorageSDK/SampleApp/KiiTutorialApp/KiiTutorialApp",
+					KiiTutorialApp,
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "KiiTutorialApp/KiiTutorialApp-Prefix.pch";
