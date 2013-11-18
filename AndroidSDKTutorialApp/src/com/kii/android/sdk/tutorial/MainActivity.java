@@ -28,7 +28,7 @@ public class MainActivity extends Activity {
         mUsernameField = (EditText) findViewById(R.id.username_field);
         mPasswordField = (EditText) findViewById(R.id.password_field);
         progressBar = (ProgressBar) findViewById(R.id.progressBar);
-        Kii.initialize("68b8823b", "b53a7a219d962c47c6e766d00a06b6ad", "https://qa21.internal.kii.com/api");
+        Kii.initialize(AppConstants.APP_ID, AppConstants.APP_KEY, AppConstants.APP_SITE);
     }
 
     public void onLoginButtonClicked(View v) {
