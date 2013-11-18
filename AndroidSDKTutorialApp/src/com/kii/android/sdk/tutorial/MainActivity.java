@@ -28,7 +28,8 @@ public class MainActivity extends Activity {
         mUsernameField = (EditText) findViewById(R.id.username_field);
         mPasswordField = (EditText) findViewById(R.id.password_field);
         progressBar = (ProgressBar) findViewById(R.id.progressBar);
-        Kii.initialize(AppConstants.APP_ID, AppConstants.APP_KEY, AppConstants.APP_SITE);
+        Kii.initialize(AppConstants.APP_ID, AppConstants.APP_KEY,
+                AppConstants.APP_SITE);
     }
 
     public void onLoginButtonClicked(View v) {
@@ -56,7 +57,8 @@ public class MainActivity extends Activity {
             progressBar.setVisibility(View.INVISIBLE);
             if (e == null) {
                 showToast("User logged-in!");
-                Intent i = new Intent(MainActivity.this, KiiObjectCreateActivity.class);
+                Intent i = new Intent(MainActivity.this,
+                        KiiObjectCreateActivity.class);
                 startActivity(i);
             } else {
                 showToast("Error : " + e.getLocalizedMessage());
@@ -68,7 +70,8 @@ public class MainActivity extends Activity {
             progressBar.setVisibility(View.INVISIBLE);
             if (e == null) {
                 showToast("User registered!");
-                Intent i = new Intent(MainActivity.this, KiiObjectCreateActivity.class);
+                Intent i = new Intent(MainActivity.this,
+                        KiiObjectCreateActivity.class);
                 startActivity(i);
             } else {
                 showToast("Error : " + e.getLocalizedMessage());
@@ -77,7 +80,7 @@ public class MainActivity extends Activity {
     };
 
     private void showToast(String message) {
-        Toast.makeText(this, message,Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, message, Toast.LENGTH_SHORT).show();
     }
 
 }

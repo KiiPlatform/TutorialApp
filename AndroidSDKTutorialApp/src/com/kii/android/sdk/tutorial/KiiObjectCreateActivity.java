@@ -12,8 +12,7 @@ import com.kii.cloud.storage.KiiBucket;
 import com.kii.cloud.storage.KiiObject;
 import com.kii.cloud.storage.callback.KiiObjectCallBack;
 
-
-public class KiiObjectCreateActivity extends Activity{
+public class KiiObjectCreateActivity extends Activity {
     ProgressBar progressBar = null;
 
     @Override
@@ -27,7 +26,7 @@ public class KiiObjectCreateActivity extends Activity{
         progressBar.setVisibility(View.VISIBLE);
         KiiBucket bucket = Kii.bucket(AppConstants.APP_BUCKET_NAME);
         KiiObject object = bucket.object();
-        object.set("score", (int)(Math.random()*100));
+        object.set("score", (int) (Math.random() * 100));
         object.save(new KiiObjectCallBack() {
 
             @Override
@@ -36,19 +35,20 @@ public class KiiObjectCreateActivity extends Activity{
                 progressBar.setVisibility(View.INVISIBLE);
                 if (exception == null) {
                     showToast("Object created!");
-                    Intent i = new Intent(KiiObjectCreateActivity.this, KiiObjectAttachFileActivity.class);
+                    Intent i = new Intent(KiiObjectCreateActivity.this,
+                            KiiObjectAttachFileActivity.class);
                     i.putExtra("object_uri", object.toUri().toString());
                     startActivity(i);
                 } else {
                     showToast("Error : " + exception.getLocalizedMessage());
                 }
             }
-            
+
         });
     }
 
     private void showToast(String message) {
-        Toast.makeText(this, message,Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, message, Toast.LENGTH_SHORT).show();
     }
 
 }

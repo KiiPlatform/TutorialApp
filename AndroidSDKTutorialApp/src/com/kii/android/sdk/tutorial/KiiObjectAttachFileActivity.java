@@ -22,7 +22,6 @@ import com.kii.cloud.storage.resumabletransfer.KiiRTransfer;
 import com.kii.cloud.storage.resumabletransfer.KiiRTransferCallback;
 import com.kii.cloud.storage.resumabletransfer.KiiUploader;
 
-
 public class KiiObjectAttachFileActivity extends Activity {
     private static final String TAG = "KiiObjectAttachFileActivity";
     ProgressBar progressBar = null;
@@ -42,22 +41,20 @@ public class KiiObjectAttachFileActivity extends Activity {
         Intent intent = new Intent();
         intent.setType("image/*");
         intent.setAction(Intent.ACTION_GET_CONTENT);
-        startActivityForResult(Intent.createChooser(intent, "Select Picture"), PICK_IMAGE);
+        startActivityForResult(Intent.createChooser(intent, "Select Picture"),
+                PICK_IMAGE);
     }
 
-
-    
-
     @Override
-    protected void onActivityResult(int requestCode, int resultCode,
-            Intent data) {
-        if(requestCode == PICK_IMAGE && resultCode == RESULT_OK) {
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        if (requestCode == PICK_IMAGE && resultCode == RESULT_OK) {
             Uri selectedFileUri = data.getData();
             String filePath = getFilePathByUri(selectedFileUri);
-            Log.v(TAG, "Picture Path : "+filePath);
-            if(filePath == null) {
-                InvalidFileDialogFragment fragment = InvalidFileDialogFragment.newInstance("File not exists!",
-                        "Please select an image that exists locally.");
+            Log.v(TAG, "Picture Path : " + filePath);
+            if (filePath == null) {
+                InvalidFileDialogFragment fragment = InvalidFileDialogFragment
+                        .newInstance("File not exists!",
+                                "Please select an image that exists locally.");
                 fragment.show(getFragmentManager(), "dialog.");
                 return;
             }
@@ -68,7 +65,7 @@ public class KiiObjectAttachFileActivity extends Activity {
     }
 
     private void showToast(String message) {
-        Toast.makeText(this, message,Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, message, Toast.LENGTH_SHORT).show();
     }
 
     private String getFilePathByUri(Uri selectedFileUri) {
@@ -98,8 +95,8 @@ public class KiiObjectAttachFileActivity extends Activity {
             @Override
             public void onProgress(KiiRTransfer operator,
                     long completedInBytes, long totalSizeinBytes) {
-                progressBar.setProgress(getProgressParcentage(
-                        completedInBytes, totalSizeinBytes));
+                progressBar.setProgress(getProgressParcentage(completedInBytes,
+                        totalSizeinBytes));
             }
 
             @Override
@@ -110,13 +107,14 @@ public class KiiObjectAttachFileActivity extends Activity {
             @Override
             public void onTransferCompleted(KiiRTransfer operator, Exception e) {
                 progressBar.setVisibility(View.INVISIBLE);
-                if(e == null) {
+                if (e == null) {
                     DialogFragment newFragment = UploadFinishDialogFragment
                             .newInstance("File uploaded!",
                                     "Would you like to create another object?");
                     newFragment.show(getFragmentManager(), "dialog.");
                 } else {
-                    showToast("Error in file upload :"+e.getLocalizedMessage());
+                    showToast("Error in file upload :"
+                            + e.getLocalizedMessage());
                 }
             }
         });
