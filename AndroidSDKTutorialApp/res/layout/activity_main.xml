@@ -1,7 +1,8 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:orientation="vertical" xmlns:tools="http://schemas.android.com/tools">
+    android:orientation="vertical" >
 
     <LinearLayout
         android:layout_width="fill_parent"
@@ -38,14 +39,14 @@
             android:layout_marginBottom="16dip"
             android:gravity="left|center_vertical"
             android:hint="@string/enter_password"
-            android:inputType="textPassword"
             android:minWidth="250dip"
             android:paddingBottom="2dip"
             android:paddingLeft="10dip"
             android:paddingRight="2dip"
             android:paddingTop="2dip"
             android:scrollHorizontally="true"
-            android:singleLine="true" />
+            android:singleLine="true"
+            tools:ignore="TextFields" />
 
         <LinearLayout
             android:layout_width="fill_parent"
@@ -59,8 +60,8 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal|center_vertical"
                 android:layout_weight="1"
-                android:onClick="onSignupButtonClicked"
                 android:minWidth="100dip"
+                android:onClick="onSignupButtonClicked"
                 android:padding="2dip"
                 android:text="@string/sign_up"
                 android:textSize="15sp"
@@ -71,36 +72,42 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:onClick="onLoginButtonClicked"
                 android:minWidth="100dip"
+                android:onClick="onLoginButtonClicked"
                 android:padding="2dip"
                 android:text="@string/log_in"
                 android:textSize="15sp"
                 android:textStyle="bold" />
         </LinearLayout>
     </LinearLayout>
+
     <LinearLayout
-            android:layout_width="fill_parent"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:orientation="vertical"
+        android:paddingBottom="2dip"
+        android:paddingTop="2dip" >
+
+        <ProgressBar
+            android:id="@+id/progressBar"
+            style="?android:attr/progressBarStyleLarge"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="bottom"
-            android:orientation="vertical"
-            android:paddingTop="2dip"
-            android:paddingBottom="2dip">
-            <ProgressBar
-                android:id="@+id/progressBar"
-                style="?android:attr/progressBarStyleLarge"
-                android:gravity="center_vertical"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:visibility="invisible"
-                android:indeterminate="true" />
-            <ImageView
-                android:id="@+id/page"
-                android:layout_width="fill_parent"
-                android:layout_height="0dip"
-                android:gravity="center_vertical"
-                android:layout_weight="1"
-                android:src="@drawable/page1" 
-                android:contentDescription="@string/page"/>
+            android:layout_gravity="center_vertical|center_horizontal"
+            android:indeterminate="true"
+            android:visibility="invisible" />
+
+        <ImageView
+            android:id="@+id/page"
+            android:layout_width="fill_parent"
+            android:layout_height="0dip"
+            android:layout_gravity="center_vertical|center_horizontal"
+            android:layout_marginBottom="10dip"
+            android:layout_marginTop="10dip"
+            android:layout_weight="1"
+            android:contentDescription="@string/page"
+            android:src="@drawable/page1" />
     </LinearLayout>
+
 </LinearLayout>

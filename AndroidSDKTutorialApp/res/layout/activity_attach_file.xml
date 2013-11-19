@@ -39,28 +39,31 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom"
+        android:orientation="vertical"
+        android:paddingBottom="2dip"
         android:paddingLeft="30dip"
         android:paddingRight="30dip"
-        android:orientation="vertical"
-        android:paddingBottom ="2dip"
         android:paddingTop="2dip" >
 
         <ProgressBar
             android:id="@+id/progressBar"
             style="?android:attr/progressBarStyleLarge"
-            android:layout_width="fill_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:gravity="center_vertical"
-            android:visibility="invisible"
-            android:max="100"/>
+            android:layout_gravity="center_vertical|center_horizontal"
+            android:indeterminate="true"
+            android:max="100"
+            android:visibility="invisible" />
 
         <ImageView
             android:id="@+id/page"
             android:layout_width="fill_parent"
             android:layout_height="0dip"
+            android:layout_gravity="center_vertical|center_horizontal"
+            android:layout_marginBottom="10dip"
+            android:layout_marginTop="10dip"
             android:layout_weight="1"
             android:contentDescription="@string/page"
-            android:gravity="center_vertical"
             android:src="@drawable/page3" />
     </LinearLayout>
 

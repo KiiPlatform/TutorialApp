@@ -23,6 +23,7 @@
             android:paddingBottom="15dip"
             android:text="@string/lets_create_an_object"
             android:textAppearance="?android:attr/textAppearanceMedium" />
+
         <TextView
             android:id="@+id/scope_textView"
             android:layout_width="fill_parent"
@@ -30,13 +31,14 @@
             android:gravity="center_horizontal|center_vertical"
             android:paddingBottom="15dip"
             android:text="@string/object_scope" />
+
         <TextView
             android:id="@+id/bucketName_textView"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:gravity="center_horizontal|center_vertical"
             android:paddingBottom="15dip"
-            android:text="@string/bucket_name"/>
+            android:text="@string/bucket_name" />
 
         <Button
             android:id="@+id/signup_button"
@@ -54,25 +56,27 @@
         android:layout_height="wrap_content"
         android:layout_gravity="bottom"
         android:orientation="vertical"
-        android:paddingBottom ="2dip"
+        android:paddingBottom="2dip"
         android:paddingTop="2dip" >
 
         <ProgressBar
             android:id="@+id/progressBar"
             style="?android:attr/progressBarStyleLarge"
-            android:layout_width="fill_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:gravity="center_vertical"
-            android:visibility="invisible"
-            android:indeterminate="true" />
+            android:layout_gravity="center_vertical|center_horizontal"
+            android:indeterminate="true"
+            android:visibility="invisible" />
 
         <ImageView
             android:id="@+id/page"
             android:layout_width="fill_parent"
             android:layout_height="0dip"
+            android:layout_gravity="center_vertical|center_horizontal"
+            android:layout_marginBottom="10dip"
+            android:layout_marginTop="10dip"
             android:layout_weight="1"
             android:contentDescription="@string/page"
-            android:gravity="center_vertical"
             android:src="@drawable/page2" />
     </LinearLayout>
 
