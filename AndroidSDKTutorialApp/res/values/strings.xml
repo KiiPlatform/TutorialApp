@@ -7,8 +7,8 @@
     <string name="page">page</string>
     <string name="log_in">Log In</string>
     <string name="sign_up">Sign Up</string>
-    <string name="enter_password">Enter password</string>
-    <string name="enter_username">Enter username</string>
+    <string name="enter_password">Enter password (4-50 length)</string>
+    <string name="enter_username">Enter username (3-64 length)</string>
     <string name="lets_create_an_object">Lets create an object!</string>
     <string name="create_object">Create Object</string>
     <string name="attach_file">Attach File</string>
