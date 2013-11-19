@@ -37,8 +37,12 @@ public class MainActivity extends Activity {
         Log.v(TAG, "login clicked");
         String username = mUsernameField.getText().toString();
         String password = mPasswordField.getText().toString();
-
-        KiiUser.logIn(callback, username, password);
+        try {
+            KiiUser.logIn(callback, username, password);
+        } catch (Exception e) {
+            progressBar.setVisibility(View.INVISIBLE);
+            showToast("Error : " + e.getLocalizedMessage());
+        }
     }
 
     public void onSignupButtonClicked(View v) {
@@ -46,9 +50,13 @@ public class MainActivity extends Activity {
 
         String username = mUsernameField.getText().toString();
         String password = mPasswordField.getText().toString();
-        KiiUser user = KiiUser.createWithUsername(username);
-        user.register(callback, password);
-
+        try {
+            KiiUser user = KiiUser.createWithUsername(username);
+            user.register(callback, password);
+        } catch (Exception e) {
+            progressBar.setVisibility(View.INVISIBLE);
+            showToast("Error : " + e.getLocalizedMessage());
+        }
     }
 
     KiiUserCallBack callback = new KiiUserCallBack() {
