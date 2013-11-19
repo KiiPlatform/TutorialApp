@@ -8,6 +8,7 @@
 
 #import "KiiCreateUserViewController.h"
 #import "KiiViewUtilities.h"
+#import "KiiCommonUtilities.h"
 #import <KiiSDK/KiiUser.h>
 
 @interface KiiCreateUserViewController ()
@@ -32,7 +33,9 @@
 
         // Check returning error
         if (retError) {
-            [KiiViewUtilities showFailureHUD:@"Registration failed." withView:self.view];
+            NSString *errorMessage = @"Registration failed.";
+            NSString *detailedMessage = [KiiCommonUtilities errorDetailsMessage:retError];
+            [KiiViewUtilities showFailureHUD:errorMessage withDetailsText:detailedMessage andView:self.view];
         } else {
             [self performSegueWithIdentifier:@"LoginCompleted" sender:self];
         }
@@ -55,7 +58,9 @@
 
         // Check returning error
         if (retError) {
-            [KiiViewUtilities showFailureHUD:@"SignIn failed." withView:self.view];
+            NSString *errorMessage = @"SignIn failed.";
+            NSString *detailedMessage = [KiiCommonUtilities errorDetailsMessage:retError];
+            [KiiViewUtilities showFailureHUD:errorMessage withDetailsText:detailedMessage andView:self.view];
         } else {
             [self performSegueWithIdentifier:@"LoginCompleted" sender:self];
         }

@@ -8,6 +8,7 @@
 
 #import "KiiFileUploadViewController.h"
 #import "KiiViewUtilities.h"
+#import "KiiCommonUtilities.h"
 #import <AssetsLibrary/ALAssetsLibrary.h>
 #import <AssetsLibrary/ALAssetRepresentation.h>
 #import <KiiSDK/Kii.h>
@@ -149,6 +150,9 @@
         if (retError != nil) {
             // Something went wrong...
             NSLog(@"Transfer error! : %@", retError);
+            NSString *errorMessage = @"File uploading failed.";
+            NSString *detailedMessage = [KiiCommonUtilities errorDetailsMessage:retError];
+            [KiiViewUtilities showFailureHUD:errorMessage withDetailsText:detailedMessage andView:self.view];
         } else {
             [self performSegueWithIdentifier:@"FileUploadCompleted" sender:self];
         }

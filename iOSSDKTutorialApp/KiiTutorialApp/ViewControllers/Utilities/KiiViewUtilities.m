@@ -39,7 +39,23 @@
     hud.dimBackground = YES;
     hud.mode = MBProgressHUDModeCustomView;
     hud.customView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"failure-indicator"]];
-    [hud hide:YES afterDelay:2];
+    [hud addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(hideHUD:)]];
+}
+
++ (void)showFailureHUD:(NSString *)labelText withDetailsText:(NSString *)detailsText andView:(id)view {
+    MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:view animated:YES];
+    hud.labelText = labelText;
+    hud.detailsLabelText = detailsText;
+    hud.dimBackground = YES;
+    hud.delegate = view;
+    hud.mode = MBProgressHUDModeCustomView;
+    hud.customView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"failure-indicator"]];
+    [hud addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(hideHUD:)]];
+}
+
++ (void)hideHUD:(UIGestureRecognizer *)gestureRecognizer {
+    MBProgressHUD *hud = (MBProgressHUD *) [gestureRecognizer view];
+    [hud hide:YES];
 }
 
 + (void)hideProgressHUD:(id)view {

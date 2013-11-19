@@ -21,6 +21,10 @@
 
 + (void)showFailureHUD:(NSString *)labelText withView:(id)view;
 
++ (void)showFailureHUD:(NSString *)labelText withDetailsText:(NSString *)detailsText andView:(id)view;
+
++ (void)hideHUD:(id)sender;
+
 + (void)hideProgressHUD:(id)view;
 
 @end
