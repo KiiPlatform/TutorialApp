@@ -2,16 +2,16 @@ package com.kii.android.sdk.tutorial;
 
 import java.io.File;
 
-import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.Dialog;
-import android.app.DialogFragment;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.database.Cursor;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
+import android.support.v4.app.DialogFragment;
+import android.support.v4.app.FragmentActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.ProgressBar;
@@ -22,7 +22,7 @@ import com.kii.cloud.storage.resumabletransfer.KiiRTransfer;
 import com.kii.cloud.storage.resumabletransfer.KiiRTransferCallback;
 import com.kii.cloud.storage.resumabletransfer.KiiUploader;
 
-public class KiiObjectAttachFileActivity extends Activity {
+public class KiiObjectAttachFileActivity extends FragmentActivity {
     private static final String TAG = "KiiObjectAttachFileActivity";
     ProgressBar progressBar = null;
     String objectUri = null;
@@ -55,7 +55,7 @@ public class KiiObjectAttachFileActivity extends Activity {
                 InvalidFileDialogFragment fragment = InvalidFileDialogFragment
                         .newInstance("File not exists!",
                                 "Please select an image that exists locally.");
-                fragment.show(getFragmentManager(), "dialog.");
+                fragment.show(getSupportFragmentManager(), TAG);
                 return;
             }
             uploadFile(filePath);
@@ -111,7 +111,7 @@ public class KiiObjectAttachFileActivity extends Activity {
                     DialogFragment newFragment = UploadFinishDialogFragment
                             .newInstance("File uploaded!",
                                     "Would you like to create another object?");
-                    newFragment.show(getFragmentManager(), "dialog.");
+                    newFragment.show(getSupportFragmentManager(), TAG);
                 } else {
                     showToast("Error in file upload :"
                             + e.getLocalizedMessage());
@@ -132,7 +132,7 @@ public class KiiObjectAttachFileActivity extends Activity {
         }
     }
 
-    static class UploadFinishDialogFragment extends DialogFragment {
+    public static class UploadFinishDialogFragment extends DialogFragment {
 
         public static UploadFinishDialogFragment newInstance(String title,
                 String msg) {
@@ -158,6 +158,7 @@ public class KiiObjectAttachFileActivity extends Activity {
                                         int whichButton) {
                                     ((KiiObjectAttachFileActivity) getActivity())
                                             .moveFromDialogFragment(KiiObjectCreateActivity.class);
+
                                 }
                             })
                     .setNegativeButton("No",
@@ -171,7 +172,7 @@ public class KiiObjectAttachFileActivity extends Activity {
         }
     }
 
-    static class InvalidFileDialogFragment extends DialogFragment {
+    public static class InvalidFileDialogFragment extends DialogFragment {
 
         public static InvalidFileDialogFragment newInstance(String title,
                 String msg) {
