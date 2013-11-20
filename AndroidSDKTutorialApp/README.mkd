@@ -3,7 +3,7 @@
 ### Requirements:
 
 - Android SDK Tools
-  - Android 4.3 SDK Platform
+  - Android 4.4 SDK Platform
 
 ### How to setup:
 
