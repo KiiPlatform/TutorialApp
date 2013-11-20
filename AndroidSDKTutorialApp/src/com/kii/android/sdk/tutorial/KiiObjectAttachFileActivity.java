@@ -1,14 +1,19 @@
 package com.kii.android.sdk.tutorial;
 
 import java.io.File;
+import java.io.FileOutputStream;
 
 import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.database.Cursor;
+import android.graphics.Bitmap;
+import android.graphics.Bitmap.CompressFormat;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
+import android.os.Environment;
 import android.provider.MediaStore;
 import android.support.v4.app.DialogFragment;
 import android.support.v4.app.FragmentActivity;
@@ -41,8 +46,12 @@ public class KiiObjectAttachFileActivity extends FragmentActivity {
         Intent intent = new Intent();
         intent.setType("image/*");
         intent.setAction(Intent.ACTION_GET_CONTENT);
-        startActivityForResult(Intent.createChooser(intent, "Select Picture"),
-                PICK_IMAGE);
+        if (Build.VERSION.SDK_INT > Build.VERSION_CODES.KITKAT) {
+            startActivityForResult(intent, PICK_IMAGE);
+        } else {
+            startActivityForResult(
+                    Intent.createChooser(intent, "Select Picture"), PICK_IMAGE);
+        }
     }
 
     @Override
@@ -69,19 +78,59 @@ public class KiiObjectAttachFileActivity extends FragmentActivity {
     }
 
     private String getFilePathByUri(Uri selectedFileUri) {
-        String[] filePathColumn = { MediaStore.Images.Media.DATA };
-        Cursor cursor = getContentResolver().query(selectedFileUri,
-                filePathColumn, null, null, null);
-        if (cursor == null)
-            return null;
-        try {
-            if (!cursor.moveToFirst())
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
+            // Workaround of retrieving file image through ContentResolver for
+            // KitKat
+            String filePath = null;
+            FileOutputStream fos = null;
+            try {
+                Bitmap bmp = MediaStore.Images.Media.getBitmap(
+                        getContentResolver(), selectedFileUri);
+
+                String cacheDir = Environment.getExternalStorageDirectory()
+                        .getAbsolutePath() + File.separator + "tutorialapp";
+                File createDir = new File(cacheDir);
+                if (!createDir.exists()) {
+                    createDir.mkdir();
+                }
+                filePath = cacheDir + File.separator + "upload.jpg";
+                File file = new File(filePath);
+
+                fos = new FileOutputStream(file);
+                bmp.compress(CompressFormat.JPEG, 95, fos);
+                fos.flush();
+                fos.getFD().sync();
+            } catch (Exception e) {
+                filePath = null;
+            } finally {
+                if (fos != null) {
+                    try {
+                        fos.close();
+                    } catch (Exception e) {
+                        // Nothing to do
+                    }
+                }
+            }
+            return filePath;
+        } else {
+            String[] filePathColumn = { MediaStore.MediaColumns.DATA };
+            Cursor cursor = getContentResolver().query(selectedFileUri,
+                    filePathColumn, null, null, null);
+
+            if (cursor == null)
                 return null;
-            int columnIndex = cursor.getColumnIndex(filePathColumn[0]);
-            String picturePath = cursor.getString(columnIndex);
-            return picturePath;
-        } finally {
-            cursor.close();
+            try {
+                if (!cursor.moveToFirst())
+                    return null;
+                int columnIndex = cursor.getColumnIndex(filePathColumn[0]);
+                if (columnIndex < 0) {
+                    return null;
+                }
+                String picturePath = cursor.getString(columnIndex);
+                return picturePath;
+            } finally {
+                cursor.close();
+            }
         }
     }
 
