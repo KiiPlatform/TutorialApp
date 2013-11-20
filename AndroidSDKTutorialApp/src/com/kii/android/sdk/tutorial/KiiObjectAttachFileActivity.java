@@ -78,9 +78,9 @@ public class KiiObjectAttachFileActivity extends FragmentActivity {
     }
 
     private String getFilePathByUri(Uri selectedFileUri) {
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
-            // Workaround of retrieving file image through ContentResolver for
-            // KitKat
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN_MR1) {
+            // Workaround of retrieving file image through ContentResolver
+            // for Android4.2 or later
             String filePath = null;
             FileOutputStream fos = null;
             try {
