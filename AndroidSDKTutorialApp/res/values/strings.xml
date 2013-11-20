@@ -9,11 +9,11 @@
     <string name="sign_up">Sign Up</string>
     <string name="enter_password">Enter password (4-50 length)</string>
     <string name="enter_username">Enter username (3-64 length)</string>
-    <string name="lets_create_an_object">Lets create an object!</string>
-    <string name="create_object">Create Object</string>
+    <string name="lets_create_an_object">Create a KiiObject</string>
+    <string name="create_object">Create KiiObject</string>
     <string name="attach_file">Attach File</string>
-    <string name="attach_file_txt">Attach file to the object</string>
-    <string name="bucket_name">Bucket Name : tutorial</string>
+    <string name="attach_file_txt">Attach a photo to the KiiObject</string>
+    <string name="bucket_name">Bucket name : tutorial</string>
     <string name="object_scope">Object scope : Application</string>
 
 </resources>

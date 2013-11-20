@@ -52,7 +52,7 @@
                                     <constraint firstAttribute="height" constant="19" id="rsd-jF-GMs"/>
                                 </constraints>
                             </imageView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" text="KiiCloud tutorial application" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SHj-m4-aGE">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" text="KiiCloud Tutorial Application" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SHj-m4-aGE">
                                 <rect key="frame" x="10" y="216" width="300" height="38"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <constraints>
@@ -64,15 +64,15 @@
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ocK-3D-DwU">
-                                <rect key="frame" x="47" y="250" width="226" height="76"/>
+                                <rect key="frame" x="42" y="250" width="236" height="76"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="226" id="LCE-bp-OAG"/>
+                                    <constraint firstAttribute="width" constant="236" id="LCE-bp-OAG"/>
                                     <constraint firstAttribute="height" constant="76" id="k4W-uG-ziA"/>
                                 </constraints>
-                                <string key="text">- SignUp/LogIn to TutorialApp
-- Create KiiObject 
-- Attach a photo to KiiObject</string>
+                                <string key="text">- Sign up/Login
+- Create a KiiObject 
+- Attach a photo to the KiiObject</string>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -85,14 +85,14 @@
                             <constraint firstItem="e1x-2U-iE6" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" constant="109" id="7RB-Qm-KJF"/>
                             <constraint firstAttribute="trailing" secondItem="e1x-2U-iE6" secondAttribute="trailing" constant="109" id="9Qq-Rv-zhg"/>
                             <constraint firstItem="8bC-t0-qCk" firstAttribute="top" secondItem="ocK-3D-DwU" secondAttribute="bottom" constant="20" id="Aul-hv-yRa"/>
-                            <constraint firstItem="ocK-3D-DwU" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" constant="47" id="IFF-iZ-d2n"/>
+                            <constraint firstItem="ocK-3D-DwU" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" constant="42" id="IFF-iZ-d2n"/>
                             <constraint firstItem="tWs-Jj-CQT" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" constant="29" id="LNx-jY-8Gv"/>
                             <constraint firstItem="tWs-Jj-CQT" firstAttribute="top" secondItem="oW4-cU-tyb" secondAttribute="bottom" constant="65" id="OnW-T4-EBd"/>
                             <constraint firstAttribute="trailing" secondItem="tWs-Jj-CQT" secondAttribute="trailing" constant="11" id="St9-0i-nBa"/>
                             <constraint firstItem="8bC-t0-qCk" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" constant="90" id="Yf8-Sl-jR7"/>
                             <constraint firstItem="SHj-m4-aGE" firstAttribute="top" secondItem="oW4-cU-tyb" secondAttribute="bottom" constant="196" id="mwH-B4-HU9"/>
                             <constraint firstItem="SHj-m4-aGE" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" constant="10" id="on8-nb-fZj"/>
-                            <constraint firstAttribute="trailing" secondItem="ocK-3D-DwU" secondAttribute="trailing" constant="47" id="riG-KE-lKO"/>
+                            <constraint firstAttribute="trailing" secondItem="ocK-3D-DwU" secondAttribute="trailing" constant="42" id="riG-KE-lKO"/>
                             <constraint firstItem="ocK-3D-DwU" firstAttribute="top" secondItem="oW4-cU-tyb" secondAttribute="bottom" constant="230" id="t4U-b9-ZAq"/>
                             <constraint firstItem="REl-Ql-zbq" firstAttribute="top" secondItem="e1x-2U-iE6" secondAttribute="bottom" constant="20" id="yzh-wq-OSc"/>
                             <constraint firstAttribute="trailing" secondItem="SHj-m4-aGE" secondAttribute="trailing" constant="10" id="zLy-TR-Yqs"/>
@@ -201,16 +201,14 @@
                                     <constraint firstAttribute="width" constant="102" id="W5b-OQ-waX"/>
                                 </constraints>
                             </imageView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="doe-23-Jbf">
-                                <rect key="frame" x="10" y="106" width="300" height="63"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" text="Sign up or LogIn to TutorialApp" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="doe-23-Jbf">
+                                <rect key="frame" x="10" y="113" width="300" height="56"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <gestureRecognizers/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="63" id="tgB-20-1HB"/>
+                                    <constraint firstAttribute="height" constant="56" id="tgB-20-1HB"/>
                                     <constraint firstAttribute="width" constant="300" id="uQm-ro-vUy"/>
                                 </constraints>
-                                <string key="text">Let's "SignUp" or "LogIn"
-to TutorialApp</string>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -225,7 +223,7 @@ to TutorialApp</string>
                             <constraint firstItem="eLo-Cp-0L2" firstAttribute="leading" secondItem="CY2-si-9HO" secondAttribute="leading" constant="14" id="1vU-bs-hH7"/>
                             <constraint firstItem="MS1-uv-1gB" firstAttribute="top" secondItem="8az-f8-HWh" secondAttribute="bottom" constant="20" id="3WX-iC-sqa"/>
                             <constraint firstAttribute="trailing" secondItem="8az-f8-HWh" secondAttribute="trailing" constant="109" id="61e-20-Kdi"/>
-                            <constraint firstItem="doe-23-Jbf" firstAttribute="top" secondItem="VXu-yJ-xjr" secondAttribute="bottom" constant="86" id="6px-9L-6BU"/>
+                            <constraint firstItem="doe-23-Jbf" firstAttribute="top" secondItem="VXu-yJ-xjr" secondAttribute="bottom" constant="93" id="6px-9L-6BU"/>
                             <constraint firstItem="No9-nB-IQq" firstAttribute="leading" secondItem="CY2-si-9HO" secondAttribute="leading" constant="14" id="7Vi-4G-Uha"/>
                             <constraint firstItem="Enp-Z3-v6l" firstAttribute="top" secondItem="VXu-yJ-xjr" secondAttribute="bottom" id="Al1-ht-JE0"/>
                             <constraint firstItem="49B-K2-ydU" firstAttribute="leading" secondItem="CY2-si-9HO" secondAttribute="leading" constant="14" id="Jom-34-QiZ"/>
@@ -356,7 +354,7 @@ to TutorialApp</string>
                                     <constraint firstAttribute="height" constant="19" id="XDE-2R-aAc"/>
                                 </constraints>
                             </imageView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" text="Let's attach a photo to KiiObject" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vGE-PK-dK8">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" text="Attach a photo to the KiiObject" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vGE-PK-dK8">
                                 <rect key="frame" x="10" y="108" width="300" height="42"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <constraints>
@@ -457,7 +455,7 @@ to TutorialApp</string>
                                     <constraint firstAttribute="height" constant="59" id="9wH-7w-gei"/>
                                     <constraint firstAttribute="width" constant="300" id="EOm-4y-cyY"/>
                                 </constraints>
-                                <string key="text">Tutorial is over.
+                                <string key="text">Tutorial finished.
 Happy developing with KiiCloud!</string>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
@@ -499,7 +497,7 @@ Happy developing with KiiCloud!</string>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w8o-3h-VNc">
-                                <rect key="frame" x="90" y="235" width="140" height="48"/>
+                                <rect key="frame" x="90" y="229" width="140" height="48"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="140" id="UQ3-kp-xs6"/>
@@ -530,8 +528,8 @@ Happy developing with KiiCloud!</string>
                                     <constraint firstAttribute="height" constant="19" id="v1J-Zz-efh"/>
                                 </constraints>
                             </imageView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" text="          Let's create KiiObject" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mhq-gu-aBo">
-                                <rect key="frame" x="10" y="111" width="300" height="40"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" text="         Create a KiiObject" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mhq-gu-aBo">
+                                <rect key="frame" x="10" y="113" width="300" height="40"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="iZA-4p-zEA"/>
@@ -542,14 +540,14 @@ Happy developing with KiiCloud!</string>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GYu-VQ-fjr">
-                                <rect key="frame" x="58" y="155" width="204" height="56"/>
+                                <rect key="frame" x="58" y="153" width="204" height="56"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="204" id="QeS-u1-UrC"/>
                                     <constraint firstAttribute="height" constant="56" id="gd3-ji-tgi"/>
                                 </constraints>
                                 <string key="text">- Object scope : Application
-- Bucket Name : tutorial</string>
+- Bucket name : tutorial</string>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -559,17 +557,17 @@ Happy developing with KiiCloud!</string>
                         <constraints>
                             <constraint firstItem="GYu-VQ-fjr" firstAttribute="leading" secondItem="hdQ-pf-VEC" secondAttribute="leading" constant="58" id="3bm-ED-lfp"/>
                             <constraint firstItem="nHB-pM-cfv" firstAttribute="leading" secondItem="hdQ-pf-VEC" secondAttribute="leading" constant="109" id="AJ0-zY-vfI"/>
-                            <constraint firstItem="mhq-gu-aBo" firstAttribute="top" secondItem="LFJ-PC-4pr" secondAttribute="bottom" constant="91" id="GXa-Z3-92e"/>
+                            <constraint firstItem="mhq-gu-aBo" firstAttribute="top" secondItem="LFJ-PC-4pr" secondAttribute="bottom" constant="93" id="GXa-Z3-92e"/>
                             <constraint firstAttribute="trailing" secondItem="nHB-pM-cfv" secondAttribute="trailing" constant="109" id="KGg-tB-IRa"/>
-                            <constraint firstItem="w8o-3h-VNc" firstAttribute="top" secondItem="GYu-VQ-fjr" secondAttribute="bottom" constant="24" id="Kut-Qm-567"/>
-                            <constraint firstItem="GYu-VQ-fjr" firstAttribute="top" secondItem="mhq-gu-aBo" secondAttribute="bottom" constant="4" id="PO9-Hc-qtR"/>
+                            <constraint firstItem="w8o-3h-VNc" firstAttribute="top" secondItem="GYu-VQ-fjr" secondAttribute="bottom" constant="20" id="Kut-Qm-567"/>
+                            <constraint firstItem="GYu-VQ-fjr" firstAttribute="top" secondItem="mhq-gu-aBo" secondAttribute="bottom" id="PO9-Hc-qtR"/>
                             <constraint firstAttribute="trailing" secondItem="GYu-VQ-fjr" secondAttribute="trailing" constant="58" id="SM4-qK-tnQ"/>
                             <constraint firstItem="pPh-UY-gMH" firstAttribute="top" secondItem="LFJ-PC-4pr" secondAttribute="bottom" id="cPI-5P-E3G"/>
                             <constraint firstItem="pPh-UY-gMH" firstAttribute="leading" secondItem="hdQ-pf-VEC" secondAttribute="leading" constant="160" id="i9D-6f-TkY"/>
                             <constraint firstAttribute="trailing" secondItem="mhq-gu-aBo" secondAttribute="trailing" constant="10" id="k9j-Z3-lIX"/>
                             <constraint firstItem="w8o-3h-VNc" firstAttribute="leading" secondItem="hdQ-pf-VEC" secondAttribute="leading" constant="90" id="mAu-Op-Ztf"/>
                             <constraint firstAttribute="trailing" secondItem="pPh-UY-gMH" secondAttribute="trailing" id="oNX-7s-TMw"/>
-                            <constraint firstItem="GYu-VQ-fjr" firstAttribute="top" secondItem="mhq-gu-aBo" secondAttribute="bottom" constant="4" id="pW2-WW-4Iq"/>
+                            <constraint firstItem="GYu-VQ-fjr" firstAttribute="top" secondItem="mhq-gu-aBo" secondAttribute="bottom" id="pW2-WW-4Iq"/>
                             <constraint firstAttribute="trailing" secondItem="pPh-UY-gMH" secondAttribute="trailing" id="pcD-Nh-Dev"/>
                             <constraint firstItem="1d2-qw-Lsg" firstAttribute="top" secondItem="nHB-pM-cfv" secondAttribute="bottom" constant="20" id="rNT-dx-afp"/>
                             <constraint firstAttribute="trailing" secondItem="w8o-3h-VNc" secondAttribute="trailing" constant="90" id="vQh-Zn-Jur"/>
