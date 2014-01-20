@@ -3,16 +3,19 @@ package com.kii.android.sdk.tutorial;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 
+import com.kii.cloud.analytics.KiiAnalytics;
 import com.kii.cloud.storage.Kii;
 import com.kii.cloud.storage.KiiBucket;
 import com.kii.cloud.storage.KiiObject;
 import com.kii.cloud.storage.callback.KiiObjectCallBack;
 
 public class KiiObjectCreateActivity extends Activity {
+    static final String TAG = "KiiObjectCreateActivity";
     ProgressBar progressBar = null;
 
     @Override
@@ -20,6 +23,25 @@ public class KiiObjectCreateActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_create_object);
         progressBar = (ProgressBar) findViewById(R.id.progressBar);
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        Log.v(TAG, "KiiObjectCreateActivity session resume");
+        KiiAnalytics
+                .startSession(this.getApplicationContext(),
+                        AppConstants.APP_ID, AppConstants.APP_KEY,
+                        KiiAnalytics.Site.US);
+    }
+
+
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        Log.v(TAG, "KiiObjectCreateActivity session pause");
+        KiiAnalytics.endSession();
     }
 
     public void onCreateObjectButtonClicked(View v) {

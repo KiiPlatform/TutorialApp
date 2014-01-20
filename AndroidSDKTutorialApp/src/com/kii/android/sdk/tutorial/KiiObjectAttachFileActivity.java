@@ -22,6 +22,7 @@ import android.view.View;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 
+import com.kii.cloud.analytics.KiiAnalytics;
 import com.kii.cloud.storage.KiiObject;
 import com.kii.cloud.storage.resumabletransfer.KiiRTransfer;
 import com.kii.cloud.storage.resumabletransfer.KiiRTransferCallback;
@@ -40,6 +41,25 @@ public class KiiObjectAttachFileActivity extends FragmentActivity {
         progressBar = (ProgressBar) findViewById(R.id.progressBar);
         progressBar.setProgress(0);
         objectUri = getIntent().getStringExtra("object_uri");
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        Log.v(TAG, "KiiObjectAttachFileActivity session resume");
+        KiiAnalytics
+                .startSession(this.getApplicationContext(),
+                        AppConstants.APP_ID, AppConstants.APP_KEY,
+                        KiiAnalytics.Site.US);
+    }
+
+
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        KiiAnalytics.endSession();
+        Log.v(TAG, "KiiObjectAttachFileActivity session pause");
     }
 
     public void onAttachFileButtonClicked(View v) {

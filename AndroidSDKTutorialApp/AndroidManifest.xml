@@ -27,6 +27,9 @@
         </activity>
         <activity android:name="com.kii.android.sdk.tutorial.KiiObjectCreateActivity" />
         <activity android:name="com.kii.android.sdk.tutorial.KiiObjectAttachFileActivity" />
+        <activity android:name="com.kii.android.sdk.tutorial.SessionEventDisplayActivity" />
+        <service android:name="com.kii.cloud.analytics.EventUploadService" />
+        <service android:name="com.kii.android.sdk.tutorial.SessionEventNotificationService" />
     </application>
 
 </manifest>

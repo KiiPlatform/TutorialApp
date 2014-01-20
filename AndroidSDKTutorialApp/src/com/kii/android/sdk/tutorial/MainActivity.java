@@ -14,13 +14,13 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.kii.android.sdk.tutorial.R;
+import com.kii.cloud.analytics.KiiAnalytics;
 import com.kii.cloud.storage.Kii;
 import com.kii.cloud.storage.KiiUser;
 import com.kii.cloud.storage.callback.KiiUserCallBack;
 
 public class MainActivity extends Activity {
-    private static final String TAG = "LoginActivity";
+    private static final String TAG = "MainActivity";
     private TextView mUsernameField;
     private TextView mPasswordField;
     private ProgressBar progressBar;
@@ -42,7 +42,35 @@ public class MainActivity extends Activity {
                 .setTransformationMethod(new PasswordTransformationMethod());
         editPassword.setInputType(InputType.TYPE_CLASS_TEXT
                 | InputType.TYPE_TEXT_VARIATION_PASSWORD);
+
+        // start session event notification service
+        Intent service = new Intent(this, SessionEventNotificationService.class);
+        this.startService(service);
+        
     }
+
+    
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        Log.v(TAG, "MainActivity session resume");
+        KiiAnalytics
+                .startSession(this.getApplicationContext(),
+                        AppConstants.APP_ID, AppConstants.APP_KEY,
+                        KiiAnalytics.Site.US);
+    }
+
+
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        Log.v(TAG, "MainActivity session pause");
+        KiiAnalytics.endSession();
+    }
+
+
 
     public void onLoginButtonClicked(View v) {
         // Hide soft keyboard
@@ -74,6 +102,7 @@ public class MainActivity extends Activity {
             KiiUser user = KiiUser.createWithUsername(username);
             user.register(callback, password);
         } catch (Exception e) {
+            e.printStackTrace();
             progressBar.setVisibility(View.INVISIBLE);
             showToast("Error : " + e.getLocalizedMessage());
         }
