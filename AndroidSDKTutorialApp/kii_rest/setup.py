@@ -6,13 +6,15 @@ import json
 import time
 
 CONFIG_FILE = 'setting.ini'
+# set to DEBUG to see details
+LOG_LEVEL = logging.INFO
 
 def getLogger():
-    logger = logging.getLogger('debug')
+    logger = logging.getLogger('info')
     ch = logging.StreamHandler();
-    ch.setLevel(logging.DEBUG)
+    ch.setLevel(LOG_LEVEL)
     logger.addHandler(ch)
-    logger.setLevel(logging.DEBUG)
+    logger.setLevel(LOG_LEVEL)
     return logger
 
 class ApiHelper(object):
@@ -44,13 +46,13 @@ class ApiHelper(object):
             'name': 'totalSessions',
             'source':'event',
             'eventType': 'KiiSession',
-            'aggregate' : { 'valueOf' : '*', 'type': 'string', 'with': 'count'},
+            'aggregate' : { 'valueOf' : 'sessionLength', 'type': 'bigint', 'with': 'sum'},
             'groupBy': [
                         { 'name': 'appVersion', 'label': 'AppVersion', 'type': 'string'},
                         { 'name': 'deviceModel', 'label': 'DeviceModel', 'type': 'string'},
-                        { 'name': 'resolution', 'label': 'resolution', 'type': 'string'},
-                        { 'name': 'locale', 'label': 'locale', 'type': 'string'},
-                        { 'name': 'platform', 'label': 'platform', 'type': 'string'},
+                        { 'name': 'resolution', 'label': 'Resolution', 'type': 'string'},
+                        { 'name': 'locale', 'label': 'Locale', 'type': 'string'},
+                        { 'name': 'platform', 'label': 'Platform', 'type': 'string'},
                         { 'name': 'osVersion', 'label': 'OSVersion', 'type': 'string'},
                         { 'name': 'packageName','label': 'PackageName', 'type': 'string'}
                         ]
@@ -64,10 +66,10 @@ class ApiHelper(object):
         conn.request('POST', path, jsonBody, headers)
         response = conn.getresponse()
         respDict = json.load(response)
-        print(respDict)
         ruleId = respDict['_id']
         self.ruleId = ruleId
-        self.logger.debug('ruleId: %s', self.ruleId)
+        self.logger.info('ruleId: %s', self.ruleId)
+        self.logger.info('Use ruleId to retrieve analytics data')
         self.logger.debug('status: %d', response.status)
         self.logger.debug('body: %s', response.read())
 
@@ -84,9 +86,9 @@ class ApiHelper(object):
             'groupBy': [
                     { 'name': 'appVersion', 'label': 'AppVersion', 'type': 'string'},
                     { 'name': 'deviceModel', 'label': 'DeviceModel', 'type': 'string'},
-                    { 'name': 'resolution', 'label': 'resolution', 'type': 'string'},
-                    { 'name': 'locale', 'label': 'locale', 'type': 'string'},
-                    { 'name': 'platform', 'label': 'platform', 'type': 'string'},
+                    { 'name': 'resolution', 'label': 'Resolution', 'type': 'string'},
+                    { 'name': 'locale', 'label': 'Locale', 'type': 'string'},
+                    { 'name': 'platform', 'label': 'Platform', 'type': 'string'},
                     { 'name': 'osVersion', 'label': 'OSVersion', 'type': 'string'},
                     { 'name': 'packageName','label': 'PackageName', 'type': 'string'}
                     ]
@@ -100,10 +102,10 @@ class ApiHelper(object):
         conn.request('POST', path, jsonBody, headers)
         response = conn.getresponse()
         respDict = json.load(response)
-        print(respDict)
         ruleId = respDict['_id']
         self.ruleId = ruleId
-        self.logger.debug('ruleId: %s', self.ruleId)
+        self.logger.info('ruleId: %s', self.ruleId)
+        self.logger.info('Use ruleId to retrieve analytics data')
         self.logger.debug('status: %d', response.status)
         self.logger.debug('body: %s', response.read())
 

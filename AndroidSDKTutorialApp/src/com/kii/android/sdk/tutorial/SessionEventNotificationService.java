@@ -37,7 +37,6 @@ public class SessionEventNotificationService extends Service {
         return START_STICKY;
     }
 
-    @SuppressWarnings("deprecation")
     public void showNotification(KiiEvent event) {
         String title = "Session event sent";
         NotificationCompat.Builder builder = new NotificationCompat.Builder(
@@ -51,8 +50,6 @@ public class SessionEventNotificationService extends Service {
                 targetIntent, PendingIntent.FLAG_UPDATE_CURRENT);
         builder.setContentIntent(contentIntent);
         NotificationManager nManager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
-        notification.setLatestEventInfo(this,
-                this.getString(R.string.app_name), title, contentIntent);
         nManager.cancelAll();
         nManager.notify(NOTIFICATION_ID, notification);
     }
