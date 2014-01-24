@@ -9,6 +9,7 @@ import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import com.kii.cloud.analytics.KiiAnalytics;
+import com.kii.cloud.analytics.SessionTracker;
 import com.kii.cloud.storage.Kii;
 import com.kii.cloud.storage.KiiBucket;
 import com.kii.cloud.storage.KiiObject;
@@ -26,22 +27,20 @@ public class KiiObjectCreateActivity extends Activity {
     }
 
     @Override
-    protected void onResume() {
+    protected void onStart() {
         super.onResume();
-        Log.v(TAG, "KiiObjectCreateActivity session resume");
-        KiiAnalytics
-                .startSession(this.getApplicationContext(),
-                        AppConstants.APP_ID, AppConstants.APP_KEY,
-                        KiiAnalytics.Site.US);
+        Log.v(TAG, "KiiObjectCreateActivity session start");
+        SessionTracker.onStartActivity(this, AppConstants.APP_ID,
+                AppConstants.APP_KEY, KiiAnalytics.Site.US);
     }
 
 
 
     @Override
-    protected void onPause() {
+    protected void onStop() {
         super.onPause();
-        Log.v(TAG, "KiiObjectCreateActivity session pause");
-        KiiAnalytics.endSession();
+        Log.v(TAG, "KiiObjectCreateActivity session stop");
+        SessionTracker.onStopActivity(this);
     }
 
     public void onCreateObjectButtonClicked(View v) {

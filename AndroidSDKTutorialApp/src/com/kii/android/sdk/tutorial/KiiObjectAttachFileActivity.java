@@ -23,6 +23,7 @@ import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import com.kii.cloud.analytics.KiiAnalytics;
+import com.kii.cloud.analytics.SessionTracker;
 import com.kii.cloud.storage.KiiObject;
 import com.kii.cloud.storage.resumabletransfer.KiiRTransfer;
 import com.kii.cloud.storage.resumabletransfer.KiiRTransferCallback;
@@ -44,22 +45,20 @@ public class KiiObjectAttachFileActivity extends FragmentActivity {
     }
 
     @Override
-    protected void onResume() {
+    protected void onStart() {
         super.onResume();
-        Log.v(TAG, "KiiObjectAttachFileActivity session resume");
-        KiiAnalytics
-                .startSession(this.getApplicationContext(),
-                        AppConstants.APP_ID, AppConstants.APP_KEY,
-                        KiiAnalytics.Site.US);
+        Log.v(TAG, "KiiObjectAttachFileActivity session start");
+        SessionTracker.onStartActivity(this, AppConstants.APP_ID,
+                AppConstants.APP_KEY, KiiAnalytics.Site.US);
     }
 
 
 
     @Override
-    protected void onPause() {
+    protected void onStop() {
         super.onPause();
-        KiiAnalytics.endSession();
-        Log.v(TAG, "KiiObjectAttachFileActivity session pause");
+        SessionTracker.onStopActivity(this);
+        Log.v(TAG, "KiiObjectAttachFileActivity session stop");
     }
 
     public void onAttachFileButtonClicked(View v) {

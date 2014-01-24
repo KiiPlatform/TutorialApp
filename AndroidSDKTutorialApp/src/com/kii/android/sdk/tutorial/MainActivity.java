@@ -15,12 +15,13 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.kii.cloud.analytics.KiiAnalytics;
+import com.kii.cloud.analytics.SessionTracker;
 import com.kii.cloud.storage.Kii;
 import com.kii.cloud.storage.KiiUser;
 import com.kii.cloud.storage.callback.KiiUserCallBack;
 
 public class MainActivity extends Activity {
-    private static final String TAG = "MainActivity";
+    private static final String TAG = "KiiMainActivity";
     private TextView mUsernameField;
     private TextView mPasswordField;
     private ProgressBar progressBar;
@@ -46,28 +47,25 @@ public class MainActivity extends Activity {
         // start session event notification service
         Intent service = new Intent(this, SessionEventNotificationService.class);
         this.startService(service);
-        
     }
 
     
 
     @Override
-    protected void onResume() {
+    protected void onStart() {
         super.onResume();
-        Log.v(TAG, "MainActivity session resume");
-        KiiAnalytics
-                .startSession(this.getApplicationContext(),
-                        AppConstants.APP_ID, AppConstants.APP_KEY,
-                        KiiAnalytics.Site.US);
+        Log.v(TAG, "MainActivity session start");
+        SessionTracker.onStartActivity(this, AppConstants.APP_ID,
+                AppConstants.APP_KEY, KiiAnalytics.Site.US);
     }
 
 
 
     @Override
-    protected void onPause() {
+    protected void onStop() {
         super.onPause();
-        Log.v(TAG, "MainActivity session pause");
-        KiiAnalytics.endSession();
+        Log.v(TAG, "MainActivity session stop");
+        SessionTracker.onStopActivity(this);
     }
 
 
