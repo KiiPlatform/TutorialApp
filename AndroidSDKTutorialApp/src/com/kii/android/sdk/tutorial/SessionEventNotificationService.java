@@ -42,7 +42,6 @@ public class SessionEventNotificationService extends Service {
         NotificationCompat.Builder builder = new NotificationCompat.Builder(
                 this).setSmallIcon(R.drawable.launcher).setContentTitle(title)
                 .setContentText("Tap to view event json");
-        Notification notification = builder.build();
         Intent targetIntent = new Intent(this.getApplicationContext(),
                 SessionEventDisplayActivity.class);
         targetIntent.putExtra("eventJson", event.toJson().toString());
@@ -51,7 +50,7 @@ public class SessionEventNotificationService extends Service {
         builder.setContentIntent(contentIntent);
         NotificationManager nManager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
         nManager.cancelAll();
-        nManager.notify(NOTIFICATION_ID, notification);
+        nManager.notify(NOTIFICATION_ID, builder.build());
     }
 
 }
