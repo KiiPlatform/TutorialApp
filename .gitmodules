@@ -1,0 +1,3 @@
+[submodule "kii_rest"]
+	path = kii_rest
+	url = git@github.com:KiiCorp/SessionTrackerTemp.git
