@@ -32,6 +32,7 @@
 		9BB8A06E1834C86C008A338B /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BB8A06D1834C86C008A338B /* MBProgressHUD.m */; };
 		9BB8A0711834CA5B008A338B /* KiiCreateObjectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BB8A0701834CA5B008A338B /* KiiCreateObjectViewController.m */; };
 		9BB8A0741834CABF008A338B /* KiiAppConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BB8A0731834CABF008A338B /* KiiAppConstants.m */; };
+		EA993ED018BC680D00A4DB8D /* KiiSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA993ECF18BC680D00A4DB8D /* KiiSDK.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -82,6 +83,7 @@
 		9BB8A0701834CA5B008A338B /* KiiCreateObjectViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KiiCreateObjectViewController.m; path = ViewControllers/KiiCreateObjectViewController.m; sourceTree = "<group>"; };
 		9BB8A0721834CABF008A338B /* KiiAppConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KiiAppConstants.h; sourceTree = "<group>"; };
 		9BB8A0731834CABF008A338B /* KiiAppConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KiiAppConstants.m; sourceTree = "<group>"; };
+		EA993ECF18BC680D00A4DB8D /* KiiSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = KiiSDK.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +100,7 @@
 				9B8703F3183648E30005C72B /* QuartzCore.framework in Frameworks */,
 				9B5B531E18338B26000533F9 /* UIKit.framework in Frameworks */,
 				9B6763C21834C35E00806CD6 /* Twitter.framework in Frameworks */,
+				EA993ED018BC680D00A4DB8D /* KiiSDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -134,6 +137,7 @@
 		9B5B531818338B26000533F9 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				EA993ECF18BC680D00A4DB8D /* KiiSDK.framework */,
 				9B6763BF1834C35200806CD6 /* Accounts.framework */,
 				9BA24E50183533C600BA9EB8 /* AssetsLibrary.framework */,
 				9B5B531B18338B26000533F9 /* CoreGraphics.framework */,
@@ -261,7 +265,7 @@
 				ORGANIZATIONNAME = "Kii Corporation";
 				TargetAttributes = {
 					9B5B533618338B27000533F9 = {
-						TestTargetID = 9B5B531518338B26000533F9 /* KiiTutorialApp */;
+						TestTargetID = 9B5B531518338B26000533F9;
 					};
 				};
 			};
@@ -441,6 +445,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					KiiTutorialApp,
+					/Users/moshiur/git/TutorialApp/iOSSDKTutorialApp,
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "KiiTutorialApp/KiiTutorialApp-Prefix.pch";
@@ -462,6 +467,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					KiiTutorialApp,
+					/Users/moshiur/git/TutorialApp/iOSSDKTutorialApp,
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "KiiTutorialApp/KiiTutorialApp-Prefix.pch";
