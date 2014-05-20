@@ -18,6 +18,7 @@ import android.widget.Toast;
 import com.kii.cloud.storage.Kii;
 import com.kii.cloud.storage.KiiUser;
 import com.kii.cloud.storage.callback.KiiUserCallBack;
+import com.kii.cloud.storage.exception.CloudExecutionException;
 
 public class MainActivity extends Activity {
     private static final String TAG = "LoginActivity";
@@ -89,7 +90,11 @@ public class MainActivity extends Activity {
                         KiiObjectCreateActivity.class);
                 startActivity(i);
             } else {
-                showAlert(e.getLocalizedMessage());
+                if (e instanceof CloudExecutionException)
+                    showAlert(Util
+                            .generateAlertMessage((CloudExecutionException) e));
+                else
+                    showAlert(e.getLocalizedMessage());
             }
         }
 
@@ -102,7 +107,11 @@ public class MainActivity extends Activity {
                         KiiObjectCreateActivity.class);
                 startActivity(i);
             } else {
-                showAlert(e.getLocalizedMessage());
+                if (e instanceof CloudExecutionException)
+                    showAlert(Util
+                            .generateAlertMessage((CloudExecutionException) e));
+                else
+                    showAlert(e.getLocalizedMessage());
             }
         }
     };

@@ -23,6 +23,7 @@ import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import com.kii.cloud.storage.KiiObject;
+import com.kii.cloud.storage.exception.CloudExecutionException;
 import com.kii.cloud.storage.resumabletransfer.KiiRTransfer;
 import com.kii.cloud.storage.resumabletransfer.KiiRTransferCallback;
 import com.kii.cloud.storage.resumabletransfer.KiiUploader;
@@ -163,8 +164,11 @@ public class KiiObjectAttachFileActivity extends Activity {
                                     "Would you like to create another object?");
                     newFragment.show(getFragmentManager(), "dialog");
                 } else {
-                    showToast("Error in file upload :"
-                            + e.getLocalizedMessage());
+                    if (e instanceof CloudExecutionException)
+                        showAlert(Util
+                                .generateAlertMessage((CloudExecutionException) e));
+                    else
+                        showAlert(e.getLocalizedMessage());
                 }
             }
         });

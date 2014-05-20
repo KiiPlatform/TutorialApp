@@ -12,6 +12,7 @@ import com.kii.cloud.storage.Kii;
 import com.kii.cloud.storage.KiiBucket;
 import com.kii.cloud.storage.KiiObject;
 import com.kii.cloud.storage.callback.KiiObjectCallBack;
+import com.kii.cloud.storage.exception.CloudExecutionException;
 
 public class KiiObjectCreateActivity extends Activity {
     ProgressBar progressBar = null;
@@ -41,7 +42,11 @@ public class KiiObjectCreateActivity extends Activity {
                     i.putExtra("object_uri", object.toUri().toString());
                     startActivity(i);
                 } else {
-                    showAlert(exception.getLocalizedMessage());
+                    if (exception instanceof CloudExecutionException)
+                        showAlert(Util
+                                .generateAlertMessage((CloudExecutionException) exception));
+                    else
+                        showAlert(exception.getLocalizedMessage());
                 }
             }
 
