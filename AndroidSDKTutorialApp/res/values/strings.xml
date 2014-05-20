@@ -16,5 +16,6 @@
     <string name="bucket_name">Bucket name : tutorial</string>
     <string name="object_scope">Object scope : Application</string>
     <string name="operation_failed">Operation failed</string>
+    <string name="description">Signup a new user with the App or Login with existing App user.</string>
 
 </resources>
