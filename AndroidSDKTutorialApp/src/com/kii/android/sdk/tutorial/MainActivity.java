@@ -1,6 +1,7 @@
 package com.kii.android.sdk.tutorial;
 
 import android.app.Activity;
+import android.app.DialogFragment;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
@@ -14,7 +15,6 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.kii.android.sdk.tutorial.R;
 import com.kii.cloud.storage.Kii;
 import com.kii.cloud.storage.KiiUser;
 import com.kii.cloud.storage.callback.KiiUserCallBack;
@@ -57,7 +57,7 @@ public class MainActivity extends Activity {
             KiiUser.logIn(callback, username, password);
         } catch (Exception e) {
             progressBar.setVisibility(View.INVISIBLE);
-            showToast("Error : " + e.getLocalizedMessage());
+            showAlert(e.getLocalizedMessage());
         }
     }
 
@@ -75,7 +75,7 @@ public class MainActivity extends Activity {
             user.register(callback, password);
         } catch (Exception e) {
             progressBar.setVisibility(View.INVISIBLE);
-            showToast("Error : " + e.getLocalizedMessage());
+            showAlert(e.getLocalizedMessage());
         }
     }
 
@@ -89,7 +89,7 @@ public class MainActivity extends Activity {
                         KiiObjectCreateActivity.class);
                 startActivity(i);
             } else {
-                showToast("Error : " + e.getLocalizedMessage());
+                showAlert(e.getLocalizedMessage());
             }
         }
 
@@ -102,7 +102,7 @@ public class MainActivity extends Activity {
                         KiiObjectCreateActivity.class);
                 startActivity(i);
             } else {
-                showToast("Error : " + e.getLocalizedMessage());
+                showAlert(e.getLocalizedMessage());
             }
         }
     };
@@ -110,5 +110,12 @@ public class MainActivity extends Activity {
     private void showToast(String message) {
         Toast.makeText(this, message, Toast.LENGTH_SHORT).show();
     }
+
+    void showAlert(String message) {
+        DialogFragment newFragment = AlertDialogFragment.newInstance(
+                R.string.operation_failed, message);
+        newFragment.show(getFragmentManager(), "dialog");
+    }
+    
 
 }

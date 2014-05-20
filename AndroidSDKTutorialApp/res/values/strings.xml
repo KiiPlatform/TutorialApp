@@ -15,5 +15,6 @@
     <string name="attach_file_txt">Attach a photo to the KiiObject</string>
     <string name="bucket_name">Bucket name : tutorial</string>
     <string name="object_scope">Object scope : Application</string>
+    <string name="operation_failed">Operation failed</string>
 
 </resources>

@@ -1,6 +1,7 @@
 package com.kii.android.sdk.tutorial;
 
 import android.app.Activity;
+import android.app.DialogFragment;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -40,7 +41,7 @@ public class KiiObjectCreateActivity extends Activity {
                     i.putExtra("object_uri", object.toUri().toString());
                     startActivity(i);
                 } else {
-                    showToast("Error : " + exception.getLocalizedMessage());
+                    showAlert(exception.getLocalizedMessage());
                 }
             }
 
@@ -49,6 +50,12 @@ public class KiiObjectCreateActivity extends Activity {
 
     private void showToast(String message) {
         Toast.makeText(this, message, Toast.LENGTH_SHORT).show();
+    }
+
+    void showAlert(String message) {
+        DialogFragment newFragment = AlertDialogFragment.newInstance(
+                R.string.operation_failed, message);
+        newFragment.show(getFragmentManager(), "dialog");
     }
 
 }

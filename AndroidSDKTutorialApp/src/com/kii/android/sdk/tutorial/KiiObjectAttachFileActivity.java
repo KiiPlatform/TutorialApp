@@ -3,8 +3,10 @@ package com.kii.android.sdk.tutorial;
 import java.io.File;
 import java.io.FileOutputStream;
 
+import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.Dialog;
+import android.app.DialogFragment;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.database.Cursor;
@@ -15,8 +17,6 @@ import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
 import android.provider.MediaStore;
-import android.support.v4.app.DialogFragment;
-import android.support.v4.app.FragmentActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.ProgressBar;
@@ -27,7 +27,7 @@ import com.kii.cloud.storage.resumabletransfer.KiiRTransfer;
 import com.kii.cloud.storage.resumabletransfer.KiiRTransferCallback;
 import com.kii.cloud.storage.resumabletransfer.KiiUploader;
 
-public class KiiObjectAttachFileActivity extends FragmentActivity {
+public class KiiObjectAttachFileActivity extends Activity {
     private static final String TAG = "KiiObjectAttachFileActivity";
     ProgressBar progressBar = null;
     String objectUri = null;
@@ -61,10 +61,11 @@ public class KiiObjectAttachFileActivity extends FragmentActivity {
             String filePath = getFilePathByUri(selectedFileUri);
             Log.v(TAG, "Picture Path : " + filePath);
             if (filePath == null) {
-                InvalidFileDialogFragment fragment = InvalidFileDialogFragment
-                        .newInstance("File not exists!",
-                                "Please select an image that exists locally.");
-                fragment.show(getSupportFragmentManager(), TAG);
+//                InvalidFileDialogFragment fragment = InvalidFileDialogFragment
+//                        .newInstance("File not exists!",
+//                                "Please select an image that exists locally.");
+//                fragment.show(getSupportFragmentManager(), TAG);
+                showAlert("File not exists, Please select an image that exists locally.");
                 return;
             }
             uploadFile(filePath);
@@ -160,7 +161,7 @@ public class KiiObjectAttachFileActivity extends FragmentActivity {
                     DialogFragment newFragment = UploadFinishDialogFragment
                             .newInstance("File uploaded!",
                                     "Would you like to create another object?");
-                    newFragment.show(getSupportFragmentManager(), TAG);
+                    newFragment.show(getFragmentManager(), "dialog");
                 } else {
                     showToast("Error in file upload :"
                             + e.getLocalizedMessage());
@@ -221,35 +222,9 @@ public class KiiObjectAttachFileActivity extends FragmentActivity {
         }
     }
 
-    public static class InvalidFileDialogFragment extends DialogFragment {
-
-        public static InvalidFileDialogFragment newInstance(String title,
-                String msg) {
-            InvalidFileDialogFragment frag = new InvalidFileDialogFragment();
-            Bundle args = new Bundle();
-            args.putString("title", title);
-            args.putString("msg", msg);
-            frag.setArguments(args);
-            return frag;
-        }
-
-        @Override
-        public Dialog onCreateDialog(Bundle savedInstanceState) {
-            String title = getArguments().getString("title");
-            String msg = getArguments().getString("msg");
-
-            return new AlertDialog.Builder(getActivity())
-                    .setTitle(title)
-                    .setMessage(msg)
-                    .setIcon(android.R.drawable.ic_dialog_alert)
-                    .setPositiveButton("OK",
-                            new DialogInterface.OnClickListener() {
-                                public void onClick(DialogInterface dialog,
-                                        int whichButton) {
-                                    dialog.cancel();
-                                }
-                            }).create();
-        }
+    void showAlert(String message) {
+        DialogFragment newFragment = AlertDialogFragment.newInstance(
+                R.string.operation_failed, message);
+        newFragment.show(getFragmentManager(), "dialog");
     }
-
 }
