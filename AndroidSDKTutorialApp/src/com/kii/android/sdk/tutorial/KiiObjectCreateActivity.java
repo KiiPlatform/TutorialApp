@@ -1,11 +1,17 @@
 package com.kii.android.sdk.tutorial;
 
+import java.util.Locale;
+
 import android.app.Activity;
 import android.app.DialogFragment;
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.Html;
+import android.text.method.LinkMovementMethod;
+import android.text.util.Linkify;
 import android.view.View;
 import android.widget.ProgressBar;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.kii.cloud.storage.Kii;
@@ -22,6 +28,9 @@ public class KiiObjectCreateActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_create_object);
         progressBar = (ProgressBar) findViewById(R.id.progressBar);
+        TextView tv = (TextView)findViewById(R.id.description_textView);
+        tv.setText(tv.getText()+" "+this.getKiiDocsUrl());
+        Linkify.addLinks(tv, Linkify.WEB_URLS);
     }
 
     public void onCreateObjectButtonClicked(View v) {
@@ -61,6 +70,16 @@ public class KiiObjectCreateActivity extends Activity {
         DialogFragment newFragment = AlertDialogFragment.newInstance(
                 R.string.operation_failed, message);
         newFragment.show(getFragmentManager(), "dialog");
+    }
+
+    private String getKiiDocsUrl() {
+        Locale locale = Locale.getDefault();
+        String language = locale.getDisplayLanguage();
+        String langPath = (language == "jp" || language == "cn") ? language
+                : "en";
+        return String.format(
+                "http://documentation.kii.com/%s/guides/android/managing-data",
+                langPath);
     }
 
 }

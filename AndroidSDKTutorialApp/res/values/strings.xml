@@ -12,10 +12,14 @@
     <string name="lets_create_an_object">Create a KiiObject</string>
     <string name="create_object">Create KiiObject</string>
     <string name="attach_file">Attach File</string>
-    <string name="attach_file_txt">Attach a photo to the KiiObject</string>
+    <string name="attach_file_txt">Congratulations! You have created a KiiObject. Now lets attach a photo to the object.</string>
     <string name="bucket_name">Bucket name : tutorial</string>
     <string name="object_scope">Object scope : Application</string>
     <string name="operation_failed">Operation failed</string>
     <string name="description">Signup a new user with the App or Login with existing App user.</string>
+    <string name="create_object_description">On completion, an \'app\' scope object
+         will be created in \'tutorial\' bucket.To learn the details about bucket and object, visit </string>
+    <string name="attach_body_description">On completion, body will be added with the obejct.
+        To learn the details about body attachment, visit </string>
 
 </resources>

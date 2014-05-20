@@ -2,6 +2,7 @@ package com.kii.android.sdk.tutorial;
 
 import java.io.File;
 import java.io.FileOutputStream;
+import java.util.Locale;
 
 import android.app.Activity;
 import android.app.AlertDialog;
@@ -17,9 +18,11 @@ import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
 import android.provider.MediaStore;
+import android.text.util.Linkify;
 import android.util.Log;
 import android.view.View;
 import android.widget.ProgressBar;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.kii.cloud.storage.KiiObject;
@@ -41,6 +44,9 @@ public class KiiObjectAttachFileActivity extends Activity {
         progressBar = (ProgressBar) findViewById(R.id.progressBar);
         progressBar.setProgress(0);
         objectUri = getIntent().getStringExtra("object_uri");
+        TextView tv = (TextView)findViewById(R.id.attach_desc_textView);
+        tv.setText(tv.getText()+" "+this.getKiiDocsUrl());
+        Linkify.addLinks(tv, Linkify.WEB_URLS);
     }
 
     public void onAttachFileButtonClicked(View v) {
@@ -62,10 +68,6 @@ public class KiiObjectAttachFileActivity extends Activity {
             String filePath = getFilePathByUri(selectedFileUri);
             Log.v(TAG, "Picture Path : " + filePath);
             if (filePath == null) {
-//                InvalidFileDialogFragment fragment = InvalidFileDialogFragment
-//                        .newInstance("File not exists!",
-//                                "Please select an image that exists locally.");
-//                fragment.show(getSupportFragmentManager(), TAG);
                 showAlert("File not exists, Please select an image that exists locally.");
                 return;
             }
@@ -230,5 +232,15 @@ public class KiiObjectAttachFileActivity extends Activity {
         DialogFragment newFragment = AlertDialogFragment.newInstance(
                 R.string.operation_failed, message);
         newFragment.show(getFragmentManager(), "dialog");
+    }
+
+    private String getKiiDocsUrl() {
+        Locale locale = Locale.getDefault();
+        String language = locale.getDisplayLanguage();
+        String langPath = (language == "jp" || language == "cn") ? language
+                : "en";
+        return String.format(
+                "http://documentation.kii.com/%s/guides/android/managing-data",
+                langPath);
     }
 }

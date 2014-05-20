@@ -4,36 +4,44 @@
     android:layout_height="fill_parent"
     android:orientation="vertical" >
 
-    <LinearLayout
-        android:layout_width="fill_parent"
-        android:layout_height="0dip"
-        android:layout_weight="1"
-        android:orientation="vertical"
-        android:paddingBottom="13dip"
-        android:paddingLeft="30dip"
-        android:paddingRight="30dip"
-        android:paddingTop="50dip"
-        tools:ignore="UselessParent" >
+   <LinearLayout
+       android:layout_width="fill_parent"
+       android:layout_height="0dip"
+       android:layout_weight="1"
+       android:orientation="vertical"
+       android:paddingBottom="13dip"
+       android:paddingLeft="30dip"
+       android:paddingRight="30dip"
+       android:paddingTop="50dip"
+       tools:ignore="UselessParent" >
 
-        <TextView
-            android:id="@+id/createObject_textView"
+       <TextView
+           android:id="@+id/createObject_textView"
+           android:layout_width="fill_parent"
+           android:layout_height="wrap_content"
+           android:gravity="center_horizontal|center_vertical"
+           android:paddingBottom="20dip"
+           android:text="@string/attach_file_txt"
+           android:textAppearance="?android:attr/textAppearanceSmall" />
+
+       <Button
+           android:id="@+id/signup_button"
+           android:layout_width="fill_parent"
+           android:layout_height="wrap_content"
+           android:gravity="center_horizontal|center_vertical"
+           android:onClick="onAttachFileButtonClicked"
+           android:text="@string/attach_file"
+           android:textSize="15sp"
+           android:textStyle="bold" />
+
+       <TextView
+            android:id="@+id/attach_desc_textView"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
+            android:paddingTop="15dip"
             android:gravity="center_horizontal|center_vertical"
-            android:paddingBottom="20dip"
-            android:text="@string/attach_file_txt"
-            android:textAppearance="?android:attr/textAppearanceMedium" />
-
-        <Button
-            android:id="@+id/signup_button"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center_horizontal|center_vertical"
-            android:onClick="onAttachFileButtonClicked"
-            android:text="@string/attach_file"
-            android:textSize="15sp"
-            android:textStyle="bold" />
-    </LinearLayout>
+            android:text="@string/attach_body_description" />
+   </LinearLayout>
 
     <LinearLayout
         android:layout_width="fill_parent"
