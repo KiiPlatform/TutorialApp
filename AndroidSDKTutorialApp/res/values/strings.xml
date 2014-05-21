@@ -18,8 +18,9 @@
     <string name="operation_failed">Operation failed</string>
     <string name="description">Signup a new user with the App or Login with existing App user.</string>
     <string name="create_object_description">On completion, an \'app\' scope object
-         will be created in \'tutorial\' bucket.To learn the details about bucket and object, visit </string>
+         will be created in \'tutorial\' bucket. To learn the details about bucket and object, visit </string>
     <string name="attach_body_description">On completion, body will be added with the obejct.
         To learn the details about body attachment, visit </string>
+    <string name="summary">Summary</string>
 
 </resources>

@@ -222,7 +222,7 @@ public class KiiObjectAttachFileActivity extends Activity {
                                 public void onClick(DialogInterface dialog,
                                         int whichButton) {
                                     ((KiiObjectAttachFileActivity) getActivity())
-                                            .moveFromDialogFragment(MainActivity.class);
+                                            .moveFromDialogFragment(SummaryActivity.class);
                                 }
                             }).create();
         }

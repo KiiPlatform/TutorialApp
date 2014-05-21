@@ -1,0 +1,81 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+
+   <LinearLayout
+       android:layout_width="fill_parent"
+       android:layout_height="0dip"
+       android:layout_weight="1"
+       android:orientation="vertical"
+       android:paddingBottom="13dip"
+       android:paddingLeft="30dip"
+       android:paddingRight="30dip"
+       android:paddingTop="50dip"
+       tools:ignore="UselessParent" >
+
+       <TextView
+           android:id="@+id/summary_textView_1"
+           android:layout_width="fill_parent"
+           android:layout_height="wrap_content"
+           android:gravity="center_horizontal|center_vertical"
+           android:paddingBottom="20dip"
+           android:text="@string/summary"
+           android:textAppearance="?android:attr/textAppearanceMedium" />
+
+       <TextView
+           android:id="@+id/summary_textView_2"
+           android:layout_width="fill_parent"
+           android:layout_height="wrap_content"
+           android:gravity="center_vertical"
+           android:paddingLeft="5dip"
+           android:paddingBottom="20dip"
+           android:text="@string/summary"
+           android:textAppearance="?android:attr/textAppearanceSmall" />
+       
+       <TextView
+           android:id="@+id/summary_textView_3"
+           android:layout_width="fill_parent"
+           android:layout_height="wrap_content"
+           android:gravity="center_vertical"
+           android:paddingLeft="5dip"
+           android:paddingBottom="20dip"
+           android:text="@string/summary"
+           android:textAppearance="?android:attr/textAppearanceSmall" />
+       
+       <TextView
+           android:id="@+id/summary_textView_4"
+           android:layout_width="fill_parent"
+           android:layout_height="wrap_content"
+           android:gravity="center_vertical"
+           android:paddingLeft="5dip"
+           android:paddingBottom="20dip"
+           android:text="@string/summary"
+           android:textAppearance="?android:attr/textAppearanceSmall" />
+
+   </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:orientation="vertical"
+        android:paddingBottom="2dip"
+        android:paddingLeft="30dip"
+        android:paddingRight="30dip"
+        android:paddingTop="2dip" >
+
+        <ImageView
+            android:id="@+id/page"
+            android:layout_width="fill_parent"
+            android:layout_height="0dip"
+            android:layout_gravity="center_vertical|center_horizontal"
+            android:layout_marginBottom="10dip"
+            android:layout_marginTop="10dip"
+            android:layout_weight="1"
+            android:contentDescription="@string/page"
+            android:src="@drawable/page3" />
+    </LinearLayout>
+
+</LinearLayout>

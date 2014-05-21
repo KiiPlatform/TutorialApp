@@ -27,6 +27,7 @@
         </activity>
         <activity android:name="com.kii.android.sdk.tutorial.KiiObjectCreateActivity" />
         <activity android:name="com.kii.android.sdk.tutorial.KiiObjectAttachFileActivity" />
+        <activity android:name="com.kii.android.sdk.tutorial.SummaryActivity" />
     </application>
 
 </manifest>
