@@ -57,6 +57,7 @@ public class KiiObjectAttachFileFragment extends Fragment {
                 onAttachFileButtonClicked(v);
             }
         });
+        setPageImage(3);
         return view;
     }
 
@@ -221,6 +222,14 @@ public class KiiObjectAttachFileFragment extends Fragment {
                 .findFragmentById(R.id.progressFragment);
         if (fragment != null && fragment.isInLayout()) {
             fragment.setProgressBarVisiblity(v);
+        }
+    }
+
+    void setPageImage(int page) {
+        ProgressFragment fragment = (ProgressFragment) getFragmentManager()
+                .findFragmentById(R.id.progressFragment);
+        if (fragment != null && fragment.isInLayout()) {
+            fragment.setPageImage(page);
         }
     }
 }

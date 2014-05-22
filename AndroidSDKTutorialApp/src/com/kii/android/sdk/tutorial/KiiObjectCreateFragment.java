@@ -41,6 +41,7 @@ public class KiiObjectCreateFragment extends Fragment {
                 KiiObjectCreateFragment.this.onCreateObjectButtonClicked(v);
             }
         });
+        setPageImage(2);
         return view;
     }
 
@@ -61,6 +62,14 @@ public class KiiObjectCreateFragment extends Fragment {
                 .findFragmentById(R.id.progressFragment);
         if (fragment != null && fragment.isInLayout()) {
             fragment.setProgressBarVisiblity(v);
+        }
+    }
+
+    void setPageImage(int page) {
+        ProgressFragment fragment = (ProgressFragment) getFragmentManager()
+                .findFragmentById(R.id.progressFragment);
+        if (fragment != null && fragment.isInLayout()) {
+            fragment.setPageImage(page);
         }
     }
 

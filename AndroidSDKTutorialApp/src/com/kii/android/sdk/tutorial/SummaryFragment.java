@@ -53,6 +53,7 @@ public class SummaryFragment extends Fragment {
         Linkify.addLinks(tv3, Linkify.WEB_URLS);
         tv4.setText(SUMMARY_HTML_3 + this.getKiiDocsUrl());
         Linkify.addLinks(tv4, Linkify.WEB_URLS);
+        setPageImage(4);
         return view;
     }
 
@@ -63,6 +64,14 @@ public class SummaryFragment extends Fragment {
                 : "en";
         return String.format("http://documentation.kii.com/%s/guides/starts",
                 langPath);
+    }
+
+    void setPageImage(int page) {
+        ProgressFragment fragment = (ProgressFragment) getFragmentManager()
+                .findFragmentById(R.id.progressFragment);
+        if (fragment != null && fragment.isInLayout()) {
+            fragment.setPageImage(page);
+        }
     }
 
     class MyTagHandler implements TagHandler {
