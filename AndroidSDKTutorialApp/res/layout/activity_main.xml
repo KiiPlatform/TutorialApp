@@ -5,6 +5,7 @@
     android:orientation="vertical" >
 
     <LinearLayout
+        android:id="@+id/mainFragment"
         android:layout_width="fill_parent"
         android:layout_height="0dip"
         android:layout_weight="1"
@@ -15,82 +16,6 @@
         android:paddingTop="0dip"
         tools:ignore="UselessParent" >
 
-        <TextView
-            android:id="@+id/textMain"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/description"
-            android:minWidth="250dip"
-            android:paddingBottom="30dip"
-            android:paddingLeft="10dip"
-            android:paddingRight="2dip"
-            android:paddingTop="20dip"
-            android:textAppearance="?android:attr/textAppearanceSmall" />
-
-        <EditText
-            android:id="@+id/username_field"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="16dip"
-            android:gravity="left|center_vertical"
-            android:hint="@string/enter_username"
-            android:inputType="textEmailAddress"
-            android:minWidth="250dip"
-            android:paddingBottom="2dip"
-            android:paddingLeft="10dip"
-            android:paddingRight="2dip"
-            android:paddingTop="2dip"
-            android:scrollHorizontally="true"
-            android:singleLine="true" >
-        </EditText>
-
-        <EditText
-            android:id="@+id/password_field"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="16dip"
-            android:gravity="left|center_vertical"
-            android:inputType="textPassword"
-            android:hint="@string/enter_password"
-            android:minWidth="250dip"
-            android:paddingBottom="2dip"
-            android:paddingLeft="10dip"
-            android:paddingRight="2dip"
-            android:paddingTop="2dip"
-            android:scrollHorizontally="true"
-            android:singleLine="true"/>
-
-        <LinearLayout
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:paddingTop="2dip" >
-
-            <Button
-                android:id="@+id/signup_button"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal|center_vertical"
-                android:layout_weight="1"
-                android:minWidth="100dip"
-                android:onClick="onSignupButtonClicked"
-                android:padding="2dip"
-                android:text="@string/sign_up"
-                android:textSize="15sp"
-                android:textStyle="bold" />
-
-            <Button
-                android:id="@+id/login_button"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:minWidth="100dip"
-                android:onClick="onLoginButtonClicked"
-                android:padding="2dip"
-                android:text="@string/log_in"
-                android:textSize="15sp"
-                android:textStyle="bold" />
-        </LinearLayout>
     </LinearLayout>
 
     <LinearLayout
@@ -101,25 +26,15 @@
         android:paddingBottom="2dip"
         android:paddingTop="2dip" >
 
-        <ProgressBar
-            android:id="@+id/progressBar"
-            style="?android:attr/progressBarStyleLarge"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical|center_horizontal"
-            android:indeterminate="true"
-            android:visibility="invisible" />
-
-        <ImageView
-            android:id="@+id/page"
+        <fragment
+            android:id="@+id/progressFragment"
             android:layout_width="fill_parent"
-            android:layout_height="0dip"
-            android:layout_gravity="center_vertical|center_horizontal"
-            android:layout_marginBottom="10dip"
-            android:layout_marginTop="10dip"
-            android:layout_weight="1"
-            android:contentDescription="@string/page"
-            android:src="@drawable/page1" />
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            class="com.kii.android.sdk.tutorial.ProgressFragment"
+            android:paddingBottom="2dip"
+            android:paddingTop="2dip" >
+        </fragment>
     </LinearLayout>
 
 </LinearLayout>

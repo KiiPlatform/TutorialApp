@@ -41,11 +41,10 @@
             android:text="@string/bucket_name" />
 
         <Button
-            android:id="@+id/signup_button"
+            android:id="@+id/create_object_button"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:gravity="center_horizontal|center_vertical"
-            android:onClick="onCreateObjectButtonClicked"
             android:text="@string/create_object"
             android:textSize="15sp"
             android:textStyle="bold" />
@@ -58,34 +57,4 @@
             android:gravity="center_horizontal|center_vertical"
             android:text="@string/create_object_description" />
     </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="bottom"
-        android:orientation="vertical"
-        android:paddingBottom="2dip"
-        android:paddingTop="2dip" >
-
-        <ProgressBar
-            android:id="@+id/progressBar"
-            style="?android:attr/progressBarStyleLarge"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical|center_horizontal"
-            android:indeterminate="true"
-            android:visibility="invisible" />
-
-        <ImageView
-            android:id="@+id/page"
-            android:layout_width="fill_parent"
-            android:layout_height="0dip"
-            android:layout_gravity="center_vertical|center_horizontal"
-            android:layout_marginBottom="10dip"
-            android:layout_marginTop="10dip"
-            android:layout_weight="1"
-            android:contentDescription="@string/page"
-            android:src="@drawable/page2" />
-    </LinearLayout>
-
 </LinearLayout>

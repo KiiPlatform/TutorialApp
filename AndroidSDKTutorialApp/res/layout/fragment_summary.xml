@@ -55,27 +55,4 @@
            android:textAppearance="?android:attr/textAppearanceSmall" />
 
    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="bottom"
-        android:orientation="vertical"
-        android:paddingBottom="2dip"
-        android:paddingLeft="30dip"
-        android:paddingRight="30dip"
-        android:paddingTop="2dip" >
-
-        <ImageView
-            android:id="@+id/page"
-            android:layout_width="fill_parent"
-            android:layout_height="0dip"
-            android:layout_gravity="center_vertical|center_horizontal"
-            android:layout_marginBottom="10dip"
-            android:layout_marginTop="10dip"
-            android:layout_weight="1"
-            android:contentDescription="@string/page"
-            android:src="@drawable/page3" />
-    </LinearLayout>
-
 </LinearLayout>

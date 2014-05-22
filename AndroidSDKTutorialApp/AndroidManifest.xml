@@ -6,7 +6,7 @@
 
     <uses-sdk
         android:minSdkVersion="11"
-        android:targetSdkVersion="11" />
+        android:targetSdkVersion="20" />
     <uses-permission android:name="android.permission.INTERNET"/>
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
@@ -25,9 +25,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="com.kii.android.sdk.tutorial.KiiObjectCreateActivity" />
-        <activity android:name="com.kii.android.sdk.tutorial.KiiObjectAttachFileActivity" />
-        <activity android:name="com.kii.android.sdk.tutorial.SummaryActivity" />
     </application>
 
 </manifest>
