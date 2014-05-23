@@ -9,10 +9,10 @@
        android:layout_height="0dip"
        android:layout_weight="1"
        android:orientation="vertical"
-       android:paddingBottom="13dip"
-       android:paddingLeft="30dip"
-       android:paddingRight="30dip"
-       android:paddingTop="50dip"
+       android:paddingBottom="5dip"
+       android:paddingLeft="20dip"
+       android:paddingRight="10dip"
+       android:paddingTop="30dip"
        tools:ignore="UselessParent" >
 
        <TextView
@@ -20,7 +20,7 @@
            android:layout_width="fill_parent"
            android:layout_height="wrap_content"
            android:gravity="center_vertical"
-           android:paddingBottom="10dip"
+           android:paddingBottom="5dip"
            android:text="@string/summary"
            android:textAppearance="?android:attr/textAppearanceMedium" />
 
@@ -29,7 +29,7 @@
            android:layout_width="fill_parent"
            android:layout_height="wrap_content"
            android:gravity="center_vertical"
-           android:paddingBottom="10dip"
+           android:paddingBottom="5dip"
            android:text="@string/summary"
            android:textAppearance="?android:attr/textAppearanceSmall" />
        
@@ -47,7 +47,7 @@
            android:layout_width="fill_parent"
            android:layout_height="wrap_content"
            android:gravity="center_vertical"
-           android:paddingBottom="10dip"
+           android:paddingBottom="5dip"
            android:text="@string/summary"
            android:textAppearance="?android:attr/textAppearanceSmall" />
 

@@ -22,7 +22,7 @@
            android:gravity="center_horizontal|center_vertical"
            android:paddingBottom="20dip"
            android:text="@string/attach_file_txt"
-           android:textAppearance="?android:attr/textAppearanceMedium" />
+           android:textAppearance="?android:attr/textAppearanceSmall" />
 
        <Button
            android:id="@+id/attach_file_button"

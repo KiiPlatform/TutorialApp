@@ -18,15 +18,16 @@
     <string name="operation_failed">Operation failed</string>
     <string name="login_text">Signup/Login to KiiCloud.</string>
     <string name="create_object_description">On completion, an \'app\' scope object
-         will be created in \'tutorial\' bucket. To learn the details about bucket and object, visit </string>
+         will be created in \'tutorial\' bucket.\n\n To learn the details about bucket and object, visit </string>
     <string name="attach_body_description">On completion, body will be added with the obejct.
-        To learn the details about body attachment, visit </string>
+        \n\nTo learn the details about body attachment, visit </string>
     <string name="login_description">When signup succeeded, a new user registered with your application.
-        Once users registered, they will be able to login with their username and password. To learn the
+        Once users registered, they will be able to login with their username and password.\n\n To learn the
         details about user management, visit </string>
     <string name="summary">Tutorial completed!</string>
     <string name="kiiobject_detail">KiiObject details</string>
     <string name="attach_file_detail">Attach file to KiiObject</string>
     <string name="login_detail">User management details</string>
+    <string name="ok">OK</string>
 
 </resources>

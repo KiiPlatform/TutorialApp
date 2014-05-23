@@ -1,7 +1,5 @@
 package com.kii.android.sdk.tutorial;
 
-import java.util.Locale;
-
 import android.app.Activity;
 import android.app.DialogFragment;
 import android.app.Fragment;

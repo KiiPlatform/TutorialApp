@@ -19,11 +19,10 @@
            android:id="@+id/createObject_textView"
            android:layout_width="fill_parent"
            android:layout_height="wrap_content"
-           android:gravity="center_vertical"
            android:gravity="center_horizontal|center_vertical"
            android:paddingBottom="50dip"
            android:text="@string/create_object_text"
-           android:textAppearance="?android:attr/textAppearanceMedium" />
+           android:textAppearance="?android:attr/textAppearanceSmall" />
 
         <Button
             android:id="@+id/create_object_button"

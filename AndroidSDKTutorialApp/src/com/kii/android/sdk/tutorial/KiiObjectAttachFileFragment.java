@@ -2,7 +2,6 @@ package com.kii.android.sdk.tutorial;
 
 import java.io.File;
 import java.io.FileOutputStream;
-import java.util.Locale;
 
 import android.app.Activity;
 import android.app.DialogFragment;
@@ -17,7 +16,6 @@ import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
 import android.provider.MediaStore;
-import android.text.util.Linkify;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -25,7 +23,6 @@ import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.kii.cloud.storage.KiiObject;
@@ -211,16 +208,6 @@ public class KiiObjectAttachFileFragment extends Fragment {
         DialogFragment newFragment = AlertDialogFragment.newInstance(
                 R.string.operation_failed, message);
         newFragment.show(getFragmentManager(), "dialog");
-    }
-
-    private String getKiiDocsUrl() {
-        Locale locale = Locale.getDefault();
-        String language = locale.getDisplayLanguage();
-        String langPath = (language == "jp" || language == "cn") ? language
-                : "en";
-        return String.format(
-                "http://documentation.kii.com/%s/guides/android/managing-data",
-                langPath);
     }
 
     void setFragmentProgress(int v) {
