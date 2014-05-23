@@ -7,13 +7,12 @@ import android.app.DialogFragment;
 import android.app.Fragment;
 import android.app.FragmentTransaction;
 import android.os.Bundle;
-import android.text.util.Linkify;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.TextView;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.kii.cloud.storage.Kii;
@@ -30,9 +29,6 @@ public class KiiObjectCreateFragment extends Fragment {
             Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_create_object,
                 container, false);
-        TextView tv = (TextView) view.findViewById(R.id.description_textView);
-        tv.setText(tv.getText() + " " + this.getKiiDocsUrl());
-        Linkify.addLinks(tv, Linkify.WEB_URLS);
         Button createObjectBtn = (Button) view
                 .findViewById(R.id.create_object_button);
         createObjectBtn.setOnClickListener(new OnClickListener() {
@@ -42,6 +38,14 @@ public class KiiObjectCreateFragment extends Fragment {
             }
         });
         setPageImage(2);
+        ImageView imageView = (ImageView) view.findViewById(R.id.details);
+        imageView.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                DialogFragment newFragment = DetailDialogFragment.newInstance(2);
+                newFragment.show(getFragmentManager(), "dialog");
+            }
+        });
         return view;
     }
 
@@ -114,15 +118,4 @@ public class KiiObjectCreateFragment extends Fragment {
                 R.string.operation_failed, message);
         newFragment.show(getFragmentManager(), "dialog");
     }
-
-    private String getKiiDocsUrl() {
-        Locale locale = Locale.getDefault();
-        String language = locale.getDisplayLanguage();
-        String langPath = (language == "jp" || language == "cn") ? language
-                : "en";
-        return String.format(
-                "http://documentation.kii.com/%s/guides/android/managing-data",
-                langPath);
-    }
-
 }

@@ -19,8 +19,8 @@
            android:id="@+id/summary_textView_1"
            android:layout_width="fill_parent"
            android:layout_height="wrap_content"
-           android:gravity="center_horizontal|center_vertical"
-           android:paddingBottom="20dip"
+           android:gravity="center_vertical"
+           android:paddingBottom="10dip"
            android:text="@string/summary"
            android:textAppearance="?android:attr/textAppearanceMedium" />
 
@@ -29,8 +29,7 @@
            android:layout_width="fill_parent"
            android:layout_height="wrap_content"
            android:gravity="center_vertical"
-           android:paddingLeft="5dip"
-           android:paddingBottom="20dip"
+           android:paddingBottom="10dip"
            android:text="@string/summary"
            android:textAppearance="?android:attr/textAppearanceSmall" />
        
@@ -39,8 +38,7 @@
            android:layout_width="fill_parent"
            android:layout_height="wrap_content"
            android:gravity="center_vertical"
-           android:paddingLeft="5dip"
-           android:paddingBottom="20dip"
+           android:paddingBottom="10dip"
            android:text="@string/summary"
            android:textAppearance="?android:attr/textAppearanceSmall" />
        
@@ -49,8 +47,7 @@
            android:layout_width="fill_parent"
            android:layout_height="wrap_content"
            android:gravity="center_vertical"
-           android:paddingLeft="5dip"
-           android:paddingBottom="20dip"
+           android:paddingBottom="10dip"
            android:text="@string/summary"
            android:textAppearance="?android:attr/textAppearanceSmall" />
 

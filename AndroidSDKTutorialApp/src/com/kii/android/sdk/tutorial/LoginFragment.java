@@ -16,6 +16,7 @@ import android.view.ViewGroup;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -51,6 +52,14 @@ public class LoginFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 onSignupButtonClicked(v);
+            }
+        });
+        ImageView imageView = (ImageView) view.findViewById(R.id.details);
+        imageView.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                DialogFragment newFragment = DetailDialogFragment.newInstance(1);
+                newFragment.show(getFragmentManager(), "dialog");
             }
         });
         return view;

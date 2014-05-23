@@ -24,6 +24,7 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -46,9 +47,6 @@ public class KiiObjectAttachFileFragment extends Fragment {
                 false);
         Bundle args = getArguments();
         objectUri = args.getString("object_uri");
-        TextView tv = (TextView) view.findViewById(R.id.attach_desc_textView);
-        tv.setText(tv.getText() + " " + this.getKiiDocsUrl());
-        Linkify.addLinks(tv, Linkify.WEB_URLS);
         Button attachButton = (Button) view
                 .findViewById(R.id.attach_file_button);
         attachButton.setOnClickListener(new OnClickListener() {
@@ -58,6 +56,14 @@ public class KiiObjectAttachFileFragment extends Fragment {
             }
         });
         setPageImage(3);
+        ImageView imageView = (ImageView) view.findViewById(R.id.details);
+        imageView.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                DialogFragment newFragment = DetailDialogFragment.newInstance(3);
+                newFragment.show(getFragmentManager(), "dialog");
+            }
+        });
         return view;
     }
 

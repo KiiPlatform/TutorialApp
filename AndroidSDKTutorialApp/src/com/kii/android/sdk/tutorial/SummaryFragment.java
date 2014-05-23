@@ -43,11 +43,9 @@ public class SummaryFragment extends Fragment {
             Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_summary, container,
                 false);
-        TextView tv1 = (TextView) view.findViewById(R.id.summary_textView_1);
         TextView tv2 = (TextView) view.findViewById(R.id.summary_textView_2);
         TextView tv3 = (TextView) view.findViewById(R.id.summary_textView_3);
         TextView tv4 = (TextView) view.findViewById(R.id.summary_textView_4);
-        tv1.setText("Summary");
         tv2.setText(Html.fromHtml(SUMMARY_HTML_1, null, new MyTagHandler()));
         tv3.setText(Html.fromHtml(SUMMARY_HTML_2, null, new MyTagHandler()));
         Linkify.addLinks(tv3, Linkify.WEB_URLS);

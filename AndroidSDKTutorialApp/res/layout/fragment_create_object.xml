@@ -11,34 +11,19 @@
         android:orientation="vertical"
         android:paddingBottom="13dip"
         android:paddingLeft="30dip"
-        android:paddingRight="30dip"
+        android:paddingRight="20dip"
         android:paddingTop="30dip"
         tools:ignore="UselessParent" >
 
-        <TextView
-            android:id="@+id/createObject_textView"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center_horizontal|center_vertical"
-            android:paddingBottom="15dip"
-            android:text="@string/lets_create_an_object"
-            android:textAppearance="?android:attr/textAppearanceMedium" />
-
-        <TextView
-            android:id="@+id/scope_textView"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center_horizontal|center_vertical"
-            android:paddingBottom="15dip"
-            android:text="@string/object_scope" />
-
-        <TextView
-            android:id="@+id/bucketName_textView"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center_horizontal|center_vertical"
-            android:paddingBottom="15dip"
-            android:text="@string/bucket_name" />
+       <TextView
+           android:id="@+id/createObject_textView"
+           android:layout_width="fill_parent"
+           android:layout_height="wrap_content"
+           android:gravity="center_vertical"
+           android:gravity="center_horizontal|center_vertical"
+           android:paddingBottom="50dip"
+           android:text="@string/create_object_text"
+           android:textAppearance="?android:attr/textAppearanceMedium" />
 
         <Button
             android:id="@+id/create_object_button"
@@ -48,13 +33,14 @@
             android:text="@string/create_object"
             android:textSize="15sp"
             android:textStyle="bold" />
-        
-        <TextView
-            android:id="@+id/description_textView"
+
+        <ImageView
+            android:id="@+id/details"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:paddingTop="5dip"
             android:gravity="center_horizontal|center_vertical"
-            android:text="@string/create_object_description" />
+            android:contentDescription="@string/page"
+            android:src="@drawable/tut" />
+
     </LinearLayout>
 </LinearLayout>

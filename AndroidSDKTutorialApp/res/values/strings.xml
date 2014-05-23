@@ -9,18 +9,24 @@
     <string name="sign_up">Sign Up</string>
     <string name="enter_password">Enter password (4-50 length)</string>
     <string name="enter_username">Enter username (3-64 length)</string>
-    <string name="lets_create_an_object">Create a KiiObject</string>
-    <string name="create_object">Create KiiObject</string>
-    <string name="attach_file">Attach File</string>
-    <string name="attach_file_txt">Congratulations! You have created a KiiObject. Now lets attach a photo to the object.</string>
+    <string name="create_object_text">Create application scope object</string>
+    <string name="create_object">Create object</string>
+    <string name="attach_file">Attach file</string>
+    <string name="attach_file_txt">Attach a binary file to the object</string>
     <string name="bucket_name">Bucket name : tutorial</string>
     <string name="object_scope">Object scope : Application</string>
     <string name="operation_failed">Operation failed</string>
-    <string name="description">Signup a new user with the App or Login with existing App user.</string>
+    <string name="login_text">Signup/Login to KiiCloud.</string>
     <string name="create_object_description">On completion, an \'app\' scope object
          will be created in \'tutorial\' bucket. To learn the details about bucket and object, visit </string>
     <string name="attach_body_description">On completion, body will be added with the obejct.
         To learn the details about body attachment, visit </string>
-    <string name="summary">Summary</string>
+    <string name="login_description">When signup succeeded, a new user registered with your application.
+        Once users registered, they will be able to login with their username and password. To learn the
+        details about user management, visit </string>
+    <string name="summary">Tutorial completed!</string>
+    <string name="kiiobject_detail">KiiObject details</string>
+    <string name="attach_file_detail">Attach file to KiiObject</string>
+    <string name="login_detail">User management details</string>
 
 </resources>
