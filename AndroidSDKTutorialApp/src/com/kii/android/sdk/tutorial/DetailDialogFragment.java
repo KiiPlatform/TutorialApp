@@ -10,6 +10,7 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 public class DetailDialogFragment extends DialogFragment {
@@ -27,13 +28,20 @@ public class DetailDialogFragment extends DialogFragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
             Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.fragment_detail, container, false);
-        View tv = v.findViewById(R.id.detail_textview);
+        TextView tv = (TextView)v.findViewById(R.id.detail_textview);
+        int page = getArguments().getInt("page");
+        ImageView iv = (ImageView)v.findViewById(R.id.storage);
+        if(page == 2) {
+            iv.setImageResource(R.drawable.datastore);
+        }else if (page == 3) {
+            iv.setImageResource(R.drawable.bodyattach);
+        }
         String text = getResources().getString(
-                getDetailId(getArguments().getInt("page")))
+                getDetailId(page))
                 + " " + getKiiDocsUrl();
         ((TextView) tv).setText(text);
         Linkify.addLinks((TextView) tv, Linkify.WEB_URLS);
-        getDialog().setTitle(getTitleId(getArguments().getInt("page")));
+        getDialog().setTitle(getTitleId(page));
 
         // Watch for button clicks.
         Button button = (Button) v.findViewById(R.id.detail_ok_button);
