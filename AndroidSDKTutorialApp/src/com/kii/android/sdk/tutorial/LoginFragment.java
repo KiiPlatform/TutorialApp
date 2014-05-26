@@ -18,9 +18,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import com.kii.android.sdk.tutorial.AlertDialogFragment.AlertDialogListener;
 import com.kii.cloud.storage.KiiUser;
 import com.kii.cloud.storage.callback.KiiUserCallBack;
 import com.kii.cloud.storage.exception.CloudExecutionException;
@@ -59,7 +57,10 @@ public class LoginFragment extends Fragment {
         imageView.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
-                DialogFragment newFragment = DetailDialogFragment.newInstance(1);
+                DetailDialogResource resource = new DetailDialogResource(
+                        getResources().getString(R.string.login_detail),
+                        getResources().getString(R.string.login_description), 0);
+                DialogFragment newFragment = DetailDialogFragment.newInstance(resource);
                 newFragment.show(getFragmentManager(), "dialog");
             }
         });

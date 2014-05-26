@@ -15,11 +15,12 @@ import android.widget.TextView;
 
 public class DetailDialogFragment extends DialogFragment {
     public static final String TAG = "DetailDialogFragment";
+    private DetailDialogResource resource;
 
-    public static DetailDialogFragment newInstance(int page) {
+    public static DetailDialogFragment newInstance(DetailDialogResource resource) {
         DetailDialogFragment frag = new DetailDialogFragment();
+        frag.resource = resource;
         Bundle args = new Bundle();
-        args.putInt("page", page);
         frag.setArguments(args);
         return frag;
     }
@@ -29,19 +30,15 @@ public class DetailDialogFragment extends DialogFragment {
             Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.fragment_detail, container, false);
         TextView tv = (TextView)v.findViewById(R.id.detail_textview);
-        int page = getArguments().getInt("page");
+        //int page = getArguments().getInt("page");
         ImageView iv = (ImageView)v.findViewById(R.id.storage);
-        if(page == 2) {
-            iv.setImageResource(R.drawable.datastore);
-        } else if (page == 3) {
-            iv.setImageResource(R.drawable.bodyattach);
-        }
-        String text = getResources().getString(
-                getDetailId(page))
+        if(resource.getImageId() > 0)
+            iv.setImageResource(resource.getImageId());
+        String text = resource.getDetail()
                 + " " + getKiiDocsUrl();
         ((TextView) tv).setText(text);
         Linkify.addLinks((TextView) tv, Linkify.WEB_URLS);
-        getDialog().setTitle(getTitleId(page));
+        getDialog().setTitle(resource.getTitle());
 
         // Watch for button clicks.
         Button button = (Button) v.findViewById(R.id.detail_ok_button);

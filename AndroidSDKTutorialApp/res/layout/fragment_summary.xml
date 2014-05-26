@@ -10,8 +10,8 @@
        android:layout_weight="1"
        android:orientation="vertical"
        android:paddingBottom="5dip"
-       android:paddingLeft="20dip"
-       android:paddingRight="10dip"
+       android:paddingLeft="30dip"
+       android:paddingRight="20dip"
        android:paddingTop="30dip"
        tools:ignore="UselessParent" >
 
@@ -19,37 +19,54 @@
            android:id="@+id/summary_textView_1"
            android:layout_width="fill_parent"
            android:layout_height="wrap_content"
-           android:gravity="center_vertical"
-           android:paddingBottom="5dip"
+           android:gravity="center_horizontal|center_vertical"
+           android:paddingBottom="20dip"
            android:text="@string/summary"
            android:textAppearance="?android:attr/textAppearanceMedium" />
 
-       <TextView
-           android:id="@+id/summary_textView_2"
-           android:layout_width="fill_parent"
-           android:layout_height="wrap_content"
-           android:gravity="center_vertical"
-           android:paddingBottom="5dip"
-           android:text="@string/summary"
-           android:textAppearance="?android:attr/textAppearanceSmall" />
-       
-       <TextView
-           android:id="@+id/summary_textView_3"
-           android:layout_width="fill_parent"
-           android:layout_height="wrap_content"
-           android:gravity="center_vertical"
-           android:paddingBottom="10dip"
-           android:text="@string/summary"
-           android:textAppearance="?android:attr/textAppearanceSmall" />
-       
-       <TextView
-           android:id="@+id/summary_textView_4"
-           android:layout_width="fill_parent"
-           android:layout_height="wrap_content"
-           android:gravity="center_vertical"
-           android:paddingBottom="5dip"
-           android:text="@string/summary"
-           android:textAppearance="?android:attr/textAppearanceSmall" />
+          <Button
+              android:id="@+id/what_done_btn"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:layout_gravity="center_horizontal|center_vertical"
+              android:minWidth="100dip"
+              android:text="@string/what_we_have_done"
+              android:textSize="15sp"
+              android:layout_marginBottom="30dp"
+              android:background="@drawable/summery_button"
+              android:padding="10dip"
+              android:textColor="#3D3D3D"
+              android:textAppearance="?android:attr/textAppearanceSmall"
+              android:typeface="serif" />
+          <Button
+              android:id="@+id/databrowse_btn"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:layout_gravity="center_horizontal|center_vertical"
+              android:minWidth="100dip"
+              android:layout_marginBottom="30dp"
+              android:text="@string/how_to_browse_data"
+              android:background="@drawable/summery_button"
+              android:textSize="15sp"
+              android:padding="12dip"
+              android:textColor="#3D3D3D"
+              android:textAppearance="?android:attr/textAppearanceSmall"
+              android:typeface="serif" />
+          <Button
+              android:id="@+id/next_btn"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:layout_gravity="center_horizontal|center_vertical"
+              android:minWidth="100dip"
+              android:layout_marginBottom="30dp"
+              android:text="@string/how_to_move_forword"
+              android:textColor="#3D3D3D"
+              android:background="@drawable/summery_button"
+              android:padding="10dip"
+              android:textAppearance="?android:attr/textAppearanceSmall"
+              android:textSize="15sp"
+              android:typeface="serif" />
+
 
    </LinearLayout>
 </LinearLayout>

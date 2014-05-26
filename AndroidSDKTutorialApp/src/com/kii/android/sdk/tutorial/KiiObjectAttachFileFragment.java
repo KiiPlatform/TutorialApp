@@ -57,7 +57,12 @@ public class KiiObjectAttachFileFragment extends Fragment {
         imageView.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
-                DialogFragment newFragment = DetailDialogFragment.newInstance(3);
+                DetailDialogResource resource = new DetailDialogResource(
+                        getResources().getString(R.string.attach_file_detail),
+                        getResources().getString(
+                                R.string.attach_body_description),
+                        R.drawable.bodyattach);
+                DialogFragment newFragment = DetailDialogFragment.newInstance(resource);
                 newFragment.show(getFragmentManager(), "dialog");
             }
         });

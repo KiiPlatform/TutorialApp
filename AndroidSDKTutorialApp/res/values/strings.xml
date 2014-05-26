@@ -34,5 +34,8 @@
     <string name="user_loggedIn">User logged in!</string>
     <string name="object_created">Object created</string>
     <string name="file_attached">File attached</string>
+    <string name="how_to_move_forword">How to move forword</string>
+    <string name="how_to_browse_data">How to browse data</string>
+    <string name="what_we_have_done">What we have done</string>
 
 </resources>

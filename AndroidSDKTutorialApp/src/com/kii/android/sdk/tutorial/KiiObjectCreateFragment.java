@@ -11,7 +11,6 @@ import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
-import android.widget.Toast;
 
 import com.kii.cloud.storage.Kii;
 import com.kii.cloud.storage.KiiBucket;
@@ -40,7 +39,12 @@ public class KiiObjectCreateFragment extends Fragment {
         imageView.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
-                DialogFragment newFragment = DetailDialogFragment.newInstance(2);
+                DetailDialogResource resource = new DetailDialogResource(
+                        getResources().getString(R.string.kiiobject_detail),
+                        getResources().getString(
+                                R.string.create_object_description),
+                        R.drawable.datastore);
+                DialogFragment newFragment = DetailDialogFragment.newInstance(resource);
                 newFragment.show(getFragmentManager(), "dialog");
             }
         });
