@@ -33,7 +33,7 @@ public class DetailDialogFragment extends DialogFragment {
         ImageView iv = (ImageView)v.findViewById(R.id.storage);
         if(page == 2) {
             iv.setImageResource(R.drawable.datastore);
-        }else if (page == 3) {
+        } else if (page == 3) {
             iv.setImageResource(R.drawable.bodyattach);
         }
         String text = getResources().getString(

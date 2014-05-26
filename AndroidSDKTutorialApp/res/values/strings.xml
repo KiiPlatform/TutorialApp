@@ -17,9 +17,10 @@
     <string name="object_scope">Object scope : Application</string>
     <string name="operation_failed">Operation failed</string>
     <string name="login_text">Signup/Login to KiiCloud.</string>
-    <string name="create_object_description">On completion, an \'app\' scope object
+    <string name="create_object_description">Creating object means storing arbitrary key/value pairs
+         as JSON-style objects in kiicloud.\n\n On completion, an \'app\' scope object
          will be created in \'tutorial\' bucket.\n\n To learn the details about bucket and object, visit </string>
-    <string name="attach_body_description">On completion, body will be added with the obejct.
+    <string name="attach_body_description">The file will be uploaded to kiicloud associating it with the object as object body.
         \n\nTo learn the details about body attachment, visit </string>
     <string name="login_description">When signup succeeded, a new user registered with your application.
         Once users registered, they will be able to login with their username and password.\n\n To learn the
