@@ -30,5 +30,9 @@
     <string name="attach_file_detail">Attach file to KiiObject</string>
     <string name="login_detail">User management details</string>
     <string name="ok">OK</string>
+    <string name="user_registered">User registered!</string>
+    <string name="user_loggedIn">User logged in!</string>
+    <string name="object_created">Object created</string>
+    <string name="file_attached">File attached</string>
 
 </resources>

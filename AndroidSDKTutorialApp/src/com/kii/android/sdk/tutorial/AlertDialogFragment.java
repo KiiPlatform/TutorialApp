@@ -8,9 +8,11 @@ import android.os.Bundle;
 
 public class AlertDialogFragment extends DialogFragment {
     public static final String TAG = "AlertDialogFragment";
-
-    public static AlertDialogFragment newInstance(int title, String message) {
+    private AlertDialogListener listener = null;
+    public static AlertDialogFragment newInstance(int title, String message,
+            AlertDialogListener listener) {
         AlertDialogFragment frag = new AlertDialogFragment();
+        frag.listener = listener;
         Bundle args = new Bundle();
         args.putInt("title", title);
         args.putString("message", message);
@@ -24,15 +26,22 @@ public class AlertDialogFragment extends DialogFragment {
         String message = getArguments().getString("message");
 
         return new AlertDialog.Builder(getActivity())
-                .setIcon(android.R.drawable.ic_dialog_alert)
+                .setIcon(R.drawable.launcher)
                 .setTitle(title)
                 .setMessage(message)
                 .setPositiveButton(android.R.string.ok,
                         new DialogInterface.OnClickListener() {
                             public void onClick(DialogInterface dialog,
                                     int whichButton) {
-                                dialog.dismiss();
+                                if(listener != null)
+                                    listener.onAlertFinished();
+                                else
+                                    dialog.dismiss();
                             }
                         }).create();
+    }
+
+    static interface AlertDialogListener {
+        public void onAlertFinished();
     }
 }

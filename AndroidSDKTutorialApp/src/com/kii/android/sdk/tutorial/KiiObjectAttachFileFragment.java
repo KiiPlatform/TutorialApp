@@ -181,11 +181,22 @@ public class KiiObjectAttachFileFragment extends Fragment {
             public void onTransferCompleted(KiiRTransfer operator, Exception e) {
                 setFragmentProgress(View.INVISIBLE);
                 if (e == null) {
-                    showToast("File attached successfully!");
-                    FragmentTransaction ft = getFragmentManager()
-                            .beginTransaction();
-                    ft.replace(R.id.mainFragment, new SummaryFragment());
-                    ft.commit();
+                    AlertDialogFragment.AlertDialogListener listener = new AlertDialogFragment.AlertDialogListener(){
+                        @Override
+                        public void onAlertFinished() {
+                            FragmentTransaction ft = getFragmentManager()
+                                    .beginTransaction();
+                            ft.replace(R.id.mainFragment, new SummaryFragment());
+                            ft.addToBackStack(null);
+                            ft.commit();
+                        }
+                    };
+                    DialogFragment newFragment = AlertDialogFragment
+                            .newInstance(
+                                    R.string.operation_failed,
+                                    "File attached successfully!\nNow lets check what we have done!",
+                                    listener);
+                    newFragment.show(getFragmentManager(), "dialog");
                 } else {
                     if (e instanceof CloudExecutionException)
                         showAlert(Util
@@ -206,7 +217,7 @@ public class KiiObjectAttachFileFragment extends Fragment {
 
     void showAlert(String message) {
         DialogFragment newFragment = AlertDialogFragment.newInstance(
-                R.string.operation_failed, message);
+                R.string.operation_failed, message, null);
         newFragment.show(getFragmentManager(), "dialog");
     }
 

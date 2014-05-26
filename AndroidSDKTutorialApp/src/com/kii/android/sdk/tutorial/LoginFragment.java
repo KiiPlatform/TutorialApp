@@ -20,6 +20,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.kii.android.sdk.tutorial.AlertDialogFragment.AlertDialogListener;
 import com.kii.cloud.storage.KiiUser;
 import com.kii.cloud.storage.callback.KiiUserCallBack;
 import com.kii.cloud.storage.exception.CloudExecutionException;
@@ -97,17 +98,13 @@ public class LoginFragment extends Fragment {
             KiiUser.logIn(callback, username, password);
         } catch (Exception e) {
             setFragmentProgress(View.INVISIBLE);
-            showAlert(e.getLocalizedMessage());
+            showAlert(R.string.operation_failed, e.getLocalizedMessage(), null);
         }
     }
 
-    private void showToast(String message) {
-        Toast.makeText(activity, message, Toast.LENGTH_SHORT).show();
-    }
-
-    void showAlert(String message) {
+    void showAlert(int titleId, String message, AlertDialogFragment.AlertDialogListener listener ) {
         DialogFragment newFragment = AlertDialogFragment.newInstance(
-                R.string.operation_failed, message);
+                titleId, message, listener);
         newFragment.show(getFragmentManager(), "dialog");
     }
 
@@ -125,7 +122,7 @@ public class LoginFragment extends Fragment {
             user.register(callback, password);
         } catch (Exception e) {
             setFragmentProgress(View.INVISIBLE);
-            showAlert(e.getLocalizedMessage());
+            showAlert(R.string.operation_failed, e.getLocalizedMessage(), null);
         }
     }
 
@@ -134,29 +131,38 @@ public class LoginFragment extends Fragment {
         public void onLoginCompleted(int token, KiiUser user, Exception e) {
             setFragmentProgress(View.INVISIBLE);
             if (e == null) {
-                showToast("User logged-in!");
-                loadFragment(new KiiObjectCreateFragment());
+                showAlert(R.string.user_loggedIn,
+                        "User logged in succesfully.\nNow lets create an object to kiicloud!",
+                        listener);
             } else {
                 if (e instanceof CloudExecutionException)
-                    showAlert(Util
-                            .generateAlertMessage((CloudExecutionException) e));
+                    showAlert(R.string.operation_failed, Util
+                            .generateAlertMessage((CloudExecutionException) e), null);
                 else
-                    showAlert(e.getLocalizedMessage());
+                    showAlert(R.string.operation_failed, e.getLocalizedMessage(), null);
             }
         }
+
+        AlertDialogFragment.AlertDialogListener listener = new AlertDialogFragment.AlertDialogListener(){
+            @Override
+            public void onAlertFinished() {
+                loadFragment(new KiiObjectCreateFragment());
+            }
+        };
 
         @Override
         public void onRegisterCompleted(int token, KiiUser user, Exception e) {
             setFragmentProgress(View.INVISIBLE);
             if (e == null) {
-                showToast("User registered!");
-                loadFragment(new KiiObjectCreateFragment());
+                showAlert(R.string.user_registered,
+                        "User registered succesfully.\nNow lets create an object to kiicloud!",
+                        listener);
             } else {
                 if (e instanceof CloudExecutionException)
-                    showAlert(Util
-                            .generateAlertMessage((CloudExecutionException) e));
+                    showAlert(R.string.operation_failed, Util
+                            .generateAlertMessage((CloudExecutionException) e), null);
                 else
-                    showAlert(e.getLocalizedMessage());
+                    showAlert(R.string.operation_failed, e.getLocalizedMessage(), null);
             }
         }
     };
@@ -164,6 +170,7 @@ public class LoginFragment extends Fragment {
     private void loadFragment(Fragment fragment) {
         FragmentTransaction ft = getFragmentManager().beginTransaction();
         ft.replace(R.id.mainFragment, fragment);
+        ft.addToBackStack(null);
         ft.commit();
     }
 

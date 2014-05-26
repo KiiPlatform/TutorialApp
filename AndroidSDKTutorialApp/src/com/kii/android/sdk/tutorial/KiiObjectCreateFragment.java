@@ -87,15 +87,28 @@ public class KiiObjectCreateFragment extends Fragment {
                     Exception exception) {
                 setFragmentProgress(View.INVISIBLE);
                 if (exception == null) {
-                    showToast("Object created!");
-                    Bundle args = new Bundle();
-                    args.putString("object_uri", object.toUri().toString());
-                    Fragment fragment = new KiiObjectAttachFileFragment();
-                    fragment.setArguments(args);
-                    FragmentTransaction ft = getFragmentManager()
-                            .beginTransaction();
-                    ft.replace(R.id.mainFragment, fragment);
-                    ft.commit();
+                    final String uri = object.toUri().toString();
+                    AlertDialogFragment.AlertDialogListener listener = new AlertDialogFragment.AlertDialogListener(){
+                        @Override
+                        public void onAlertFinished() {
+                            Bundle args = new Bundle();
+                            args.putString("object_uri", uri);
+                            Fragment fragment = new KiiObjectAttachFileFragment();
+                            fragment.setArguments(args);
+                            FragmentTransaction ft = getFragmentManager()
+                                    .beginTransaction();
+                            ft.replace(R.id.mainFragment, fragment);
+                            ft.addToBackStack(null);
+                            ft.commit();
+                        }
+                        
+                    };
+                    DialogFragment newFragment = AlertDialogFragment
+                            .newInstance(
+                                    R.string.operation_failed,
+                                    "Object creted successfully. \nNow lets attach a file to the object!",
+                                    listener);
+                    newFragment.show(getFragmentManager(), "dialog");
                 } else {
                     if (exception instanceof CloudExecutionException)
                         showAlert(Util
@@ -107,13 +120,9 @@ public class KiiObjectCreateFragment extends Fragment {
         });
     }
 
-    private void showToast(String message) {
-        Toast.makeText(this.activity, message, Toast.LENGTH_SHORT).show();
-    }
-
     void showAlert(String message) {
         DialogFragment newFragment = AlertDialogFragment.newInstance(
-                R.string.operation_failed, message);
+                R.string.operation_failed, message, null);
         newFragment.show(getFragmentManager(), "dialog");
     }
 }
