@@ -11,7 +11,7 @@
         android:orientation="vertical"
         android:paddingBottom="5dip"
         android:paddingLeft="30dip"
-        android:paddingRight="30dip"
+        android:paddingRight="10dip"
         android:paddingTop="0dip"
         tools:ignore="UselessParent" >
 
@@ -22,10 +22,11 @@
             android:text="@string/login_text"
             android:minWidth="250dip"
             android:paddingBottom="30dip"
-            android:paddingLeft="10dip"
-            android:paddingRight="2dip"
+            android:paddingLeft="20dip"
+            android:paddingRight="20dip"
             android:paddingTop="20dip"
-            android:textAppearance="?android:attr/textAppearanceSmall" />
+            android:layout_gravity="center_horizontal|center_vertical"
+            android:textAppearance="?android:attr/textAppearanceMedium" />
 
         <EditText
             android:id="@+id/username_field"
@@ -73,8 +74,9 @@
                 android:layout_gravity="center_horizontal|center_vertical"
                 android:layout_weight="1"
                 android:minWidth="100dip"
-                android:padding="2dip"
+                android:layout_marginRight="4dip"
                 android:text="@string/sign_up"
+                style="@style/customBtnStyle"
                 android:textSize="15sp"
                 android:textStyle="bold" />
 
@@ -84,9 +86,9 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:minWidth="100dip"
-                android:padding="2dip"
                 android:text="@string/log_in"
                 android:textSize="15sp"
+                style="@style/customBtnStyle"
                 android:textStyle="bold" />
         </LinearLayout>
         <ImageView

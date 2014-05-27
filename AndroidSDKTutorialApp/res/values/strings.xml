@@ -22,7 +22,7 @@
          will be created in \'tutorial\' bucket.\n\n To learn more about bucket and object, visit </string>
     <string name="attach_body_description">The file will be uploaded to kiicloud associating it with the object as object body.
         \n\nTo learn more about body attachment, visit </string>
-    <string name="login_description">signup/login to KiiCloud with user credeintials.\n
+    <string name="login_description">Signup/login to KiiCloud with user credeintials.\n
         Note it is different from developer account you\'re using to login to developer.kii.com.\n\n
 
         When signup succeeded, a new user registered with your application.

@@ -10,8 +10,8 @@
        android:layout_weight="1"
        android:orientation="vertical"
        android:paddingBottom="13dip"
-       android:paddingLeft="30dip"
-       android:paddingRight="30dip"
+       android:paddingLeft="10dip"
+       android:paddingRight="10dip"
        android:paddingTop="50dip"
        tools:ignore="UselessParent" >
 
@@ -20,9 +20,9 @@
            android:layout_width="fill_parent"
            android:layout_height="wrap_content"
            android:gravity="center_horizontal|center_vertical"
-           android:paddingBottom="20dip"
+           android:layout_marginBottom="50dip"
            android:text="@string/attach_file_txt"
-           android:textAppearance="?android:attr/textAppearanceSmall" />
+           android:textAppearance="?android:attr/textAppearanceMedium" />
 
        <Button
            android:id="@+id/attach_file_button"
@@ -30,6 +30,7 @@
            android:layout_height="wrap_content"
            android:gravity="center_horizontal|center_vertical"
            android:text="@string/attach_file"
+           style="@style/customBtnStyle"
            android:textSize="15sp"
            android:textStyle="bold" />
 

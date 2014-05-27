@@ -42,11 +42,7 @@
               android:minWidth="100dip"
               android:layout_marginBottom="30dp"
               android:text="@string/how_to_browse_data"
-              android:background="@drawable/summery_button"
-              android:textSize="15sp"
-              android:padding="12dip"
-              android:textColor="#3D3D3D"
-              android:textAppearance="?android:attr/textAppearanceSmall"
+              style="@style/customBtnStyle"
               android:typeface="serif" />
           <Button
               android:id="@+id/next_btn"
@@ -56,11 +52,7 @@
               android:minWidth="100dip"
               android:layout_marginBottom="30dp"
               android:text="@string/how_to_move_forword"
-              android:textColor="#3D3D3D"
-              android:background="@drawable/summery_button"
-              android:padding="10dip"
-              android:textAppearance="?android:attr/textAppearanceSmall"
-              android:textSize="15sp"
+              style="@style/customBtnStyle"
               android:typeface="serif" />
 
 

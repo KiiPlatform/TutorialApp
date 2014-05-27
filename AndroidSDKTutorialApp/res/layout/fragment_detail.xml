@@ -37,6 +37,10 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:gravity="center_horizontal|center_vertical"
+        style="@style/customBtnStyle"
+        android:layout_marginLeft="4dip"
+        android:layout_marginRight="4dip"
+        android:layout_marginBottom="4dip"
         android:text="@string/ok"
         android:textSize="15sp"
         android:textStyle="bold" />
