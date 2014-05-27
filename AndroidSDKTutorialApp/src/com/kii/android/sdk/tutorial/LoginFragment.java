@@ -8,7 +8,6 @@ import android.content.Context;
 import android.os.Bundle;
 import android.text.InputType;
 import android.text.method.PasswordTransformationMethod;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -24,6 +23,7 @@ import com.kii.cloud.storage.callback.KiiUserCallBack;
 import com.kii.cloud.storage.exception.CloudExecutionException;
 
 public class LoginFragment extends Fragment {
+    @SuppressWarnings("unused")
     private static final String TAG = "LoginFragment";
     private TextView mUsernameField;
     private TextView mPasswordField;
@@ -59,7 +59,8 @@ public class LoginFragment extends Fragment {
             public void onClick(View v) {
                 DetailDialogResource resource = new DetailDialogResource(
                         getResources().getString(R.string.login_detail),
-                        getResources().getString(R.string.login_description), 0);
+                        getResources().getString(R.string.login_description));
+                resource.setDocsUrl(Util.getKiiDocsBaseUrl()+"/guides/android/managing-users");
                 DialogFragment newFragment = DetailDialogFragment.newInstance(resource);
                 newFragment.show(getFragmentManager(), "dialog");
             }
@@ -92,7 +93,6 @@ public class LoginFragment extends Fragment {
                 .getSystemService(Context.INPUT_METHOD_SERVICE);
         imm.toggleSoftInput(InputMethodManager.HIDE_IMPLICIT_ONLY, 0);
         setFragmentProgress(View.VISIBLE);
-        Log.v(TAG, "login clicked");
         String username = mUsernameField.getText().toString();
         String password = mPasswordField.getText().toString();
         try {

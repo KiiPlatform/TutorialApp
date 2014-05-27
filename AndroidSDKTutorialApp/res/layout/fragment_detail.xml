@@ -10,8 +10,8 @@
         android:layout_weight="1"
         android:orientation="vertical"
         android:paddingBottom="13dip"
-        android:paddingLeft="30dip"
-        android:paddingRight="30dip"
+        android:paddingLeft="20dip"
+        android:paddingRight="10dip"
         android:paddingTop="5dip"
         tools:ignore="UselessParent" >
 
@@ -20,7 +20,7 @@
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:gravity="center_horizontal|center_vertical" 
-            android:contentDescription="storage"/>
+            android:contentDescription="@string/create_object"/>
 
         <TextView
             android:id="@+id/detail_textview"

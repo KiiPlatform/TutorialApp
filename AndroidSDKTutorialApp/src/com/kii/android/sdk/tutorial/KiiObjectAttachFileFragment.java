@@ -60,8 +60,9 @@ public class KiiObjectAttachFileFragment extends Fragment {
                 DetailDialogResource resource = new DetailDialogResource(
                         getResources().getString(R.string.attach_file_detail),
                         getResources().getString(
-                                R.string.attach_body_description),
-                        R.drawable.bodyattach);
+                                R.string.attach_body_description));
+                resource.setImageId(R.drawable.bodyattach);
+                resource.setDocsUrl(Util.getKiiDocsBaseUrl()+"/guides/android/managing-data/buckets");
                 DialogFragment newFragment = DetailDialogFragment.newInstance(resource);
                 newFragment.show(getFragmentManager(), "dialog");
             }

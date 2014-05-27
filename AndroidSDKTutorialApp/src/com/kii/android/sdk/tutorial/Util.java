@@ -1,5 +1,7 @@
 package com.kii.android.sdk.tutorial;
 
+import java.util.Locale;
+
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -25,5 +27,12 @@ public class Util {
             }
         }
         return sb.toString();
+    }
+
+    public static String getKiiDocsBaseUrl() {
+        Locale locale = Locale.getDefault();
+        String lan = locale.getDisplayLanguage();
+        String langPath = (lan == "jp" || lan == "cn") ? lan : "en";
+        return "http://documentation.kii.com/" + langPath;
     }
 }

@@ -4,12 +4,12 @@ public class DetailDialogResource {
     private String title;
     private String detail;
     private int imageId;
+    private String docsUrl;
 
-    public DetailDialogResource(String titleId, String detailId, int imageId) {
+    public DetailDialogResource(String titleId, String detailId) {
         super();
         this.title = titleId;
         this.detail = detailId;
-        this.imageId = imageId;
     }
 
     public String getTitle() {
@@ -23,5 +23,19 @@ public class DetailDialogResource {
     public int getImageId() {
         return imageId;
     }
+
+    public String getDocsUrl() {
+        return docsUrl;
+    }
+
+    public void setDocsUrl(String docsUrl) {
+        this.docsUrl = docsUrl;
+    }
+
+    public void setImageId(int imageId) {
+        this.imageId = imageId;
+    }
+
+    
 
 }

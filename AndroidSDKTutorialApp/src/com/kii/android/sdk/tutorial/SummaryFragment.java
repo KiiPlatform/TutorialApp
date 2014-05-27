@@ -1,7 +1,5 @@
 package com.kii.android.sdk.tutorial;
 
-import java.util.Locale;
-
 import org.xml.sax.XMLReader;
 
 import android.app.DialogFragment;
@@ -16,11 +14,13 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.TextView;
 
 public class SummaryFragment extends Fragment implements OnClickListener {
     private static final String TAG = "KiiObjectAttachFileActivity";
     private static final String SUMMARY_HTML_1 = "Lets give a look what we have done: "
             + "<ul>"
+            + "<li>Signup/login to KiiCloud.</li>"
             + "<li>Created an object in KiiCloud </li>"
             + "<li>Attached body to the object</li>" + "</ul>";
 
@@ -34,8 +34,8 @@ public class SummaryFragment extends Fragment implements OnClickListener {
             + "<li>Search by typing 'tutorial' shows the list of objects under the bucket</li>"
             + "</ul>";
 
-    private static final String SUMMARY_HTML_3 = "To move forward:\n"
-            + "We have guides, references, samples and tutorials "
+    private static final String SUMMARY_HTML_3 = "We have guides,"
+            + " references, samples and tutorials "
             + "describes the details of developing Apps with KiiCloud."
             + "You can get these from ";
 
@@ -44,31 +44,14 @@ public class SummaryFragment extends Fragment implements OnClickListener {
             Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_summary, container,
                 false);
-//        TextView tv2 = (TextView) view.findViewById(R.id.summary_textView_2);
-//        TextView tv3 = (TextView) view.findViewById(R.id.summary_textView_3);
-//        TextView tv4 = (TextView) view.findViewById(R.id.summary_textView_4);
-//        tv2.setText(Html.fromHtml(SUMMARY_HTML_1, null, new MyTagHandler()));
-//        tv3.setText(Html.fromHtml(SUMMARY_HTML_2, null, new MyTagHandler()));
-//        Linkify.addLinks(tv3, Linkify.WEB_URLS);
-//        tv4.setText(SUMMARY_HTML_3 + this.getKiiDocsUrl());
-//        Linkify.addLinks(tv4, Linkify.WEB_URLS);
-        Button b1 = (Button) view.findViewById(R.id.what_done_btn);
+        TextView tv2 = (TextView) view.findViewById(R.id.summary_textView_2);
+        tv2.setText(Html.fromHtml(SUMMARY_HTML_1, null, new MyTagHandler()));
         Button b2 = (Button) view.findViewById(R.id.databrowse_btn);
         Button b3 = (Button) view.findViewById(R.id.next_btn);
-        b1.setOnClickListener(this);
         b2.setOnClickListener(this);
         b3.setOnClickListener(this);
         setPageImage(4);
         return view;
-    }
-
-    private String getKiiDocsUrl() {
-        Locale locale = Locale.getDefault();
-        String language = locale.getDisplayLanguage();
-        String langPath = (language == "jp" || language == "cn") ? language
-                : "en";
-        return String.format("http://documentation.kii.com/%s/guides/starts",
-                langPath);
     }
 
     void setPageImage(int page) {
@@ -105,23 +88,24 @@ public class SummaryFragment extends Fragment implements OnClickListener {
         int titleId;
         String detail;
         int id = v.getId();
+        DetailDialogResource resource = null;
         switch (id) {
-        case R.id.what_done_btn:
-            titleId = R.string.what_we_have_done;
-            detail = Html.fromHtml(SUMMARY_HTML_1, null, new MyTagHandler()).toString();
-            break;
+        
         case R.id.databrowse_btn:
             titleId = R.string.how_to_browse_data;
             detail = Html.fromHtml(SUMMARY_HTML_2, null, new MyTagHandler()).toString();
+            resource = new DetailDialogResource(getResources().getString(titleId), detail);
             break;
         case R.id.next_btn:
             titleId = R.string.how_to_move_forword;
             detail = Html.fromHtml(SUMMARY_HTML_3, null, new MyTagHandler()).toString();
+            resource = new DetailDialogResource(getResources().getString(titleId), detail);
+            resource.setDocsUrl(Util.getKiiDocsBaseUrl()+"/starts");
             break;
         default:
             throw new RuntimeException("Unknown button");
         }
-        DetailDialogResource resource = new DetailDialogResource(getResources().getString(titleId), detail, 0);
+        
         DialogFragment newFragment = DetailDialogFragment.newInstance(resource);
         newFragment.show(getFragmentManager(), "dialog");
     }

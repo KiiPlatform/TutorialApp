@@ -19,8 +19,6 @@ import com.kii.cloud.storage.callback.KiiObjectCallBack;
 import com.kii.cloud.storage.exception.CloudExecutionException;
 
 public class KiiObjectCreateFragment extends Fragment {
-    private Activity activity;
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
             Bundle savedInstanceState) {
@@ -42,25 +40,14 @@ public class KiiObjectCreateFragment extends Fragment {
                 DetailDialogResource resource = new DetailDialogResource(
                         getResources().getString(R.string.kiiobject_detail),
                         getResources().getString(
-                                R.string.create_object_description),
-                        R.drawable.datastore);
+                                R.string.create_object_description));
+                resource.setImageId(R.drawable.datastore);
+                resource.setDocsUrl(Util.getKiiDocsBaseUrl()+"/guides/android/managing-data/buckets");
                 DialogFragment newFragment = DetailDialogFragment.newInstance(resource);
                 newFragment.show(getFragmentManager(), "dialog");
             }
         });
         return view;
-    }
-
-    @Override
-    public void onAttach(Activity activity) {
-        super.onAttach(activity);
-        this.activity = activity;
-    }
-
-    @Override
-    public void onDetach() {
-        super.onDetach();
-        this.activity = null;
     }
 
     void setFragmentProgress(int v) {
