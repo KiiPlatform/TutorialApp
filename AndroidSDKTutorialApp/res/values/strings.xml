@@ -9,11 +9,36 @@
     <string name="sign_up">Sign Up</string>
     <string name="enter_password">Enter password (4-50 length)</string>
     <string name="enter_username">Enter username (3-64 length)</string>
-    <string name="lets_create_an_object">Create a KiiObject</string>
-    <string name="create_object">Create KiiObject</string>
-    <string name="attach_file">Attach File</string>
-    <string name="attach_file_txt">Attach a photo to the KiiObject</string>
+    <string name="create_object_text">Create application scope object</string>
+    <string name="create_object">Create object</string>
+    <string name="attach_file">Attach file</string>
+    <string name="attach_file_txt">Attach a binary file to the object</string>
     <string name="bucket_name">Bucket name : tutorial</string>
     <string name="object_scope">Object scope : Application</string>
+    <string name="operation_failed">Operation failed</string>
+    <string name="login_text">Signup/Login to KiiCloud.</string>
+    <string name="create_object_description">Creating object means storing arbitrary key/value pairs
+         as JSON-style objects in kiicloud.\n\n On completion, an \'app\' scope object
+         will be created in \'tutorial\' bucket.\n\n To learn more about bucket and object, visit </string>
+    <string name="attach_body_description">The file will be uploaded to kiicloud associating it with the object as object body.
+        \n\nTo learn more about body attachment, visit </string>
+    <string name="login_description">Signup/login to KiiCloud with user credeintials.\n
+        Note it is different from developer account you\'re using to login to developer.kii.com.\n\n
+
+        When signup succeeded, a new user registered with your application.
+        Once users registered, they will be able to login with their username and password.\n\n
+        To learn more about the user management, visit </string>
+    <string name="summary">Tutorial completed!</string>
+    <string name="kiiobject_detail">KiiObject details</string>
+    <string name="attach_file_detail">Attach file to KiiObject</string>
+    <string name="login_detail">User management details</string>
+    <string name="ok">OK</string>
+    <string name="user_registered">User registered!</string>
+    <string name="user_loggedIn">User logged in!</string>
+    <string name="object_created">Object created</string>
+    <string name="file_attached">File attached</string>
+    <string name="how_to_move_forword">How to move forword</string>
+    <string name="how_to_browse_data">How to browse data</string>
+    <string name="what_we_have_done">What we have done</string>
 
 </resources>

@@ -1,1 +1,1 @@
-git archive --prefix=AndroidSDKTutorialApp/ -o ../AndroidSDKTutorialApp.zip HEAD
+git archive --prefix=KiiSDKTutorialApp/ -o ../KiiSDKTutorialApp.zip HEAD
