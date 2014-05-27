@@ -1,6 +1,5 @@
 package com.kii.android.sdk.tutorial;
 
-import android.app.Activity;
 import android.app.DialogFragment;
 import android.app.Fragment;
 import android.app.FragmentTransaction;
