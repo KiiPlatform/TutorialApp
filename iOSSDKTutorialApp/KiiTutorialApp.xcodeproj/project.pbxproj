@@ -261,7 +261,7 @@
 				ORGANIZATIONNAME = "Kii Corporation";
 				TargetAttributes = {
 					9B5B533618338B27000533F9 = {
-						TestTargetID = 9B5B531518338B26000533F9 /* KiiTutorialApp */;
+						TestTargetID = 9B5B531518338B26000533F9;
 					};
 				};
 			};
