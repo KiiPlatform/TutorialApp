@@ -14,6 +14,7 @@
 #import "KiiAppConstants.h"
 
 @interface KiiCreateObjectViewController ()
+@property (weak, nonatomic) IBOutlet UIImageView *descView;
 
 @end
 
@@ -21,6 +22,11 @@
 
 - (void)viewDidLoad {
     [KiiViewUtilities showSuccessHUD:@"Login success" withView:self.view];
+    UITapGestureRecognizer *singleTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(descViewTaped:)];
+    singleTap.numberOfTapsRequired = 1;
+    singleTap.numberOfTouchesRequired = 1;
+    [self.descView addGestureRecognizer:singleTap];
+    [self.descView setUserInteractionEnabled:YES];
 }
 
 - (IBAction)mCreateKiiObjectButton:(id)sender {
@@ -44,6 +50,17 @@
         KiiFileUploadViewController *viewController = (KiiFileUploadViewController *) [segue destinationViewController];
         viewController.kiiObject = self.kiiObject;
     }
+}
+
+- (void)descViewTaped:(UIGestureRecognizer *)gestureRecognizer {
+    
+    NSString* data = @"Creating object means storing arbitrary key/value pairs as JSON-style objects in kiicloud.\n\n On completion, an \'app\' scope object will be created in \'tutorial\' bucket.\n\n To learn more about bucket and object, visit ";
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Data management"
+                                                    message:data
+                                                   delegate:nil
+                                          cancelButtonTitle:@"OK"
+                                          otherButtonTitles:nil];
+    [alert show];
 }
 
 @end

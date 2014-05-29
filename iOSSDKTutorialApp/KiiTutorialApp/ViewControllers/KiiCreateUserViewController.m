@@ -12,10 +12,21 @@
 #import <KiiSDK/KiiUser.h>
 
 @interface KiiCreateUserViewController ()
+@property (weak, nonatomic) IBOutlet UIImageView *descView;
 
 @end
 
 @implementation KiiCreateUserViewController
+
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+    UITapGestureRecognizer *singleTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(descViewTaped:)];
+    singleTap.numberOfTapsRequired = 1;
+    singleTap.numberOfTouchesRequired = 1;
+    [self.descView addGestureRecognizer:singleTap];
+    [self.descView setUserInteractionEnabled:YES];
+}
 
 - (IBAction)mSignUpButton:(id)sender {
     // Hide keyboard
@@ -84,6 +95,21 @@
 
 - (void)singleTapGestureCaptured:(UITapGestureRecognizer *)gesture {
     [self.view endEditing:YES];
+}
+
+- (void)descViewTaped:(UIGestureRecognizer *)gestureRecognizer {
+    
+    NSString* data = @"\nSignup/login to KiiCloud with user credentials.\n \
+    Note it is different from developer account you're using to login to developer.kii.com\n\n \
+    When signup succeeded, a new user registered with your application. \
+    Once users registered, they will be able to login with their username and password.\n\n \
+    To learn more about the user management, visit ";
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"User management"
+                                        message:data
+                                        delegate:nil
+                                        cancelButtonTitle:@"OK"
+                                        otherButtonTitles:nil];
+    [alert show];
 }
 
 @end

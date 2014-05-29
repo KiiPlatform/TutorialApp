@@ -124,7 +124,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i34-xp-Vac">
-                                <rect key="frame" x="163" y="281" width="129" height="48"/>
+                                <rect key="frame" x="162.5" y="281" width="129" height="48"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <size key="titleShadowOffset" width="0.0" height="-1"/>
                                 <state key="normal" title="Sign Up" backgroundImage="blue_normal">
@@ -139,7 +139,7 @@
                                 </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="Enter your Username (3-64 length)" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="eLo-Cp-0L2">
-                                <rect key="frame" x="29" y="172" width="263" height="40"/>
+                                <rect key="frame" x="28.5" y="172" width="263" height="40"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
@@ -169,7 +169,7 @@
                                 </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="Enter your Password (4-50 length)" clearsOnBeginEditing="YES" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="49B-K2-ydU">
-                                <rect key="frame" x="29" y="223" width="263" height="40"/>
+                                <rect key="frame" x="28.5" y="223" width="263" height="40"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
@@ -244,6 +244,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="Vhz-dw-T6q"/>
                     <connections>
+                        <outlet property="descView" destination="MP1-BO-Qhr" id="iF3-GE-Slv"/>
                         <outlet property="passwordField" destination="49B-K2-ydU" id="pcX-DN-2ZC"/>
                         <outlet property="usernameField" destination="eLo-Cp-0L2" id="geV-9t-MdO"/>
                         <segue destination="rVl-Ng-DmM" kind="push" identifier="LoginCompleted" id="z0a-2M-WLO"/>
@@ -388,6 +389,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="knR-Be-zLa"/>
                     <connections>
+                        <outlet property="descView" destination="IJT-Ew-TXj" id="gd8-NR-KsL"/>
                         <outlet property="selectedImageView" destination="me9-Kc-bl2" id="Kiy-j2-2wl"/>
                         <segue destination="9Rk-hV-xPA" kind="push" identifier="FileUploadCompleted" id="xyQ-4K-fYx"/>
                     </connections>
@@ -579,6 +581,7 @@ Happy developing with KiiCloud!</string>
                     </view>
                     <navigationItem key="navigationItem" id="0tg-FE-cVQ"/>
                     <connections>
+                        <outlet property="descView" destination="MvE-dH-P25" id="BsK-WK-S7Y"/>
                         <segue destination="k0Q-9a-vaQ" kind="push" identifier="CreateObjectCompleted" id="of8-vM-Arz"/>
                     </connections>
                 </viewController>
