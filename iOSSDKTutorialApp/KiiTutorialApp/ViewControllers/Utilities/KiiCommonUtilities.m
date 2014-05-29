@@ -22,4 +22,15 @@
     return detailsMessage;
 }
 
++ (NSString *)kiidocsLocalePath {
+    NSString* lan = [[NSLocale preferredLanguages] objectAtIndex:0];
+    NSString* path = nil;
+    if ([lan isEqualToString:@"jp"] || [lan isEqualToString:@"cn"]) {
+        path = lan;
+    } else {
+        path = @"en";
+    }
+    return path;
+}
+
 @end

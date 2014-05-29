@@ -12,6 +12,7 @@
 #import "KiiFileUploadViewController.h"
 #import "KiiViewUtilities.h"
 #import "KiiAppConstants.h"
+#import "KiiCommonUtilities.h"
 
 @interface KiiCreateObjectViewController ()
 @property (weak, nonatomic) IBOutlet UIImageView *descView;
@@ -54,9 +55,11 @@
 
 - (void)descViewTaped:(UIGestureRecognizer *)gestureRecognizer {
     
-    NSString* data = @"Creating object means storing arbitrary key/value pairs as JSON-style objects in kiicloud.\n\n On completion, an \'app\' scope object will be created in \'tutorial\' bucket.\n\n To learn more about bucket and object, visit ";
+    NSString* data = @"Creating object means storing arbitrary key/value pairs as JSON-style objects in kiicloud.\n\n On completion, an \'app\' scope object will be created in \'tutorial\' bucket.\n\n To learn more about bucket and object, visit %@";
+    NSString* docsPath = [[NSURL URLWithString:[NSString stringWithFormat:@"http://developer.kii.com/%@/guides/android/managing-data/buckets",[KiiCommonUtilities kiidocsLocalePath]]] absoluteString];
+    NSString* message = [NSString stringWithFormat:data, docsPath];
     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Data management"
-                                                    message:data
+                                                    message:message
                                                    delegate:nil
                                           cancelButtonTitle:@"OK"
                                           otherButtonTitles:nil];
