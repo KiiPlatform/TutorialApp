@@ -1,21 +1,21 @@
 //
-//  KiiUserDescViewController.m
+//  KiiFileAttachDescViewController.m
 //  KiiTutorialApp
 //
 //  Created by Moshiur on 5/30/14.
 //  Copyright (c) 2014 Kii Corporation. All rights reserved.
 //
 
-#import "KiiUserDescViewController.h"
+#import "KiiFileAttachDescViewController.h"
 #import "KiiCommonUtilities.h"
 
-@interface KiiUserDescViewController ()
-@property (weak, nonatomic) IBOutlet UIWebView *descView;
+@interface KiiFileAttachDescViewController ()
 - (IBAction)btnPressed:(id)sender;
+@property (weak, nonatomic) IBOutlet UIWebView *descView;
 
 @end
 
-@implementation KiiUserDescViewController
+@implementation KiiFileAttachDescViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -31,11 +31,7 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     
-    NSString* data = @"\nSignup/login to KiiCloud with user credentials.<br> \
-    Note it is different from developer account you're using to login to developer.kii.com<br><br> \
-    When signup succeeded, a new user registered with your application. \
-    Once users registered, they will be able to login with their username and password.<br><br> \
-    To learn more about user management, visit <a href=\"http://www.developer.kii.com/%@/guides/ios/managing-users\">docs.</a>";
+    NSString* data = @"The file will be uploaded to kiicloud associating it with the object as object body.<br><br>To learn more about body attachment, visit <a href=\"http://www.developer.kii.com/%@/guides/ios/managing-data/buckets\">docs.</a>";
     
     NSString* message = [NSString stringWithFormat:data, [KiiCommonUtilities kiidocsLocalePath]];
     [[self descView] loadHTMLString:message baseURL:nil];

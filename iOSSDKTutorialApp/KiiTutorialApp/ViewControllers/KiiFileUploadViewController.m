@@ -169,17 +169,7 @@
 }
 
 - (void)descViewTaped:(UIGestureRecognizer *)gestureRecognizer {
-    
-    NSString* data = @"The file will be uploaded to kiicloud associating it with the object as object body.\n\nTo learn more about body attachment, visit %@";
-    
-    NSString* docsPath = [[NSURL URLWithString:[NSString stringWithFormat:@"http://developer.kii.com/%@/guides/android/managing-data/buckets",[KiiCommonUtilities kiidocsLocalePath]]] absoluteString];
-    NSString* message = [NSString stringWithFormat:data, docsPath];
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"File attachment"
-                                                    message:message
-                                                   delegate:nil
-                                          cancelButtonTitle:@"OK"
-                                          otherButtonTitles:nil];
-    [alert show];
+   [self performSegueWithIdentifier:@"FileAttachDesc" sender:gestureRecognizer]; 
 }
 
 @end
