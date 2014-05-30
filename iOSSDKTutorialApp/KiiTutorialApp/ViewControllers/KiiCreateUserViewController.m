@@ -7,6 +7,7 @@
 //
 
 #import "KiiCreateUserViewController.h"
+#import "KiiUserDescViewController.h"
 #import "KiiViewUtilities.h"
 #import "KiiCommonUtilities.h"
 #import <KiiSDK/KiiUser.h>
@@ -99,20 +100,6 @@
 
 - (void)descViewTaped:(UIGestureRecognizer *)gestureRecognizer {
     
-    NSString* data = @"\nSignup/login to KiiCloud with user credentials.\n \
-    Note it is different from developer account you're using to login to developer.kii.com\n\n \
-    When signup succeeded, a new user registered with your application. \
-    Once users registered, they will be able to login with their username and password.\n\n \
-    To learn more about the user management, visit %@";
-    NSString* docsPath = [[NSURL URLWithString:[NSString stringWithFormat:@"http://developer.kii.com/%@/guides/android/managing-users",[KiiCommonUtilities kiidocsLocalePath]]] absoluteString];
-    NSString* message = [NSString stringWithFormat:data, docsPath];
-    
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"User management"
-                                        message:message
-                                        delegate:nil
-                                        cancelButtonTitle:@"OK"
-                                        otherButtonTitles:nil];
-    [alert show];
+    [self performSegueWithIdentifier:@"UserDesc" sender:gestureRecognizer];
 }
-
 @end

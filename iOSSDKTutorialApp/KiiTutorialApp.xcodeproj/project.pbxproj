@@ -32,6 +32,7 @@
 		9BB8A06E1834C86C008A338B /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BB8A06D1834C86C008A338B /* MBProgressHUD.m */; };
 		9BB8A0711834CA5B008A338B /* KiiCreateObjectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BB8A0701834CA5B008A338B /* KiiCreateObjectViewController.m */; };
 		9BB8A0741834CABF008A338B /* KiiAppConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BB8A0731834CABF008A338B /* KiiAppConstants.m */; };
+		EAB8AF2A1938737C000A4590 /* KiiUserDescViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EAB8AF291938737C000A4590 /* KiiUserDescViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -82,6 +83,8 @@
 		9BB8A0701834CA5B008A338B /* KiiCreateObjectViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KiiCreateObjectViewController.m; path = ViewControllers/KiiCreateObjectViewController.m; sourceTree = "<group>"; };
 		9BB8A0721834CABF008A338B /* KiiAppConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KiiAppConstants.h; sourceTree = "<group>"; };
 		9BB8A0731834CABF008A338B /* KiiAppConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KiiAppConstants.m; sourceTree = "<group>"; };
+		EAB8AF281938737C000A4590 /* KiiUserDescViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KiiUserDescViewController.h; path = ViewControllers/KiiUserDescViewController.h; sourceTree = "<group>"; };
+		EAB8AF291938737C000A4590 /* KiiUserDescViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KiiUserDescViewController.m; path = ViewControllers/KiiUserDescViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -156,6 +159,8 @@
 				9B5B532818338B26000533F9 /* KiiAppDelegate.h */,
 				9B5B532918338B26000533F9 /* KiiAppDelegate.m */,
 				9B5B532B18338B26000533F9 /* Main.storyboard */,
+				EAB8AF281938737C000A4590 /* KiiUserDescViewController.h */,
+				EAB8AF291938737C000A4590 /* KiiUserDescViewController.m */,
 				9BB8A06B1834C86C008A338B /* MBProgressHUD */,
 				9B5B532018338B26000533F9 /* Supporting Files */,
 				9B9C41A61834B07400EDED68 /* ViewControllers */,
@@ -313,6 +318,7 @@
 				9B5B532618338B26000533F9 /* main.m in Sources */,
 				9B3F55AA183B574800B60B5F /* KiiCommonUtilities.m in Sources */,
 				9BB8A0741834CABF008A338B /* KiiAppConstants.m in Sources */,
+				EAB8AF2A1938737C000A4590 /* KiiUserDescViewController.m in Sources */,
 				9BA896971835C3120061B1D5 /* KiiViewUtilities.m in Sources */,
 				9B5B533018338B26000533F9 /* KiiFirstViewController.m in Sources */,
 				9B9C41A51834B06C00EDED68 /* KiiCreateUserViewController.m in Sources */,
