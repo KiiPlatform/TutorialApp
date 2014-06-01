@@ -32,6 +32,7 @@
 		9BB8A06E1834C86C008A338B /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BB8A06D1834C86C008A338B /* MBProgressHUD.m */; };
 		9BB8A0711834CA5B008A338B /* KiiCreateObjectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BB8A0701834CA5B008A338B /* KiiCreateObjectViewController.m */; };
 		9BB8A0741834CABF008A338B /* KiiAppConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BB8A0731834CABF008A338B /* KiiAppConstants.m */; };
+		EA3155B0193BC42B007DBBFA /* KiiOverviewDataBrowseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EA3155AF193BC42B007DBBFA /* KiiOverviewDataBrowseViewController.m */; };
 		EAB8AF2A1938737C000A4590 /* KiiUserDescViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EAB8AF291938737C000A4590 /* KiiUserDescViewController.m */; };
 		EAB8AF2D19388459000A4590 /* KiiFileCreateDescViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EAB8AF2C19388459000A4590 /* KiiFileCreateDescViewController.m */; };
 		EAB8AF30193888D6000A4590 /* KiiFileAttachDescViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EAB8AF2F193888D6000A4590 /* KiiFileAttachDescViewController.m */; };
@@ -85,6 +86,8 @@
 		9BB8A0701834CA5B008A338B /* KiiCreateObjectViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KiiCreateObjectViewController.m; path = ViewControllers/KiiCreateObjectViewController.m; sourceTree = "<group>"; };
 		9BB8A0721834CABF008A338B /* KiiAppConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KiiAppConstants.h; sourceTree = "<group>"; };
 		9BB8A0731834CABF008A338B /* KiiAppConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KiiAppConstants.m; sourceTree = "<group>"; };
+		EA3155AE193BC42B007DBBFA /* KiiOverviewDataBrowseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KiiOverviewDataBrowseViewController.h; path = ViewControllers/KiiOverviewDataBrowseViewController.h; sourceTree = "<group>"; };
+		EA3155AF193BC42B007DBBFA /* KiiOverviewDataBrowseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KiiOverviewDataBrowseViewController.m; path = ViewControllers/KiiOverviewDataBrowseViewController.m; sourceTree = "<group>"; };
 		EAB8AF281938737C000A4590 /* KiiUserDescViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KiiUserDescViewController.h; path = ViewControllers/KiiUserDescViewController.h; sourceTree = "<group>"; };
 		EAB8AF291938737C000A4590 /* KiiUserDescViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KiiUserDescViewController.m; path = ViewControllers/KiiUserDescViewController.m; sourceTree = "<group>"; };
 		EAB8AF2B19388459000A4590 /* KiiFileCreateDescViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KiiFileCreateDescViewController.h; path = ViewControllers/KiiFileCreateDescViewController.h; sourceTree = "<group>"; };
@@ -165,6 +168,8 @@
 				9B5B532818338B26000533F9 /* KiiAppDelegate.h */,
 				9B5B532918338B26000533F9 /* KiiAppDelegate.m */,
 				9B5B532B18338B26000533F9 /* Main.storyboard */,
+				EA3155AE193BC42B007DBBFA /* KiiOverviewDataBrowseViewController.h */,
+				EA3155AF193BC42B007DBBFA /* KiiOverviewDataBrowseViewController.m */,
 				EAB8AF2E193888D6000A4590 /* KiiFileAttachDescViewController.h */,
 				EAB8AF2F193888D6000A4590 /* KiiFileAttachDescViewController.m */,
 				EAB8AF2B19388459000A4590 /* KiiFileCreateDescViewController.h */,
@@ -334,6 +339,7 @@
 				9BA896971835C3120061B1D5 /* KiiViewUtilities.m in Sources */,
 				9B5B533018338B26000533F9 /* KiiFirstViewController.m in Sources */,
 				9B9C41A51834B06C00EDED68 /* KiiCreateUserViewController.m in Sources */,
+				EA3155B0193BC42B007DBBFA /* KiiOverviewDataBrowseViewController.m in Sources */,
 				9BB8A0711834CA5B008A338B /* KiiCreateObjectViewController.m in Sources */,
 				9B9C41A91834B41F00EDED68 /* KiiFileUploadViewController.m in Sources */,
 				9B9C41AC1834B49200EDED68 /* KiiTutorialOverViewController.m in Sources */,
