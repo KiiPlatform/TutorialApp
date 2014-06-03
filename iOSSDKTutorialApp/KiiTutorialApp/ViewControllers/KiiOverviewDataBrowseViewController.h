@@ -8,6 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
+typedef NS_ENUM(NSUInteger, TutorialOverview) {
+    MoveForword,
+    BrowseData
+};
 @interface KiiOverviewDataBrowseViewController : UIViewController
-
+@property  TutorialOverview overview;
 @end

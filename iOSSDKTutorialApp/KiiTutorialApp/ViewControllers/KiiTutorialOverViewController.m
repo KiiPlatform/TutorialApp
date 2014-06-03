@@ -10,12 +10,15 @@
 #import "KiiTutorialOverViewController.h"
 #import "KiiViewUtilities.h"
 #import "KiiCommonUtilities.h"
+#import "KiiOverviewDataBrowseViewController.h"
 
 @interface KiiTutorialOverViewController ()
 @property (weak, nonatomic) IBOutlet UITextView *refTextView;
+@property TutorialOverview overview;
 
 - (IBAction)browseBtnPressed:(id)sender;
 
+- (IBAction)moveBtnPressed:(id)sender;
 
 @end
 
@@ -24,11 +27,9 @@
 - (void)viewDidLoad {
     [KiiViewUtilities showSuccessHUD:@"File uploading success" withView:self.view];
     
-    NSString* data = @"We have guides,references, samples and tutorials describes the details of developing Apps with KiiCloud.You can get these from http://developer.kii.com/%@/guides/ios/starts";
     
-    NSString* message = [NSString stringWithFormat:data, [KiiCommonUtilities kiidocsLocalePath]];
-    [[self refTextView] setText:message];
-    self.refTextView.dataDetectorTypes = UIDataDetectorTypeLink;
+    //[[self refTextView] setText:message];
+    //self.refTextView.dataDetectorTypes = UIDataDetectorTypeLink;
 }
 
 - (IBAction)mTourAgainButton:(id)sender {
@@ -37,7 +38,20 @@
 }
 
 - (IBAction)browseBtnPressed:(id)sender {
+    self.overview = BrowseData;
     [self performSegueWithIdentifier:@"HowToDataBrowse" sender:sender];
     
+}
+
+- (IBAction)moveBtnPressed:(id)sender {
+    self.overview = MoveForword;
+    [self performSegueWithIdentifier:@"HowToDataBrowse" sender:sender];
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([[segue identifier] isEqualToString:@"HowToDataBrowse"]) {
+        KiiOverviewDataBrowseViewController *viewController = (KiiOverviewDataBrowseViewController *) [segue destinationViewController];
+        viewController.overview = self.overview;
+    }
 }
 @end

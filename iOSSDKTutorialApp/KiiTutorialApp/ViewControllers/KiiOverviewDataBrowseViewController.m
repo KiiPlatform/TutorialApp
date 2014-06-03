@@ -12,6 +12,7 @@
 @interface KiiOverviewDataBrowseViewController ()
 @property (weak, nonatomic) IBOutlet UIWebView *descView;
 - (IBAction)okPressed:(id)sender;
+@property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 
 @end
 
@@ -30,7 +31,8 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
-    NSString* data = @"To check the details of created object: \
+    NSString* browseDataTitle = @"How to browse data";
+    NSString* browseData = @"To check the details of created object: \
      <ul> \
      <li>Go to http://developer.kii.com </li> \
      <li>Login using KiiCloud account</li> \
@@ -40,8 +42,19 @@
      <li>Search by typing 'tutorial' shows the list of objects under the bucket</li> \
      </ul>";
     
-    NSString* message = [NSString stringWithFormat:data, [KiiCommonUtilities kiidocsLocalePath]];
-    [[self descView] loadHTMLString:message baseURL:nil];
+    NSString* moveTitle = @"How to move forward";
+    
+    NSString* moveData = @"We have guides,references, samples and tutorials which describes the details of developing Apps with KiiCloud.<br><br>You can access these resources from <a href=\"http://developer.kii.com/%@/guides/ios/starts\">here</a>";
+    
+    if (self.overview == MoveForword) {
+        self.titleLabel.text = moveTitle;
+        [[self descView] loadHTMLString:[NSString stringWithFormat:moveData, [KiiCommonUtilities kiidocsLocalePath]] baseURL:nil];
+    } else if (self.overview == BrowseData) {
+        [self titleLabel].text = browseDataTitle;
+        [[self descView] loadHTMLString:[NSString stringWithFormat:browseData, [KiiCommonUtilities kiidocsLocalePath]] baseURL:nil];
+    }
+    
+    
 }
 
 - (void)didReceiveMemoryWarning
