@@ -11,11 +11,12 @@
 @implementation KiiCommonUtilities
 
 + (NSString *)errorDetailsMessage:(NSError *)error {
+    NSLog(@"error description: %@", [error description]);
     if (error == nil || [error userInfo] == nil) {
         return nil;
     }
     NSDictionary *userInfo = [error userInfo];
-    NSString *detailsMessage = userInfo[@"description"];
+    NSString *detailsMessage = userInfo[@"ios_sdk_message"];
     if (detailsMessage == nil || [detailsMessage isEqualToString:@""]) {
         detailsMessage = userInfo[@"server_message"];
     }
