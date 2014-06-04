@@ -12,6 +12,6 @@ typedef NS_ENUM(NSUInteger, TutorialOverview) {
     MoveForword,
     BrowseData
 };
-@interface KiiOverviewDataBrowseViewController : UIViewController
+@interface KiiOverviewDataBrowseViewController : UIViewController<UIWebViewDelegate>
 @property  TutorialOverview overview;
 @end

@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface KiiFileCreateDescViewController : UIViewController
+@interface KiiFileCreateDescViewController : UIViewController<UIWebViewDelegate>
 @property (weak, nonatomic) IBOutlet UIWebView *descView;
 
 @end

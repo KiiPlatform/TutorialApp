@@ -29,13 +29,14 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.descView.delegate = self;
 	// Do any additional setup after loading the view.
     
     NSString* data = @"\nSignup/login to KiiCloud with user credentials.<br> \
     Note it is different from developer account you're using to login to developer.kii.com<br><br> \
     When signup succeeded, a new user registered with your application. \
     Once users registered, they will be able to login with their username and password.<br><br> \
-    To learn more about user management, visit <a href=\"http://www.developer.kii.com/%@/guides/ios/managing-users\">docs.</a>";
+    To learn more about user management, visit <a href=\"http://documentation.kii.com/%@/guides/ios/managing-users\">docs.</a>";
     
     NSString* message = [NSString stringWithFormat:data, [KiiCommonUtilities kiidocsLocalePath]];
     [[self descView] loadHTMLString:message baseURL:nil];
@@ -50,4 +51,13 @@
 - (IBAction)btnPressed:(id)sender {
     [self dismissViewControllerAnimated:YES completion:nil];
 }
+
+- (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType {
+    if (navigationType == UIWebViewNavigationTypeLinkClicked) {
+        [[UIApplication sharedApplication] openURL:request.URL];
+        return false;
+    }
+    return true;
+}
+
 @end

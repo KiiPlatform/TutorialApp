@@ -30,8 +30,9 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
+    self.descView.delegate = self;
     
-    NSString* data = @"The file will be uploaded to kiicloud associating it with the object as object body.<br><br>To learn more about body attachment, visit <a href=\"http://www.developer.kii.com/%@/guides/ios/managing-data/buckets\">docs.</a>";
+    NSString* data = @"The file will be uploaded to kiicloud associating it with the object as object body.<br><br>To learn more about body attachment, visit <a href=\"http://documentation.kii.com/%@/guides/ios/managing-data/buckets\">docs.</a>";
     
     NSString* message = [NSString stringWithFormat:data, [KiiCommonUtilities kiidocsLocalePath]];
     [[self descView] loadHTMLString:message baseURL:nil];
@@ -45,5 +46,13 @@
 
 - (IBAction)btnPressed:(id)sender {
     [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType {
+    if (navigationType == UIWebViewNavigationTypeLinkClicked) {
+        [[UIApplication sharedApplication] openURL:request.URL];
+        return false;
+    }
+    return true;
 }
 @end

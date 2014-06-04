@@ -31,6 +31,7 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
+    self.descView.delegate = self;
     NSString* browseDataTitle = @"How to browse data";
     NSString* browseData = @"To check the details of created object: \
      <ul> \
@@ -44,7 +45,7 @@
     
     NSString* moveTitle = @"How to move forward";
     
-    NSString* moveData = @"We have guides,references, samples and tutorials which describes the details of developing Apps with KiiCloud.<br><br>You can access these resources from <a href=\"http://developer.kii.com/%@/guides/ios/starts\">here</a>";
+    NSString* moveData = @"We have guides,references, samples and tutorials which describes the details of developing Apps with KiiCloud.<br><br>You can access these resources from <a href=\"http://documentation.kii.com/%@/starts\">here</a>";
     
     if (self.overview == MoveForword) {
         self.titleLabel.text = moveTitle;
@@ -65,5 +66,13 @@
 
 - (IBAction)okPressed:(id)sender {
     [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType {
+    if (navigationType == UIWebViewNavigationTypeLinkClicked) {
+        [[UIApplication sharedApplication] openURL:request.URL];
+        return false;
+    }
+    return true;
 }
 @end

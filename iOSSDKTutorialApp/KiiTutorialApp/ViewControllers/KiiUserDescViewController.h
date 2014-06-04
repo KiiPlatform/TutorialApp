@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface KiiUserDescViewController : UIViewController
+@interface KiiUserDescViewController : UIViewController<UIWebViewDelegate>
 
 @end

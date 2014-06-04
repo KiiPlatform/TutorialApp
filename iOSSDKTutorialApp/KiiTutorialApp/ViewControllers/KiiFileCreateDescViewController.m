@@ -28,8 +28,9 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.descView.delegate = self;
 	// Do any additional setup after loading the view.
-    NSString* data = @"Creating object means storing arbitrary key/value pairs as JSON-style objects in kiicloud.<br><br> On completion, an \'app\' scope object will be created in \'tutorial\' bucket.\n\n To learn more about bucket and object, visit <a href=\"http://www.developer.kii.com/%@/guides/ios/managing-data/buckets\">docs.</a>";
+    NSString* data = @"Creating object means storing arbitrary key/value pairs as JSON-style objects in kiicloud.<br><br> On completion, an \'app\' scope object will be created in \'tutorial\' bucket.\n\n To learn more about bucket and object, visit <a href=\"http://documentation.kii.com/%@/guides/ios/managing-data/buckets\">docs.</a>";
     
     NSString* message = [NSString stringWithFormat:data, [KiiCommonUtilities kiidocsLocalePath]];
     [[self descView] loadHTMLString:message baseURL:nil];
@@ -44,5 +45,13 @@
 
 - (IBAction)btnPressed:(id)sender {
     [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType {
+    if (navigationType == UIWebViewNavigationTypeLinkClicked) {
+        [[UIApplication sharedApplication] openURL:request.URL];
+        return false;
+    }
+    return true;
 }
 @end

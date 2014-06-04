@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface KiiFileAttachDescViewController : UIViewController
+@interface KiiFileAttachDescViewController : UIViewController<UIWebViewDelegate>
 
 @end
