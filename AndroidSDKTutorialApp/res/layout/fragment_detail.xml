@@ -1,0 +1,48 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="0dip"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:paddingBottom="13dip"
+        android:paddingLeft="20dip"
+        android:paddingRight="10dip"
+        android:paddingTop="5dip"
+        tools:ignore="UselessParent" >
+
+        <ImageView
+            android:id="@+id/storage"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal|center_vertical" 
+            android:contentDescription="@string/create_object"/>
+
+        <TextView
+            android:id="@+id/detail_textview"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:paddingBottom="20dip"
+            android:paddingTop="5dip" />
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/detail_ok_button"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal|center_vertical"
+        style="@style/customBtnStyle"
+        android:layout_marginLeft="4dip"
+        android:layout_marginRight="4dip"
+        android:layout_marginBottom="4dip"
+        android:text="@string/ok"
+        android:textSize="15sp"
+        android:textStyle="bold" />
+
+</LinearLayout>
