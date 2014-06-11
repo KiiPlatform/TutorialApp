@@ -14,6 +14,7 @@
 #import <KiiSDK/Kii.h>
 
 @interface KiiFileUploadViewController ()
+@property (weak, nonatomic) IBOutlet UIImageView *descView;
 @end
 
 @implementation KiiFileUploadViewController
@@ -26,6 +27,11 @@
     self.selectedImageView.layer.borderWidth = 1.0;
 
     [KiiViewUtilities showSuccessHUD:@"KiiObject creation success" withView:self.view];
+    UITapGestureRecognizer *singleTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(descViewTaped:)];
+    singleTap.numberOfTapsRequired = 1;
+    singleTap.numberOfTouchesRequired = 1;
+    [self.descView addGestureRecognizer:singleTap];
+    [self.descView setUserInteractionEnabled:YES];
 }
 
 - (IBAction)mChoosePhotoButton:(id)sender {
@@ -160,6 +166,10 @@
 
     // Start uploading.
     [uploader transferWithProgressBlock:progressBlock andCompletionBlock:completionBlock];
+}
+
+- (void)descViewTaped:(UIGestureRecognizer *)gestureRecognizer {
+   [self performSegueWithIdentifier:@"FileAttachDesc" sender:gestureRecognizer]; 
 }
 
 @end

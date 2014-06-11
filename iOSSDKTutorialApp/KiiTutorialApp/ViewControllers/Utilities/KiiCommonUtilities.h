@@ -11,5 +11,6 @@
 @interface KiiCommonUtilities : NSObject
 
 + (NSString *)errorDetailsMessage:(NSError *)error;
++ (NSString *)kiidocsLocalePath;
 
 @end

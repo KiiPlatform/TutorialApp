@@ -7,15 +7,27 @@
 //
 
 #import "KiiCreateUserViewController.h"
+#import "KiiUserDescViewController.h"
 #import "KiiViewUtilities.h"
 #import "KiiCommonUtilities.h"
 #import <KiiSDK/KiiUser.h>
 
 @interface KiiCreateUserViewController ()
+@property (weak, nonatomic) IBOutlet UIImageView *descView;
 
 @end
 
 @implementation KiiCreateUserViewController
+
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+    UITapGestureRecognizer *singleTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(descViewTaped:)];
+    singleTap.numberOfTapsRequired = 1;
+    singleTap.numberOfTouchesRequired = 1;
+    [self.descView addGestureRecognizer:singleTap];
+    [self.descView setUserInteractionEnabled:YES];
+}
 
 - (IBAction)mSignUpButton:(id)sender {
     // Hide keyboard
@@ -86,4 +98,8 @@
     [self.view endEditing:YES];
 }
 
+- (void)descViewTaped:(UIGestureRecognizer *)gestureRecognizer {
+    
+    [self performSegueWithIdentifier:@"UserDesc" sender:gestureRecognizer];
+}
 @end

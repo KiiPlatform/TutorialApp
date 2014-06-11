@@ -12,8 +12,10 @@
 #import "KiiFileUploadViewController.h"
 #import "KiiViewUtilities.h"
 #import "KiiAppConstants.h"
+#import "KiiCommonUtilities.h"
 
 @interface KiiCreateObjectViewController ()
+@property (weak, nonatomic) IBOutlet UIImageView *descView;
 
 @end
 
@@ -21,6 +23,11 @@
 
 - (void)viewDidLoad {
     [KiiViewUtilities showSuccessHUD:@"Login success" withView:self.view];
+    UITapGestureRecognizer *singleTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(descViewTaped:)];
+    singleTap.numberOfTapsRequired = 1;
+    singleTap.numberOfTouchesRequired = 1;
+    [self.descView addGestureRecognizer:singleTap];
+    [self.descView setUserInteractionEnabled:YES];
 }
 
 - (IBAction)mCreateKiiObjectButton:(id)sender {
@@ -44,6 +51,11 @@
         KiiFileUploadViewController *viewController = (KiiFileUploadViewController *) [segue destinationViewController];
         viewController.kiiObject = self.kiiObject;
     }
+}
+
+- (void)descViewTaped:(UIGestureRecognizer *)gestureRecognizer {
+    
+    [self performSegueWithIdentifier:@"KiiObjectCreateDesc" sender:gestureRecognizer];
 }
 
 @end
