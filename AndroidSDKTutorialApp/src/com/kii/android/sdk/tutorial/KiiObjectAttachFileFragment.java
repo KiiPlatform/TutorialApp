@@ -86,12 +86,8 @@ public class KiiObjectAttachFileFragment extends Fragment {
         Intent intent = new Intent();
         intent.setType("image/*");
         intent.setAction(Intent.ACTION_GET_CONTENT);
-        if (Build.VERSION.SDK_INT > Build.VERSION_CODES.KITKAT) {
-            startActivityForResult(intent, PICK_IMAGE);
-        } else {
-            startActivityForResult(
-                    Intent.createChooser(intent, "Select Picture"), PICK_IMAGE);
-        }
+        startActivityForResult(
+                Intent.createChooser(intent, "Select Picture"), PICK_IMAGE);
     }
 
     @Override
