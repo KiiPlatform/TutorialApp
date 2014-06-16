@@ -17,8 +17,6 @@
 		9B5B532D18338B26000533F9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B5B532B18338B26000533F9 /* Main.storyboard */; };
 		9B5B533018338B26000533F9 /* KiiFirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B5B532F18338B26000533F9 /* KiiFirstViewController.m */; };
 		9B5B533218338B26000533F9 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9B5B533118338B26000533F9 /* Images.xcassets */; };
-		9B5B533A18338B27000533F9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B5B531918338B26000533F9 /* Foundation.framework */; };
-		9B5B533B18338B27000533F9 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B5B531D18338B26000533F9 /* UIKit.framework */; };
 		9B6763C01834C35200806CD6 /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B6763BF1834C35200806CD6 /* Accounts.framework */; };
 		9B6763C21834C35E00806CD6 /* Twitter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B6763C11834C35E00806CD6 /* Twitter.framework */; };
 		9B6763C41834C37100806CD6 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B6763C31834C37100806CD6 /* MobileCoreServices.framework */; };
@@ -33,21 +31,11 @@
 		9BB8A0711834CA5B008A338B /* KiiCreateObjectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BB8A0701834CA5B008A338B /* KiiCreateObjectViewController.m */; };
 		9BB8A0741834CABF008A338B /* KiiAppConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BB8A0731834CABF008A338B /* KiiAppConstants.m */; };
 		EA3155B0193BC42B007DBBFA /* KiiOverviewDataBrowseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EA3155AF193BC42B007DBBFA /* KiiOverviewDataBrowseViewController.m */; };
+		EA993ED018BC680D00A4DB8D /* KiiSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA993ECF18BC680D00A4DB8D /* KiiSDK.framework */; };
 		EAB8AF2A1938737C000A4590 /* KiiUserDescViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EAB8AF291938737C000A4590 /* KiiUserDescViewController.m */; };
 		EAB8AF2D19388459000A4590 /* KiiFileCreateDescViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EAB8AF2C19388459000A4590 /* KiiFileCreateDescViewController.m */; };
 		EAB8AF30193888D6000A4590 /* KiiFileAttachDescViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EAB8AF2F193888D6000A4590 /* KiiFileAttachDescViewController.m */; };
-		EA993ED018BC680D00A4DB8D /* KiiSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA993ECF18BC680D00A4DB8D /* KiiSDK.framework */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		9B5B533C18338B27000533F9 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 9B5B530E18338B26000533F9 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 9B5B531518338B26000533F9;
-			remoteInfo = KiiTutorialApp;
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		9B3F55A8183B574800B60B5F /* KiiCommonUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KiiCommonUtilities.h; path = ViewControllers/Utilities/KiiCommonUtilities.h; sourceTree = "<group>"; };
@@ -66,7 +54,6 @@
 		9B5B532E18338B26000533F9 /* KiiFirstViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = KiiFirstViewController.h; path = ViewControllers/KiiFirstViewController.h; sourceTree = "<group>"; };
 		9B5B532F18338B26000533F9 /* KiiFirstViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = KiiFirstViewController.m; path = ViewControllers/KiiFirstViewController.m; sourceTree = "<group>"; };
 		9B5B533118338B26000533F9 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		9B5B533718338B27000533F9 /* KiiTutorialAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KiiTutorialAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9B6763BF1834C35200806CD6 /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
 		9B6763C11834C35E00806CD6 /* Twitter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Twitter.framework; path = System/Library/Frameworks/Twitter.framework; sourceTree = SDKROOT; };
 		9B6763C31834C37100806CD6 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
@@ -89,13 +76,13 @@
 		9BB8A0731834CABF008A338B /* KiiAppConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KiiAppConstants.m; sourceTree = "<group>"; };
 		EA3155AE193BC42B007DBBFA /* KiiOverviewDataBrowseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KiiOverviewDataBrowseViewController.h; path = ViewControllers/KiiOverviewDataBrowseViewController.h; sourceTree = "<group>"; };
 		EA3155AF193BC42B007DBBFA /* KiiOverviewDataBrowseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KiiOverviewDataBrowseViewController.m; path = ViewControllers/KiiOverviewDataBrowseViewController.m; sourceTree = "<group>"; };
+		EA993ECF18BC680D00A4DB8D /* KiiSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = KiiSDK.framework; sourceTree = "<group>"; };
 		EAB8AF281938737C000A4590 /* KiiUserDescViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KiiUserDescViewController.h; path = ViewControllers/KiiUserDescViewController.h; sourceTree = "<group>"; };
 		EAB8AF291938737C000A4590 /* KiiUserDescViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KiiUserDescViewController.m; path = ViewControllers/KiiUserDescViewController.m; sourceTree = "<group>"; };
 		EAB8AF2B19388459000A4590 /* KiiFileCreateDescViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KiiFileCreateDescViewController.h; path = ViewControllers/KiiFileCreateDescViewController.h; sourceTree = "<group>"; };
 		EAB8AF2C19388459000A4590 /* KiiFileCreateDescViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KiiFileCreateDescViewController.m; path = ViewControllers/KiiFileCreateDescViewController.m; sourceTree = "<group>"; };
 		EAB8AF2E193888D6000A4590 /* KiiFileAttachDescViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KiiFileAttachDescViewController.h; path = ViewControllers/KiiFileAttachDescViewController.h; sourceTree = "<group>"; };
 		EAB8AF2F193888D6000A4590 /* KiiFileAttachDescViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KiiFileAttachDescViewController.m; path = ViewControllers/KiiFileAttachDescViewController.m; sourceTree = "<group>"; };
-		EA993ECF18BC680D00A4DB8D /* KiiSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = KiiSDK.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,15 +103,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		9B5B533418338B27000533F9 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				9B5B533B18338B27000533F9 /* UIKit.framework in Frameworks */,
-				9B5B533A18338B27000533F9 /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -141,7 +119,6 @@
 			isa = PBXGroup;
 			children = (
 				9B5B531618338B26000533F9 /* KiiTutorialApp.app */,
-				9B5B533718338B27000533F9 /* KiiTutorialAppTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -256,24 +233,6 @@
 			productReference = 9B5B531618338B26000533F9 /* KiiTutorialApp.app */;
 			productType = "com.apple.product-type.application";
 		};
-		9B5B533618338B27000533F9 /* KiiTutorialAppTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 9B5B534B18338B27000533F9 /* Build configuration list for PBXNativeTarget "KiiTutorialAppTests" */;
-			buildPhases = (
-				9B5B533318338B27000533F9 /* Sources */,
-				9B5B533418338B27000533F9 /* Frameworks */,
-				9B5B533518338B27000533F9 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				9B5B533D18338B27000533F9 /* PBXTargetDependency */,
-			);
-			name = KiiTutorialAppTests;
-			productName = KiiTutorialAppTests;
-			productReference = 9B5B533718338B27000533F9 /* KiiTutorialAppTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -283,11 +242,6 @@
 				CLASSPREFIX = Kii;
 				LastUpgradeCheck = 0500;
 				ORGANIZATIONNAME = "Kii Corporation";
-				TargetAttributes = {
-					9B5B533618338B27000533F9 = {
-						TestTargetID = 9B5B531518338B26000533F9;
-					};
-				};
 			};
 			buildConfigurationList = 9B5B531118338B26000533F9 /* Build configuration list for PBXProject "KiiTutorialApp" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -303,7 +257,6 @@
 			projectRoot = "";
 			targets = (
 				9B5B531518338B26000533F9 /* KiiTutorialApp */,
-				9B5B533618338B27000533F9 /* KiiTutorialAppTests */,
 			);
 		};
 /* End PBXProject section */
@@ -316,13 +269,6 @@
 				9B5B533218338B26000533F9 /* Images.xcassets in Resources */,
 				9B5B532418338B26000533F9 /* InfoPlist.strings in Resources */,
 				9B5B532D18338B26000533F9 /* Main.storyboard in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		9B5B533518338B27000533F9 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -351,22 +297,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		9B5B533318338B27000533F9 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		9B5B533D18338B27000533F9 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 9B5B531518338B26000533F9 /* KiiTutorialApp */;
-			targetProxy = 9B5B533C18338B27000533F9 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		9B5B532218338B26000533F9 /* InfoPlist.strings */ = {
@@ -503,48 +434,6 @@
 			};
 			name = Release;
 		};
-		9B5B534C18338B27000533F9 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/KiiTutorialApp.app/KiiTutorialApp";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-					"$(DEVELOPER_FRAMEWORKS_DIR)",
-				);
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "KiiTutorialApp/KiiTutorialApp-Prefix.pch";
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = "KiiTutorialAppTests/KiiTutorialAppTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUNDLE_LOADER)";
-				WRAPPER_EXTENSION = xctest;
-			};
-			name = Debug;
-		};
-		9B5B534D18338B27000533F9 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/KiiTutorialApp.app/KiiTutorialApp";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-					"$(DEVELOPER_FRAMEWORKS_DIR)",
-				);
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "KiiTutorialApp/KiiTutorialApp-Prefix.pch";
-				INFOPLIST_FILE = "KiiTutorialAppTests/KiiTutorialAppTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUNDLE_LOADER)";
-				WRAPPER_EXTENSION = xctest;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -562,15 +451,6 @@
 			buildConfigurations = (
 				9B5B534918338B27000533F9 /* Debug */,
 				9B5B534A18338B27000533F9 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		9B5B534B18338B27000533F9 /* Build configuration list for PBXNativeTarget "KiiTutorialAppTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				9B5B534C18338B27000533F9 /* Debug */,
-				9B5B534D18338B27000533F9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
