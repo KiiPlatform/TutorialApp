@@ -45,7 +45,7 @@
     
     NSString* moveTitle = @"How to move forward";
     
-    NSString* moveData = @"We have guides,references, samples and tutorials which describes the details of developing Apps with KiiCloud.<br><br>You can access these resources from <a href=\"http://documentation.kii.com/%@/starts\">here</a>";
+    NSString* moveData = @"<br><br>We have guides,references, samples and tutorials which describes the details of developing Apps with KiiCloud.<br><br>You can access these resources from <a href=\"http://documentation.kii.com/%@/starts\">here</a>";
     
     if (self.overview == MoveForword) {
         self.titleLabel.text = moveTitle;
