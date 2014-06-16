@@ -91,7 +91,7 @@ public class LoginFragment extends Fragment {
     public void onLoginButtonClicked(View v) {
         InputMethodManager imm = (InputMethodManager) activity
                 .getSystemService(Context.INPUT_METHOD_SERVICE);
-        imm.toggleSoftInput(InputMethodManager.HIDE_IMPLICIT_ONLY, 0);
+        imm.hideSoftInputFromWindow(v.getWindowToken(), 0);
         setFragmentProgress(View.VISIBLE);
         String username = mUsernameField.getText().toString();
         String password = mPasswordField.getText().toString();
@@ -112,7 +112,7 @@ public class LoginFragment extends Fragment {
     public void onSignupButtonClicked(View v) {
         InputMethodManager imm = (InputMethodManager) activity
                 .getSystemService(Context.INPUT_METHOD_SERVICE);
-        imm.toggleSoftInput(InputMethodManager.HIDE_IMPLICIT_ONLY, 0);
+        imm.hideSoftInputFromWindow(v.getWindowToken(), 0);
 
         setFragmentProgress(View.VISIBLE);
 
