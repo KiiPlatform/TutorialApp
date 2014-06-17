@@ -200,9 +200,10 @@ public class KiiObjectAttachFileFragment extends Fragment {
                                     listener);
                     newFragment.show(getFragmentManager(), "dialog");
                 } else {
-                    if (e instanceof CloudExecutionException)
+                    Throwable cause = e.getCause();
+                    if (cause instanceof CloudExecutionException)
                         showAlert(Util
-                                .generateAlertMessage((CloudExecutionException) e));
+                                .generateAlertMessage((CloudExecutionException) cause));
                     else
                         showAlert(e.getLocalizedMessage());
                 }
