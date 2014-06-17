@@ -195,14 +195,15 @@ public class KiiObjectAttachFileFragment extends Fragment {
                     };
                     DialogFragment newFragment = AlertDialogFragment
                             .newInstance(
-                                    R.string.operation_failed,
+                                    R.string.attach_file,
                                     "File attached successfully!\nNow lets check what we have done!",
                                     listener);
                     newFragment.show(getFragmentManager(), "dialog");
                 } else {
-                    if (e instanceof CloudExecutionException)
+                    Throwable cause = e.getCause();
+                    if (cause instanceof CloudExecutionException)
                         showAlert(Util
-                                .generateAlertMessage((CloudExecutionException) e));
+                                .generateAlertMessage((CloudExecutionException) cause));
                     else
                         showAlert(e.getLocalizedMessage());
                 }
