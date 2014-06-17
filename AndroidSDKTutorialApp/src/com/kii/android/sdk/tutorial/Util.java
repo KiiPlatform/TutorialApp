@@ -21,7 +21,12 @@ public class Util {
             sb.append("Reason: ");
             try {
                 JSONObject body = new JSONObject(ex.getBody());
-                sb.append(body.getString("error_description"));
+                if(body.has("error_description"))
+                    sb.append(body.getString("error_description"));
+                else if (body.has("message"))
+                    sb.append(body.getString("message"));
+                else
+                    sb.append(ex.getLocalizedMessage());
             } catch (JSONException e) {
                 // not happen.
             }
