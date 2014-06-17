@@ -95,7 +95,7 @@ public class KiiObjectCreateFragment extends Fragment {
                     };
                     DialogFragment newFragment = AlertDialogFragment
                             .newInstance(
-                                    R.string.operation_failed,
+                                    R.string.create_object,
                                     "Object creted successfully. \nNow lets attach a file to the object!",
                                     listener);
                     newFragment.show(getFragmentManager(), "dialog");
