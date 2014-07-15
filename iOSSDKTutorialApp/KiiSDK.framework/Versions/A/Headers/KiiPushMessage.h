@@ -14,57 +14,57 @@
 
   Key           | Short key | Push to App | Push to User                        | Direct Push                           | Description                                          | Possible values
  ---------------|-----------|-------------|-------------------------------------|---------------------------------------|------------------------------------------------------|------
- APP_ID         | a         | -           | -<br>(Depends on "sendAppID")       | -                                     | Source app which generated the notification.         |
- SENDER         | s         | -           | X<br>(Depends on "sendSender")      | X<br>(Depends on "sendSender")        | The user who caused the notification.                |
- ORIGIN         | o         | -           | -<br>(Depends on "sendOrigin")      | -<br>(Depends on "sendOrigin")        | Origin of push. "EVENT" for "Push to App" notification. "EXPLICIT" for "Push to User" and "Direct Push" notification. | - EVENT<br> - EXPLICIT
- WHEN           | w         | X           | -<br>(Depends on "sendWhen")        | -<br>(Depends on "sendWhen")          | The timestamp of the notification in milliseconds. (Since January 1, 1970 00:00:00 UTC) |
- TYPE           | t         | X           | -<br>(Depends on "pushMessageType") | -<br>(Depends on "pushMessageType")   | The type of notification and the additional data.    | [Push to App]<br>- DATA_OBJECT_CREATED<br> - DATA_OBJECT_DELETED<br> - DATA_OBJECT_UPDATED<br> - DATA_OBJECT_BODY_UPDATED<br> - DATA_OBJECT_BODY_DELETED<br> - DATA_OBJECT_ACL_MODIFIED<br> - BUCKET_DELETED
- TOPIC          | to        | -           | X<br>(Depends on "sendTopicID")     | -                                     | TopicID that is the source of this notification. TopicID is only for "Push to User" push messages.    |
- SCOPE_APP_ID   | sa        | X           | X<br>(Depends on "sendObjectScope") | -                                     | AppID of object scope.                               |
- SCOPE_USER_ID  | su        | X           | X<br>(Depends on "sendObjectScope") | -                                     | UserID of object scope. Push message has this field only if the subscribed bucket is user scope.|
- SCOPE_GROUP_ID | sg        | X           | X<br>(Depends on "sendObjectScope") | -                                     | GroupID of object scope. Push message has this field only if the subscribed bucket is group scope. |
- SCOPE_TYPE     | st        | X           | X<br>(Depends on "sendObjectScope") | -                                     | Type of object scope.                                 | - APP<br> - APP_AND_USER<br> - APP_AND_GROUP
- BUCKET_ID      | bi        | X           | -                                   | -                                     | Bucket name of push subscribed.                      |
- BUCKET_TYPE    | bt        | X           | -                                   | -                                     | Type of source bucket.                    | - rw<br> - sync
- OBJECT_ID      | oi        | X           | -                                   | -                                     | ID of the object operated.                           |
- OBJECT_MODIFIED_AT | om    | -           | -                                   | -                                     | Timestamp of the modification of object in milliseconds. (Since January 1, 1970 00:00:00 UTC)  | - DATA_OBJECT_CREATED<br> - DATA_OBJECT_UPDATED<br> - DATA_OBJECT_BODY_UPDATE
+ KiiMessage_APP_ID         | a         | -           | -<br>(Depends on "sendAppID")       | -                                     | Source app which generated the notification.         |
+ KiiMessage_SENDER         | s         | -           | X<br>(Depends on "sendSender")      | X<br>(Depends on "sendSender")        | The user who caused the notification.                |
+ KiiMessage_ORIGIN         | o         | -           | -<br>(Depends on "sendOrigin")      | -<br>(Depends on "sendOrigin")        | Origin of push. "EVENT" for "Push to App" notification. "EXPLICIT" for "Push to User" and "Direct Push" notification. | - EVENT<br> - EXPLICIT
+ KiiMessage_WHEN           | w         | X           | -<br>(Depends on "sendWhen")        | -<br>(Depends on "sendWhen")          | The timestamp of the notification in milliseconds. (Since January 1, 1970 00:00:00 UTC) |
+ KiiMessage_TYPE           | t         | X           | -<br>(Depends on "pushMessageType") | -<br>(Depends on "pushMessageType")   | The type of notification and the additional data.    | [Push to App]<br>- DATA_OBJECT_CREATED<br> - DATA_OBJECT_DELETED<br> - DATA_OBJECT_UPDATED<br> - DATA_OBJECT_BODY_UPDATED<br> - DATA_OBJECT_BODY_DELETED<br> - DATA_OBJECT_ACL_MODIFIED<br> - BUCKET_DELETED
+ KiiMessage_TOPIC          | to        | -           | X<br>(Depends on "sendTopicID")     | -                                     | TopicID that is the source of this notification. TopicID is only for "Push to User" push messages.    |
+ KiiMessage_SCOPE_APP_ID   | sa        | X           | X<br>(Depends on "sendObjectScope") | -                                     | AppID of object scope.                               |
+ KiiMessage_SCOPE_USER_ID  | su        | X           | X<br>(Depends on "sendObjectScope") | -                                     | UserID of object scope. Push message has this field only if the subscribed bucket is user scope.|
+ KiiMessage_SCOPE_GROUP_ID | sg        | X           | X<br>(Depends on "sendObjectScope") | -                                     | GroupID of object scope. Push message has this field only if the subscribed bucket is group scope. |
+ KiiMessage_SCOPE_TYPE     | st        | X           | X<br>(Depends on "sendObjectScope") | -                                     | Type of object scope.                                 | - APP<br> - APP_AND_USER<br> - APP_AND_GROUP
+ KiiMessage_BUCKET_ID      | bi        | X           | -                                   | -                                     | Bucket name of push subscribed.                      |
+ KiiMessage_BUCKET_TYPE    | bt        | X           | -                                   | -                                     | Type of source bucket.                    | - rw<br> - sync
+ KiiMessage_OBJECT_ID      | oi        | X           | -                                   | -                                     | ID of the object operated.                           |
+ KiiMessage_OBJECT_MODIFIED_AT | om    | -           | -                                   | -                                     | Timestamp of the modification of object in milliseconds. (Since January 1, 1970 00:00:00 UTC)  | - DATA_OBJECT_CREATED<br> - DATA_OBJECT_UPDATED<br> - DATA_OBJECT_BODY_UPDATE
 
  */
 typedef NS_ENUM(NSUInteger, KiiMessageField) {
     /** Source app which generated the notification. */
-    APP_ID,
+    KiiMessage_APP_ID,
     /** The user who caused the notification. */
-    SENDER,
+    KiiMessage_SENDER,
     /** The type of notification and the additional data. */
-    TYPE,
+    KiiMessage_TYPE,
     /** The timestamp of the notification in milliseconds.
      (Since January 1, 1970 00:00:00 UTC) */
-    WHEN,
+    KiiMessage_WHEN,
     /** Origin of push. "EVENT" for "Push to App" notification.
      "EXPLICIT" for "Push to User" and "Direct Push" notification. */
-    ORIGIN,
+    KiiMessage_ORIGIN,
     /** TopicID that is the source of this notification.
      TopicID is only for "Push to User" push messages. */
-    TOPIC,
+    KiiMessage_TOPIC,
     /** AppID of object scope. */
-    SCOPE_APP_ID,
+    KiiMessage_SCOPE_APP_ID,
     /** UserID of object scope.
      Push message has this field only if the subscribed bucket is user scope. */
-    SCOPE_USER_ID,
+    KiiMessage_SCOPE_USER_ID,
     /** GroupID of object scope.
      Push message has this field only if the subscribed bucket is group scope. */
-    SCOPE_GROUP_ID,
+    KiiMessage_SCOPE_GROUP_ID,
     /** Type of object scope. */
-    SCOPE_TYPE,
+    KiiMessage_SCOPE_TYPE,
     /** Bucket name of push subscribed. */
-    BUCKET_ID,
+    KiiMessage_BUCKET_ID,
     /** Type of source bucket. */
-    BUCKET_TYPE,
+    KiiMessage_BUCKET_TYPE,
     /** ID of the object operated. */
-    OBJECT_ID,
+    KiiMessage_OBJECT_ID,
     /** Timestamp of the modification of object in milliseconds.
      (Since January 1, 1970 00:00:00 UTC) */
-    OBJECT_MODIFIED_AT
+    KiiMessage_OBJECT_MODIFIED_AT
 };
 
 @class KiiAPNSFields,KiiGCMFields;
@@ -73,7 +73,7 @@ typedef NS_ENUM(NSUInteger, KiiMessageField) {
  Class for encapsulating incoming and outgoing push notification message
 Three types of push message supported by KiiCloud.
 
-- **Push to App** : Message sent to the subscribers when an event happens in the <KiiBucket> and <KiiFileBucket>.
+- **Push to App** : Message sent to the subscribers when an event happens in the <KiiBucket>.
 - **Push to User** : Message sent to the subscribers of <KiiTopic> that is created explicitly.
 - **Direct Push** : Message sent to a certain user by manipulating the developer portal. (Only app developer can send this message.)
 
@@ -88,20 +88,20 @@ KiiCloud specific fields are as follows:
 
   Key           | Short key | Push to App | Push to User                        | Direct Push                           | Description                                          | Possible values
  ---------------|-----------|-------------|-------------------------------------|---------------------------------------|------------------------------------------------------|------
- APP_ID         | a         | -           | -<br>(Depends on "sendAppID")       | -                                     | Source app which generated the notification.         |
- SENDER         | s         | -           | X<br>(Depends on "sendSender")      | X<br>(Depends on "sendSender")        | The user who caused the notification.                |
- ORIGIN         | o         | -           | -<br>(Depends on "sendOrigin")      | -<br>(Depends on "sendOrigin")        | Origin of push. "EVENT" for "Push to App" notification. "EXPLICIT" for "Push to User" notification. | - EVENT<br> - EXPLICIT
- WHEN           | w         | X           | -<br>(Depends on "sendWhen")        | -<br>(Depends on "sendWhen")          | The timestamp of the notification in milliseconds. (Since January 1, 1970 00:00:00 UTC) |
- TYPE           | t         | X           | -<br>(Depends on "pushMessageType") | -<br>(Depends on "pushMessageType")   | The type of notification and the additional data.    | [Push to App]<br>- DATA_OBJECT_CREATED<br> - DATA_OBJECT_DELETED<br> - DATA_OBJECT_UPDATED<br> - DATA_OBJECT_BODY_UPDATED<br> - DATA_OBJECT_BODY_DELETED<br> - DATA_OBJECT_ACL_MODIFIED<br> - BUCKET_DELETED
- TOPIC          | to        | -           | X<br>(Depends on "sendTopicID")     | -                                     | TopicID is only for "Push to User" push messages.    |
- SCOPE_APP_ID   | sa        | X           | X<br>(Depends on "sendObjectScope") | -                                     | AppID of object scope.                               |
- SCOPE_USER_ID  | su        | X           | X<br>(Depends on "sendObjectScope") | -                                     | UserID of object scope. Push message has this field only if the subscribed bucket is user scope.|
- SCOPE_GROUP_ID | sg        | X           | X<br>(Depends on "sendObjectScope") | -                                     | GroupID of object scope. Push message has this field only if the subscribed bucket is group scope. |
- SCOPE_TYPE     | st        | X           | X<br>(Depends on "sendObjectScope") | -                                     | Type of object scope.                                 | - APP<br> - APP_AND_USER<br> - APP_AND_GROUP 
- BUCKET_ID      | bi        | X           | -                                   | -                                     | Bucket name of push subscribed.                      |
- BUCKET_TYPE    | bt        | X           | -                                   | -                                     | Type of bucket has been modified.                    | - rw<br> - sync
- OBJECT_ID      | oi        | X           | -                                   | -                                     | ID of the object operated.                           |
- OBJECT_MODIFIED_AT | om    | -           | -                                   | -                                     | Timestamp of the modification of object in milliseconds. (Since January 1, 1970 00:00:00 UTC)  | - DATA_OBJECT_CREATED<br> - DATA_OBJECT_UPDATED<br> - DATA_OBJECT_BODY_UPDATE
+ KiiMessage_APP_ID         | a         | -           | -<br>(Depends on "sendAppID")       | -                                     | Source app which generated the notification.         |
+ KiiMessage_SENDER         | s         | -           | X<br>(Depends on "sendSender")      | X<br>(Depends on "sendSender")        | The user who caused the notification.                |
+ KiiMessage_ORIGIN         | o         | -           | -<br>(Depends on "sendOrigin")      | -<br>(Depends on "sendOrigin")        | Origin of push. "EVENT" for "Push to App" notification. "EXPLICIT" for "Push to User" notification. | - EVENT<br> - EXPLICIT
+ KiiMessage_WHEN           | w         | X           | -<br>(Depends on "sendWhen")        | -<br>(Depends on "sendWhen")          | The timestamp of the notification in milliseconds. (Since January 1, 1970 00:00:00 UTC) |
+ KiiMessage_TYPE           | t         | X           | -<br>(Depends on "pushMessageType") | -<br>(Depends on "pushMessageType")   | The type of notification and the additional data.    | [Push to App]<br>- DATA_OBJECT_CREATED<br> - DATA_OBJECT_DELETED<br> - DATA_OBJECT_UPDATED<br> - DATA_OBJECT_BODY_UPDATED<br> - DATA_OBJECT_BODY_DELETED<br> - DATA_OBJECT_ACL_MODIFIED<br> - BUCKET_DELETED
+ KiiMessage_TOPIC          | to        | -           | X<br>(Depends on "sendTopicID")     | -                                     | TopicID is only for "Push to User" push messages.    |
+ KiiMessage_SCOPE_APP_ID   | sa        | X           | X<br>(Depends on "sendObjectScope") | -                                     | AppID of object scope.                               |
+ KiiMessage_SCOPE_USER_ID  | su        | X           | X<br>(Depends on "sendObjectScope") | -                                     | UserID of object scope. Push message has this field only if the subscribed bucket is user scope.|
+ KiiMessage_SCOPE_GROUP_ID | sg        | X           | X<br>(Depends on "sendObjectScope") | -                                     | GroupID of object scope. Push message has this field only if the subscribed bucket is group scope. |
+ KiiMessage_SCOPE_TYPE     | st        | X           | X<br>(Depends on "sendObjectScope") | -                                     | Type of object scope.                                 | - APP<br> - APP_AND_USER<br> - APP_AND_GROUP
+ KiiMessage_BUCKET_ID      | bi        | X           | -                                   | -                                     | Bucket name of push subscribed.                      |
+ KiiMessage_BUCKET_TYPE    | bt        | X           | -                                   | -                                     | Type of bucket has been modified.                    | - rw<br> - sync
+ KiiMessage_OBJECT_ID      | oi        | X           | -                                   | -                                     | ID of the object operated.                           |
+ KiiMessage_OBJECT_MODIFIED_AT | om    | -           | -                                   | -                                     | Timestamp of the modification of object in milliseconds. (Since January 1, 1970 00:00:00 UTC)  | - DATA_OBJECT_CREATED<br> - DATA_OBJECT_UPDATED<br> - DATA_OBJECT_BODY_UPDATE
  
  ### GCM restriction for reserved keyword
  Based on Google GCM specification, there are reserved payload keys that should not be used inside data/specific data.

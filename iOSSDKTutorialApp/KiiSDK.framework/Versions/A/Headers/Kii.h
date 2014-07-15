@@ -48,6 +48,9 @@
 #import "KiiGeoPoint.h"
 #import "KiiPushSubscription.h"
 #import "FileHolder.h"
+#import "KiiCloudPhotoColle.h"
+#import "KiiPhotoColleRTransferManager.h"
+#import "KiiPhotoColleSocialConnect.h"
 
 
 @class KiiFile, KiiUser, KiiBucket, KiiGroup;
@@ -62,7 +65,9 @@ typedef NS_ENUM(NSUInteger, KiiSite) {
     /** Use cloud in Japan. */
     kiiSiteJP,
     /** Use cloud in China. */
-    kiiSiteCN
+    kiiSiteCN,
+    /** Use cloud in Singapore. */
+    kiiSiteSG
 };
 
 /** The main SDK class
@@ -86,7 +91,9 @@ typedef NS_ENUM(NSUInteger, KiiSite) {
  If Kii has provided a custom URL, use this initializer to set it
  @param appId The application ID found in your Kii developer console
  @param appKey The application key found in your Kii developer console
- @param kiiSite One of the enumerator constants kiiSiteUS (United States), kiiSiteJP (Japan) or kiiSiteCN (China), based on your desired location.
+ @param kiiSite One of the enumerator constants kiiSiteUS (United States),
+ kiiSiteJP (Japan), kiiSiteCN (China) or kiiSiteSG (Singapore) based
+ on your desired location.
  */
 + (void) beginWithID:(NSString*)appId andKey:(NSString*)appKey andSite:(KiiSite)kiiSite;
 + (void) beginWithID:(NSString*)appId andKey:(NSString*)appKey andCustomURL:(NSString*)customURL;
@@ -142,14 +149,16 @@ typedef NS_ENUM(NSUInteger, KiiSite) {
 /** Enable Kii APNS with APNS environment setting.
  @param isDevelopmentMode YES if APNS development environment mode or NO for production mode.
  @param types of ui remote notification type.
+ @deprecated This method is deprecated. Use default iOS SDK <[UIApplication registerForRemoteNotificationTypes]> then call installation with <[KiiPushInstallation installSynchronousWithDeviceToken:andDevelopmentMode:andError:]>
  */
 +(void)enableAPNSWithDevelopmentMode:(BOOL) isDevelopmentMode
-               andNotificationTypes:(UIRemoteNotificationType) types;
+               andNotificationTypes:(UIRemoteNotificationType) types __attribute__((deprecated("Use default iOS SDK [UIApplication registerForRemoteNotificationTypes] then call installation with [KiiPushInstallation installSynchronousWithDeviceToken:andDevelopmentMode:andError:]")));
 
 /** Set APNS device token it is called on AppDelegate's didRegisterForRemoteNotificationsWithDeviceToken
-@param deviceToken device token that is given by APNS server.
+ @param deviceToken device token that is given by APNS server.
+ @deprecated This method is deprecated. Use <[KiiPushInstallation installSynchronousWithDeviceToken:andDevelopmentMode:andError:]> instead.
  */
-+(void) setAPNSDeviceToken:(NSData*) deviceToken;
++(void) setAPNSDeviceToken:(NSData*) deviceToken __attribute__((deprecated("Use [KiiPushInstallation installSynchronousWithDeviceToken:andDevelopmentMode:andError:]")));
 
 /** Create KiiServerCodeEntry instance with the given entry name.
  @param entryName a specific entry name for this server code. Can not be nil and valid entryName pattern is "[a-zA-Z][_a-zA-Z0-9]*$"
@@ -167,6 +176,10 @@ typedef NS_ENUM(NSUInteger, KiiSite) {
  */
 +(KiiServerCodeEntry*)serverCodeEntry:(NSString*) entryName withVersion:(NSString*) version;
 
-@property(assign) BOOL isDevelopmentMode;
+/**
+* URL of KiiApps Server.
+* @return A NSString object representing the URL of KiiApps Server.
+*/
++ (NSString *)kiiAppsBaseURL;
 
 @end

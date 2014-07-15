@@ -11,7 +11,6 @@
 #import "KiiResumableTransfer.h"
 
 /** Implementation of resumable transfer operation.
- This operation is only supported with localpath, if the KiiFile object that produce the downloader has NSData value, it will not be used.
  */
 @interface KiiDownloader : KiiResumableTransfer<KiiRTransfer>
 

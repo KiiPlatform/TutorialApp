@@ -12,7 +12,7 @@
 
 @class KiiObject, KiiCallback, KiiFile;
 
-typedef enum { GET, PUT, POST, FORMPOST, DELETE , HEAD } HttpMethods;
+typedef enum { KiiRequestGET, KiiRequestPUT, KiiRequestPOST, KiiRequestFORMPOST, KiiRequestDELETE , KiiRequestHEAD } KiiRequestHttpMethods;
 
 @interface KiiRequest : NSObject {
         
@@ -54,7 +54,6 @@ typedef enum { GET, PUT, POST, FORMPOST, DELETE , HEAD } HttpMethods;
 @property (nonatomic, strong) KiiObject *mObject;
 @property (nonatomic, assign) BOOL isChunkUpload;
 @property (nonatomic, assign) BOOL isChunkDownload;
-@property (nonatomic, assign) BOOL isObjectBodyMetadata;
 @property (nonatomic, assign) long long uploadFileSize;
 
 
@@ -64,12 +63,14 @@ typedef enum { GET, PUT, POST, FORMPOST, DELETE , HEAD } HttpMethods;
 - (id) initWithPath:(NSString*)path andApp:(BOOL)appInPath;
 - (id) initWithPath:(NSString*)path;
 
+- (id) initWithUrl:(NSString *)url;
+
 - (void) setRequestPath:(NSString *)reqPath withApp:(BOOL)appInURL;
 
-- (NSDictionary*) makeSynchronousRequest:(NSError**)sendError andResponse:(int*)response withETag:(NSString**) etag discardBody:(BOOL)discardBody;
-- (NSDictionary*) makeSynchronousRequest:(NSError**)sendError andResponse:(int*)response discardBody:(BOOL)discardBody;
+- (NSDictionary*) makeSynchronousRequest:(NSError**)sendError andResponseCode:(int*)outResponseCode withETag:(NSString**) etag;
+- (NSDictionary*) makeSynchronousRequest:(NSError**)sendError andResponseCode:(int*)response;
 - (NSDictionary*) makeSynchronousRequest:(NSError**)sendError;
 -(void) responseDataReceived:(NSMutableData *)data withExpectedSize:(long long) size;
 -(void) requestDataSend:(NSInteger) totalBytesWritten;
-
+- (void) makeSynchronousRequest:(NSError **)sendError andResponseCode:(int *)outResponseCode withETag:(NSString **)etag withJSONResponse: (NSDictionary**)jsonResp;
 @end
