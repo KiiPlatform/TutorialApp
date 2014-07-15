@@ -24,14 +24,16 @@
 		9B9C41A51834B06C00EDED68 /* KiiCreateUserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B9C41A41834B06C00EDED68 /* KiiCreateUserViewController.m */; };
 		9B9C41A91834B41F00EDED68 /* KiiFileUploadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B9C41A81834B41F00EDED68 /* KiiFileUploadViewController.m */; };
 		9B9C41AC1834B49200EDED68 /* KiiTutorialOverViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B9C41AB1834B49200EDED68 /* KiiTutorialOverViewController.m */; };
-		9B9C41AE1834C19E00EDED68 /* KiiSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B9C41AD1834C19E00EDED68 /* KiiSDK.framework */; };
 		9BA24E51183533C600BA9EB8 /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9BA24E50183533C600BA9EB8 /* AssetsLibrary.framework */; };
 		9BA896971835C3120061B1D5 /* KiiViewUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BA896961835C3120061B1D5 /* KiiViewUtilities.m */; };
 		9BB8A06E1834C86C008A338B /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BB8A06D1834C86C008A338B /* MBProgressHUD.m */; };
 		9BB8A0711834CA5B008A338B /* KiiCreateObjectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BB8A0701834CA5B008A338B /* KiiCreateObjectViewController.m */; };
 		9BB8A0741834CABF008A338B /* KiiAppConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BB8A0731834CABF008A338B /* KiiAppConstants.m */; };
 		EA3155B0193BC42B007DBBFA /* KiiOverviewDataBrowseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EA3155AF193BC42B007DBBFA /* KiiOverviewDataBrowseViewController.m */; };
-		EA993ED018BC680D00A4DB8D /* KiiSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA993ECF18BC680D00A4DB8D /* KiiSDK.framework */; };
+		EA5B94BA19750DC100398A32 /* KiiSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA5B94B919750DC100398A32 /* KiiSDK.framework */; };
+		EA5B94BC19750E2B00398A32 /* libsqlite3.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = EA5B94BB19750E2B00398A32 /* libsqlite3.0.dylib */; };
+		EA5B94BE19750F7500398A32 /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA5B94BD19750F7500398A32 /* ImageIO.framework */; };
+		EA5B94C019750F8300398A32 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA5B94BF19750F8300398A32 /* Social.framework */; };
 		EAB8AF2A1938737C000A4590 /* KiiUserDescViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EAB8AF291938737C000A4590 /* KiiUserDescViewController.m */; };
 		EAB8AF2D19388459000A4590 /* KiiFileCreateDescViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EAB8AF2C19388459000A4590 /* KiiFileCreateDescViewController.m */; };
 		EAB8AF30193888D6000A4590 /* KiiFileAttachDescViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EAB8AF2F193888D6000A4590 /* KiiFileAttachDescViewController.m */; };
@@ -64,7 +66,6 @@
 		9B9C41A81834B41F00EDED68 /* KiiFileUploadViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KiiFileUploadViewController.m; path = ViewControllers/KiiFileUploadViewController.m; sourceTree = "<group>"; };
 		9B9C41AA1834B49200EDED68 /* KiiTutorialOverViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KiiTutorialOverViewController.h; path = ViewControllers/KiiTutorialOverViewController.h; sourceTree = "<group>"; };
 		9B9C41AB1834B49200EDED68 /* KiiTutorialOverViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KiiTutorialOverViewController.m; path = ViewControllers/KiiTutorialOverViewController.m; sourceTree = "<group>"; };
-		9B9C41AD1834C19E00EDED68 /* KiiSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = KiiSDK.framework; path = KiiTutorialApp/KiiSDK.framework; sourceTree = "<group>"; };
 		9BA24E50183533C600BA9EB8 /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
 		9BA896951835C3120061B1D5 /* KiiViewUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KiiViewUtilities.h; path = ViewControllers/Utilities/KiiViewUtilities.h; sourceTree = "<group>"; };
 		9BA896961835C3120061B1D5 /* KiiViewUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KiiViewUtilities.m; path = ViewControllers/Utilities/KiiViewUtilities.m; sourceTree = "<group>"; };
@@ -76,7 +77,10 @@
 		9BB8A0731834CABF008A338B /* KiiAppConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KiiAppConstants.m; sourceTree = "<group>"; };
 		EA3155AE193BC42B007DBBFA /* KiiOverviewDataBrowseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KiiOverviewDataBrowseViewController.h; path = ViewControllers/KiiOverviewDataBrowseViewController.h; sourceTree = "<group>"; };
 		EA3155AF193BC42B007DBBFA /* KiiOverviewDataBrowseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KiiOverviewDataBrowseViewController.m; path = ViewControllers/KiiOverviewDataBrowseViewController.m; sourceTree = "<group>"; };
-		EA993ECF18BC680D00A4DB8D /* KiiSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = KiiSDK.framework; sourceTree = "<group>"; };
+		EA5B94B919750DC100398A32 /* KiiSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = KiiSDK.framework; sourceTree = "<group>"; };
+		EA5B94BB19750E2B00398A32 /* libsqlite3.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.0.dylib; path = usr/lib/libsqlite3.0.dylib; sourceTree = SDKROOT; };
+		EA5B94BD19750F7500398A32 /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
+		EA5B94BF19750F8300398A32 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 		EAB8AF281938737C000A4590 /* KiiUserDescViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KiiUserDescViewController.h; path = ViewControllers/KiiUserDescViewController.h; sourceTree = "<group>"; };
 		EAB8AF291938737C000A4590 /* KiiUserDescViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KiiUserDescViewController.m; path = ViewControllers/KiiUserDescViewController.m; sourceTree = "<group>"; };
 		EAB8AF2B19388459000A4590 /* KiiFileCreateDescViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KiiFileCreateDescViewController.h; path = ViewControllers/KiiFileCreateDescViewController.h; sourceTree = "<group>"; };
@@ -90,16 +94,18 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EA5B94C019750F8300398A32 /* Social.framework in Frameworks */,
+				EA5B94BE19750F7500398A32 /* ImageIO.framework in Frameworks */,
+				9B5B531C18338B26000533F9 /* CoreGraphics.framework in Frameworks */,
+				EA5B94BC19750E2B00398A32 /* libsqlite3.0.dylib in Frameworks */,
+				EA5B94BA19750DC100398A32 /* KiiSDK.framework in Frameworks */,
 				9B6763C01834C35200806CD6 /* Accounts.framework in Frameworks */,
 				9BA24E51183533C600BA9EB8 /* AssetsLibrary.framework in Frameworks */,
-				9B5B531C18338B26000533F9 /* CoreGraphics.framework in Frameworks */,
 				9B5B531A18338B26000533F9 /* Foundation.framework in Frameworks */,
-				9B9C41AE1834C19E00EDED68 /* KiiSDK.framework in Frameworks */,
 				9B6763C41834C37100806CD6 /* MobileCoreServices.framework in Frameworks */,
 				9B8703F3183648E30005C72B /* QuartzCore.framework in Frameworks */,
 				9B5B531E18338B26000533F9 /* UIKit.framework in Frameworks */,
 				9B6763C21834C35E00806CD6 /* Twitter.framework in Frameworks */,
-				EA993ED018BC680D00A4DB8D /* KiiSDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -126,12 +132,14 @@
 		9B5B531818338B26000533F9 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				EA993ECF18BC680D00A4DB8D /* KiiSDK.framework */,
+				EA5B94BF19750F8300398A32 /* Social.framework */,
+				EA5B94BD19750F7500398A32 /* ImageIO.framework */,
+				EA5B94BB19750E2B00398A32 /* libsqlite3.0.dylib */,
+				EA5B94B919750DC100398A32 /* KiiSDK.framework */,
 				9B6763BF1834C35200806CD6 /* Accounts.framework */,
 				9BA24E50183533C600BA9EB8 /* AssetsLibrary.framework */,
 				9B5B531B18338B26000533F9 /* CoreGraphics.framework */,
 				9B5B531918338B26000533F9 /* Foundation.framework */,
-				9B9C41AD1834C19E00EDED68 /* KiiSDK.framework */,
 				9B6763C31834C37100806CD6 /* MobileCoreServices.framework */,
 				9B8703F2183648E30005C72B /* QuartzCore.framework */,
 				9B6763C11834C35E00806CD6 /* Twitter.framework */,
@@ -401,6 +409,7 @@
 					"$(inherited)",
 					KiiTutorialApp,
 					/Users/moshiur/git/TutorialApp/iOSSDKTutorialApp,
+					"$(PROJECT_DIR)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "KiiTutorialApp/KiiTutorialApp-Prefix.pch";
@@ -423,6 +432,7 @@
 					"$(inherited)",
 					KiiTutorialApp,
 					/Users/moshiur/git/TutorialApp/iOSSDKTutorialApp,
+					"$(PROJECT_DIR)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "KiiTutorialApp/KiiTutorialApp-Prefix.pch";
