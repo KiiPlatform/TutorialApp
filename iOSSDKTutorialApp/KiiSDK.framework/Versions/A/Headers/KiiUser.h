@@ -698,8 +698,9 @@ typedef void (^KiiErrorBlock)(NSError *error);
  
  @param bucketName The name of the file bucket you'd like to use
  @return An instance of a working <KiiFileBucket>
+ @deprecated This method is deprecated. Use <[KiiUser bucketWithName:]> instead.
  */
-- (KiiFileBucket*) fileBucketWithName:(NSString*)bucketName;
+- (KiiFileBucket*) fileBucketWithName:(NSString*)bucketName __attribute__((deprecated("Use [KiiUser bucketWithName:] instead.")));
 
 /** Get or create a Push notification topic at the user level
  
@@ -1173,5 +1174,15 @@ typedef void (^KiiErrorBlock)(NSError *error);
  */
 - (NSArray*) ownerOfGroupsSynchronous:(NSError**)error;
 
+/**
+ Return YES when the specified KiiUser is in following conditions.
+ - KiiUser ID is equal to this one.
+ - (If KiiUser does not have ID) KiiUser instance is equal to this one.
+@param object KiiUser object that will be compared to this.
+@return YES if the given KiiUser is equal to this, NO otherwise.
+*/
+- (BOOL)isEqual:(id)object;
+
+- (NSUInteger)hash;
 
 @end

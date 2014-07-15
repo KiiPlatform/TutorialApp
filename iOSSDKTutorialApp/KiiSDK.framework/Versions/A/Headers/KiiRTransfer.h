@@ -84,7 +84,7 @@ typedef void(^KiiRTransferBlock)(id<KiiRTransfer> transferObject, NSError *error
 -(void) terminate:(NSError**) error;
 
 /** Get the File Holder instance which this transfer is bounded.
- @return fileHolder a KiiObject or KiiFile instance which this transfer is bounded.
+ @return fileHolder a KiiObject instance which this transfer is bounded.
  */
 -(id<FileHolder>) fileHolder;
 @end

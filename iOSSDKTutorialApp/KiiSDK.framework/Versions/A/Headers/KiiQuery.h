@@ -43,6 +43,20 @@
 + (KiiQuery*) queryWithClause:(KiiClause*)clause;
 
 
+/**
+ Create KiiQuery from Dictionary
+
+ You may not use this method.
+
+ This is introduced for internal use.
+ 
+ @param Dictinary represents query. Should be equibalent to JSON object constructed for query REST api.
+ @return KiiQuery instatnce
+ 
+ */
++ (KiiQuery*) queryWithDictionary:(NSDictionary *)queryDict;
+
+
 /** Set the query to sort by a field in descending order
  
  If a sort has already been set, it will be overwritten.

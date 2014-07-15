@@ -18,9 +18,13 @@ typedef NS_ENUM(NSUInteger, KiiACLAction) {
     KiiACLBucketActionQueryObjects,
     /** Action of drop the bucket. It will also remove all contents in the bucket. */
     KiiACLBucketActionDropBucket,
-    /** Action of read file in the bucket. */
+    /** Action of read file in the bucket.
+    * @deprecated This enum is deprecated. Use KiiACLObjectActionRead instead.
+    */
     KiiACLFileActionRead,
-    /** Action of modify, delete file in the bucket. */
+    /** Action of modify, delete file in the bucket.
+    * @deprecated This enum is deprecated. Use KiiACLObjectActionWrite instead.
+    */
     KiiACLFileActionWrite,
     /** Action of read object in the bucket. */
     KiiACLObjectActionRead,

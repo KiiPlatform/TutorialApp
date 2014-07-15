@@ -14,13 +14,13 @@
 */
 typedef NS_ENUM(NSInteger, KiiExperimentStatus) {
     /** The experiment is in draft. You need to run Experiment in the developer portal before starting A/B testing. */
-    Draft,
+    KiiExperimentDraft,
     /** The experiment is running. */
-    Running,
+    KiiExperimentRunning,
     /** The experiment is paused. */
-    Paused,
+    KiiExperimentPaused,
     /** The experiment is terminated. */
-    Terminated
+    KiiExperimentTerminated
 };
 
 @class KiiExperiment;
@@ -82,6 +82,22 @@ If you use <KiiVariationSamplerByKiiUser> with current login user, it will be sa
  @param error An NSError object, passed by reference.
  */
 - (KiiVariation*) appliedVariationWithSampler:(id<KiiVariationSampler>) sampler andError:(NSError**) error;
+
+/** Get the variation applied to this trial. <br>
+    Sampler should return the variation according to the rate defined
+    in this experiment. If sampler fails to return applied variation,
+    then fallback is returned. If you use
+    <KiiVariationSamplerByKiiUser> with current login user, it will be
+    same as <appliedVariationWithError:>.
+
+    @param sampler an instance of object that conform
+    KiiVariationSampler protocol.
+    @param fallback fallback The variation to return when failed to
+    get the applied variation.
+    @return applied variation for this trial or fallback.
+ */
+- (KiiVariation*) appliedVariationWithSampler:(id<KiiVariationSampler>) sampler
+                                     fallback:(KiiVariation*) fallback;
 
 /** Get the variation which has the specified name.
  
