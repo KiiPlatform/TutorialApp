@@ -1,8 +1,0 @@
-# Eclipse project files
-.classpath
-.project
-
-# Android Studio
-.idea/workspace.xml
-.gradle
-build/
