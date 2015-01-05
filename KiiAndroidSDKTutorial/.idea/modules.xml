@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/AndroidSDKTutorialApp.iml" filepath="$PROJECT_DIR$/AndroidSDKTutorialApp.iml" />
+      <module fileurl="file://$PROJECT_DIR$/KiiAndroidSDKTutorial.iml" filepath="$PROJECT_DIR$/KiiAndroidSDKTutorial.iml" />
     </modules>
   </component>
 </project>
