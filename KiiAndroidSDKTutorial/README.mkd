@@ -2,14 +2,13 @@
 
 ### Requirements:
 
-- Android SDK Tools
-  - Android 4.4 SDK Platform
+- Android Studio
 
 ### How to setup:
 
-1. Open Eclipse.
-2. Select "File" -> "Import" -> "General" -> "Existing Projects into Workspace".
-3. Select project directoy to "Select root directory", then import "AndroidSDKTutorialApp".
+1. Open Android Studio.
+2. Select "Open an existing Android Studio project".
+3. Choose downloaded "KiiAndroidSDKTutorial".
 4. Get the APP ID, APP KEY and server location from KiiCloud developer portal, then copy these values to AppConstants.java.
 
 ```java
@@ -17,4 +16,3 @@ public static final String APP_ID = "__APP_ID__";
 public static final String APP_KEY = "__APP_KEY__";
 public static final Site APP_SITE = Site.US;
 ```
-
